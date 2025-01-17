@@ -1,0 +1,42 @@
+ul {
+    list-style-type: none;
+    /* Remove as bolinhas ou números das listas não ordenadas */
+    margin: 0;
+    /* Remove a margem padrão do ul */
+    padding: 0;
+    /* Remove o preenchimento padrão do ul */
+}
+
+
+ul a {
+    width: 200px;
+    /* Define a largura de cada link */
+    height: 40px;
+    /* Define a altura de cada link */
+    display: block;
+    /* Faz o link se comportar como um bloco (block-level element) */
+    color: #000;
+    /* Define a cor do texto do link */
+    text-decoration: none;
+    /* Remove a sublinha dos links */
+    text-indent: 40px;
+    /* Adiciona um recuo de 40px ao texto dentro do link */
+    line-height: 40px;
+    /* Centraliza verticalmente o texto dentro do link */
+    background: url(../imagens/menu.png) no-repeat right bottom;
+    /* Adiciona uma imagem de fundo ao link, sem repetição, alinhada à direita e na parte inferior */
+}
+
+a:hover {
+    background-position: left bottom;
+    /* Muda a posição da imagem de fundo para a esquerda inferior */
+    color: #fff;
+    /* Muda a cor do texto do link para branco */
+}
+
+li {
+    padding: 10px 20px;
+    /* Adiciona 10px de preenchimento acima/abaixo e 20px à esquerda/direita de cada item da lista */
+    background: url(../imagens/seta.png) no-repeat left center;
+    /* Adiciona uma imagem de fundo à esquerda e centralizada verticalmente em cada item da lista */
+}

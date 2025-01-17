@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+    
+   /*  if (2 == 2 && 3 >= 1 && 'a' == 'b') {
+        document.write('Verdadeiro')
+    }
+    
+      if (2 == 2 || 3 >= 1 || 'a' == 'b') {
+        document.write('Verdadeiro')
+    } else {
+        documento.write('Falso')
+    }
+ */
+    //false = false
+    /* if(!(5 >= 2)){
+        document.write('Verdadeiro')
+    } else {
+        document.write('Falso')
+    } */
+
+    var nota = prompt('Digite a nota do aluno:')
+    var faltas = prompt('Digite a quantidade de faltas:')
+
+    media = 7
+    faltas_maximas = 15
+    
+    /* if(nota>= media && faltas <= faltas_maximas){
+        document.write('Aprovado')
+        //lógica
+    } else {
+        document.write('Reprovado')
+        //lógica
+    } */
+
+    var resultado = nota >= media && faltas <= faltas_maximas ? 'Aprovado' : 'Reprovado'
+    document.write(resultado)
+    </script>
+</head>
+<body>
+   <p>
+
+javascript <br>
+Copiar código <br>
+/* <br>
+if (2 == 2 && 3 >= 1 && 'a' == 'b') { <br>
+    document.write('Verdadeiro') <br>
+}<br><br>
+
+if (2 == 2 || 3 >= 1 || 'a' == 'b') { <br>
+    document.write('Verdadeiro') <br>
+} else { <br>
+    documento.write('Falso') <br>
+} <br>
+*/<br>
+Condições if com operadores lógicos AND e OR:<br><br>
+
+A primeira condição verifica se três expressões são verdadeiras simultaneamente usando o operador lógico && (AND). Como 'a' == 'b' é falso, a expressão completa resulta em falso, então nada é escrito.<br><br>
+
+Na segunda condição, o operador || (OR) é utilizado. <br><br>
+
+Se ao menos uma das expressões for verdadeira, a condição será verdadeira. Como 2 == 2 e 3 >= 1 são verdadeiras, o código escreveria "Verdadeiro".<br>
+Segunda parte do código comentado:<br><br>
+
+javascript <br>
+Copiar código <br>
+//false = false <br>
+/* if(!(5 >= 2)){ <br>
+    document.write('Verdadeiro') <br>
+} else { <br>
+    document.write('Falso') <br>
+} */ <br>
+
+Operador NOT !: <br> <br>
+
+Este bloco verifica a negação de uma condição. O operador ! inverte o valor lógico. No caso, !(5 >= 2) inverte o resultado da comparação 5 >= 2, que é verdadeiro, tornando-o falso. Como o resultado é falso, o bloco else será executado, escrevendo "Falso".<br><br>
+
+Terceira parte do código (ativa):<br><br>
+
+javascript <br>
+Copiar código <br>
+var nota = prompt('Digite a nota do aluno:') <br>
+var faltas = prompt('Digite a quantidade de faltas:') <br>
+<br>
+media = 7 <br>
+faltas_maximas = 15<br>
+<br>
+var resultado = nota >= media && faltas <= faltas_maximas ? 'Aprovado' : 'Reprovado' <br>
+document.write(resultado)<br> <br>
+
+Entrada de valores com prompt: O código começa pedindo ao usuário a nota do aluno e o número de faltas usando a função prompt(). Ambos os valores são inseridos como strings e podem ser convertidos para números caso necessário.<br> <br>
+
+Variáveis media e faltas_maximas: <br> <br>
+
+A variável media é definida como 7, e faltas_maximas como 15. Elas são usadas para comparar os valores de nota e faltas inseridos pelo usuário.<br>
+Operador ternário: <br><br>
+
+O operador ternário é utilizado para simplificar a lógica do if-else. Ele verifica se o aluno tem nota maior ou igual à média (nota >= media) e se as faltas são menores ou iguais ao limite máximo (faltas <= faltas_maximas). Se ambas as condições forem verdadeiras, o aluno será "Aprovado". Caso contrário, será "Reprovado".<br>
+Saída de resultado: <br><br>
+
+O resultado da verificação é armazenado na variável resultado, que então é exibida na tela com document.write(resultado).<br><br>
+Explicação geral do código:<br>
+Este código utiliza operadores lógicos e o operador ternário para determinar se um aluno foi aprovado ou reprovado com base em duas condições: a nota e o número de faltas. Dependendo das respostas dadas pelo usuário, o código imprime "Aprovado" ou "Reprovado". Ele também demonstra o uso de operadores de comparação (>=, <=) e lógicos (&&, ||) para tomar decisões no fluxo de execução.
+
+
+
+
+
+
+
+
+
+
+
+ChatGPT pode cometer erros. Consid
+   </p>
+</body>
+</html>

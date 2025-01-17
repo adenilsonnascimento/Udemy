@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    /**
+     * Função que calcula a soma dos valores passados como argumentos.
+     * Utiliza o objeto especial `arguments` para acessar todos os parâmetros da função,
+     * independentemente de quantos sejam fornecidos.
+     */
+    function soma() {
+      let resultado = 0; // Inicializa a variável `resultado` como 0 para armazenar a soma.
+      // Percorre todos os argumentos fornecidos para a função.
+      for (let i in arguments) {
+        // `arguments` é um objeto que contém todos os parâmetros passados para a função.
+        // console.log(arguments[i]); // Exibe cada argumento no console (opcional, está comentado).
+        resultado += arguments[i]; // Adiciona cada valor ao `resultado`.
+      }
+      return resultado; // Retorna o valor total da soma.
+    }
+
+    // Exemplo de chamada da função `soma` com diferentes tipos de parâmetros.
+    console.log(soma(7, 5, 3.2, 'Texto')); 
+    // A saída será `NaN` (Not a Number), pois o último argumento ('Texto') é uma string,
+    // e a operação de soma com números resulta em um valor inválido.
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este exemplo demonstra o uso do objeto especial <code>arguments</code> em JavaScript. A função <code>soma</code> aceita uma quantidade variável de parâmetros e tenta somá-los.
+    <ul>
+      <li>Na função, uma variável <code>resultado</code> é inicializada como 0.</li>
+      <li>Um laço <code>for-in</code> percorre os índices do objeto <code>arguments</code>, que contém os parâmetros passados.</li>
+      <li>Os valores de <code>arguments[i]</code> são somados ao <code>resultado</code>.</li>
+      <li>Por fim, a função retorna o <code>resultado</code>.</li>
+    </ul>
+    Ao chamar <code>soma(7, 5, 3.2, 'Texto')</code>, ocorre um problema:
+    <ul>
+      <li>Os números 7, 5 e 3.2 são somados corretamente.</li>
+      <li>O parâmetro <code>'Texto'</code> é uma string, e sua adição causa um resultado inválido (<code>NaN</code>).</li>
+    </ul>
+    Para evitar esse problema, seria necessário validar o tipo de cada argumento antes de somá-lo.
+  </p>
+</body>
+
+</html>

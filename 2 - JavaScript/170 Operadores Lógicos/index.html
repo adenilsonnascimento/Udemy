@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Lógicos</title>
+</head>
+<body>
+    
+  <p>
+
+    Os operadores lógicos em JavaScript são usados para realizar operações lógicas com variáveis ou expressões, retornando valores booleanos (true ou false). Eles são frequentemente utilizados em estruturas de controle como if, while, e em expressões condicionais. <br><br>
+
+Aqui estão os principais operadores lógicos em JavaScript: <br><br>
+
+1. AND Lógico (&&) <br>
+O operador AND retorna true se ambas as expressões forem verdadeiras. Se uma ou ambas forem falsas, ele retorna false. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+expr1 && expr2 <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let a = true; <br>
+let b = false; <br>
+console.log(a && b);  // Saída: false <br>
+console.log(a && true);  // Saída: true <br>
+2. OR Lógico (||) <br>
+O operador OR retorna true se pelo menos uma das expressões for verdadeira. Se ambas forem falsas, ele retorna false. <br><br>
+
+Sintaxe: <br><br>
+ 
+javascript <br>
+Copiar código <br>
+expr1 || expr2 <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let a = true; <br>
+let b = false; <br>
+console.log(a || b);  // Saída: false <br>
+console.log(b || false);  // Saída: false <br>
+3. NOT Lógico (!) <br>
+O operador NOT inverte o valor de uma expressão booleana. Se for true, ele retorna false, e vice-versa. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+!expr <br><br>
+
+Exemplo: <br><br>
+ 
+javascript <br>
+Copiar código <br>
+let a = true; <br> 
+console.log(!a);  // Saída: false <br>
+console.log(!false);  // Saída: true <br>
+4. Nullish Coalescing (??) <br>
+O operador Nullish Coalescing é usado para retornar o valor à direita se o valor à esquerda for null ou undefined. Se o valor à esquerda não for nulo ou indefinido, ele retorna o valor à esquerda. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+expr1 ?? expr2 <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let a = null; <br>
+let b = "valor padrão"; <br>
+console.log(a ?? b);  // Saída: "valor padrão" <br>
+5. Operador Ternário (? :) <br>
+O operador ternário é uma forma curta de escrever uma condicional if...else, verificando uma expressão e retornando um dos dois valores. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br> 
+Copiar código <br>
+condicao ? expr1 : expr2 <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let idade = 18; <br>
+let resultado = (idade >= 18) ? "Maior de idade" : "Menor de idade"; <br>
+console.log(resultado);  // Saída: "Maior de idade" <br>
+Esses operadores são fundamentais para controle de fluxo e decisões em JavaScript, permitindo a criação de expressões condicionais complexas.
+
+  </p>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escopo de 'var' em Blocos</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Declaração de variável global usando 'var'.
+        var serie = 'Friends'
+
+        {
+            // 'var' não respeita o escopo de bloco. 
+            // A variável declarada aqui sobrescreve a variável global.
+            var serie = "The Walking Dead"
+            console.log('dentro do bloco: ' + serie) // Mostra "The Walking Dead".
+        }
+
+        // A variável 'serie' continua modificada fora do bloco.
+        console.log('fora do bloco: ' + serie) // Mostra "The Walking Dead".
+    </script>
+</head>
+
+<body>
+    <h1>O comportamento de 'var' em blocos</h1>
+    <p>
+        No ECMAScript, o 'var' ignora o escopo de blocos, o que pode levar a 
+        resultados inesperados. No exemplo acima, a variável global 'serie' é 
+        modificada dentro do bloco porque 'var' permite reatribuições no mesmo escopo. 
+        Esse comportamento foi uma das razões para introduzir 'let' e 'const', que 
+        respeitam o escopo de bloco e evitam reatribuições acidentais, tornando o código 
+        mais seguro e previsível.
+    </p>
+    <div id="output"></div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      // 3 escopos: global, função e o bloco
+
+      // Variável declarada no escopo global
+      var serie = 'Friends';
+
+      // Início de um bloco de código (if)
+      if (true) {
+        // `var` não respeita o escopo de bloco (escopo de função ou global apenas)
+        var serie2 = 'Game of Thrones'; 
+        // Acessa a variável global `serie`
+        document.write(serie);  // Saída: Friends
+      }
+
+      document.write('<br />'); 
+      // `serie2` foi declarada no bloco, mas devido ao `var`, ela tem escopo global/função
+      document.write(serie2);  // Saída: Game of Thrones
+
+      document.write('<br />');
+
+      // Função x declarada
+      function x() {
+        // Variável declarada no escopo local da função
+        var serie3 = 'The Walking Dead'; 
+        // Acessa a variável global `serie`
+        document.write(serie);  // Saída: Friends
+        document.write('<br />');
+        // Acessa a variável global `serie2`
+        document.write(serie2);  // Saída: Game of Thrones
+      }
+
+      // Chama a função x
+      x();
+
+      document.write('<br />');
+      // Tenta acessar `serie3` fora do escopo da função
+      // Não é possível acessar `serie3` aqui, pois foi declarada dentro da função x (escopo local)
+      document.write(serie3);  // Não renderiza, pois `serie3` não existe no escopo global
+    </script>
+  </head>
+
+  <body>
+
+
+  <p>
+
+    Explicação sobre escopo de variáveis <br>
+    Escopo define a área do código onde uma variável está disponível ou acessível. Em JavaScript, temos três tipos principais de escopo: escopo global, escopo de função e escopo de bloco. <br> <br>
+    
+    1. Escopo Global <br>
+    Variáveis declaradas fora de qualquer função ou bloco de código têm escopo global, o que significa que elas podem ser acessadas de qualquer parte do código, incluindo funções e blocos. <br> <br>
+    
+    Exemplo no código: <br><br>
+    
+    javascript <br>
+    Copiar código <br>
+    var serie = 'Friends'; <br>
+    A variável serie é global e pode ser usada em qualquer parte do código. <br><br>
+    
+    2. Escopo de Função <br><br>
+
+    Variáveis declaradas dentro de uma função têm escopo local à função. Isso significa que essas variáveis só podem ser acessadas dentro da função onde foram criadas. O escopo de função é ativado ao usar var, let ou const dentro de uma função. <br><br>
+    
+    Exemplo no código: <br><br>
+    
+    javascript <br>
+    Copiar código <br>
+    function x() { <br>
+      var serie3 = 'The Walking Dead';<br>
+    }<br><br>
+
+    A variável serie3 só existe dentro da função x e não pode ser acessada fora dela. Tentar acessá-la fora da função resultará em um erro. <br><br>
+    
+    3. Escopo de Bloco <br><br>
+
+    O escopo de bloco é ativado em blocos de código como if, for, ou {}. No entanto, var não respeita o escopo de bloco, ou seja, variáveis declaradas com var dentro de blocos são "levantadas" para o escopo global ou da função mais próxima. Já variáveis declaradas com let ou const respeitam o escopo de bloco. <br><br>
+    
+    Exemplo no código: <br><br>
+     
+    javascript <br>
+    Copiar código <br>
+    if (true) { <br>
+      var serie2 = 'Game of Thrones'; <br>
+    } <br><br>
+
+    Apesar de serie2 estar dentro do bloco if, ela pode ser acessada fora dele porque foi declarada com var. Se tivesse sido declarada com let ou const, ela só existiria dentro do bloco if. <br><br>
+    
+    Resumo sobre escopo:<br>
+    Escopo global: Variáveis acessíveis de qualquer parte do código. <br>
+    Escopo de função: Variáveis só podem ser acessadas dentro da função onde foram declaradas. <br> 
+    Escopo de bloco: Com let e const, as variáveis só existem dentro do bloco onde foram declaradas. Com var, elas "escapam" para o escopo global ou de função. <br>
+    Esses conceitos são fundamentais para evitar erros, como tentar acessar variáveis que estão fora do seu escopo, ou sobrescrever variáveis acidentalmente. <br>
+    
+    
+    
+    
+    
+    
+    
+
+  </p>
+
+  </body>
+</html>

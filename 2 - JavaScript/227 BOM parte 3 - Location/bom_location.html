@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript - BOM location</title>
+
+  <script>
+    // Abaixo estão exemplos que utilizam o objeto `window.location`
+    // para redirecionar o usuário para diferentes URLs.
+
+    // O atributo `href` do objeto `location` é usado para definir
+    // ou alterar o endereço da página atual.
+    // Isso faz com que o navegador redirecione para a URL especificada.
+  </script>
+
+</head>
+
+<body>
+  <!-- Botão que redireciona para o site do Google ao ser clicado -->
+  <button onclick="window.location.href = 'http://www.google.com' ">Acessar Google</button>
+
+  <!-- Botão que redireciona para o site da Faus ao ser clicado -->
+  <button onclick="window.location.href = 'http://www.faus.com.br' ">Acessar Faus</button>
+
+  <h1>Explicando tudo sobre o BOM location</h1>
+
+  <p>
+    O **BOM (Browser Object Model)** é um conjunto de objetos que permite o acesso e manipulação de funcionalidades do navegador. 
+    Um desses objetos é o **`window.location`**, que fornece informações sobre a URL atual e permite navegar para outras páginas.
+    <br /><br />
+    Neste exemplo, os botões utilizam o método <code>window.location.href</code>, que altera o endereço da página atual para o URL especificado. 
+    Quando o botão "Acessar Google" é clicado, o navegador redireciona para o site do Google. Da mesma forma, ao clicar em "Acessar Faus", o navegador redireciona para o site da Faus.
+  </p>
+
+  <h2>Explicando todos códigos existentes no BOM location</h2>
+
+  <p>
+    O objeto **`window.location`** oferece várias propriedades e métodos que podem ser usados para interagir com URLs. Aqui estão os principais:
+    <ul>
+      <li><code>location.href</code>: Retorna a URL atual ou redireciona para uma nova URL.</li>
+      <li><code>location.hostname</code>: Retorna o nome do host (ex: www.google.com).</li>
+      <li><code>location.pathname</code>: Retorna o caminho do arquivo da URL atual (ex: /pagina.html).</li>
+      <li><code>location.protocol</code>: Retorna o protocolo da URL (ex: http ou https).</li>
+      <li><code>location.assign()</code>: Carrega um novo documento em uma URL especificada.</li>
+      <li><code>location.reload()</code>: Recarrega a página atual.</li>
+    </ul>
+    Esses comandos permitem desde navegação até recarregamento de páginas, tornando o **BOM location** uma ferramenta poderosa para interações com o navegador.
+  </p>
+</body>
+
+</html>

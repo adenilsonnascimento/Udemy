@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exibindo Data com JavaScript</title>
+    <script>
+      // Cria uma instância do objeto Date que retorna a data e hora atuais
+      let data = new Date();
+
+      // Exibe a data no formato DD/MM/AAAA
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("data-atual").textContent = 
+          data.getDate() + '/' + 
+          (data.getMonth() + 1) + '/' + 
+          data.getFullYear();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Exibição da Data Atual</h1>
+    <p>
+      Este script utiliza o objeto <code>Date</code> do JavaScript para obter a data atual e exibi-la no formato DD/MM/AAAA.
+      O objeto <code>Date</code> representa um momento no tempo e oferece diversos métodos para manipular e acessar componentes 
+      individuais da data, como o dia, o mês e o ano.
+    </p>
+    <p>
+      O método <code>getDate()</code> retorna o dia do mês (de 1 a 31). O método <code>getMonth()</code> retorna o índice 
+      do mês (de 0 a 11), sendo necessário somar 1 para obter o número correto do mês. Já o método <code>getFullYear()</code> 
+      retorna o ano com quatro dígitos. O código combina esses componentes da data em uma string no formato desejado.
+    </p>
+    <p>
+      Para exibir a data no HTML, foi adicionado um elemento <code>&lt;span&gt;</code> com o atributo <code>id="data-atual"</code>. 
+      Este elemento é usado como alvo para inserir a data gerada pelo script. O código acessa este elemento utilizando 
+      <code>document.getElementById()</code> e atualiza seu conteúdo com a data formatada.
+    </p>
+    <p>
+      Além disso, foi utilizado o evento <code>DOMContentLoaded</code> para garantir que o script só será executado 
+      após todos os elementos do DOM estarem carregados. Isso evita erros que poderiam ocorrer se o JavaScript fosse 
+      executado antes do carregamento do elemento <code>&lt;span&gt;</code>.
+    </p>
+    <p><strong>Data atual: </strong><span id="data-atual"></span></p>
+  </body>
+</html>

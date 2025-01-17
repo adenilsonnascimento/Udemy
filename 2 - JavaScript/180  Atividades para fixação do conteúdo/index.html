@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC Calculator</title>
+
+    <script>
+        let nome = prompt("Digite o seu nome: ");
+        let alturaCm = prompt("Digite sua altura em CM: ");
+        let peso = prompt("Digite seu peso:");
+
+        peso = parseFloat(peso);
+        alturaCm = parseFloat(alturaCm);
+        let altura = alturaCm / 100; // Converter a altura de cm para metros
+
+        let massa = peso / (altura * altura); // Fórmula correta para o IMC
+
+        if (massa < 16) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Baixo peso muito grave.");
+        } else if (massa >= 16 && massa < 17) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Baixo peso grave.");
+        } else if (massa >= 17 && massa < 18.5) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Baixo peso.");
+        } else if (massa >= 18.5 && massa < 25) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Peso normal.");
+        } else if (massa >= 25 && massa < 30) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Sobrepeso.");
+        } else if (massa >= 30 && massa < 35) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Obesidade grau I.");
+        } else if (massa >= 35 && massa < 40) {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Obesidade grau II.");
+        } else {
+            document.write(nome + ", sua altura é " + altura.toFixed(2) + "m, e seu peso é " + peso + "kg. Sua massa corporal é " + massa.toFixed(2) + ": Obesidade grau III (obesidade mórbida).");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

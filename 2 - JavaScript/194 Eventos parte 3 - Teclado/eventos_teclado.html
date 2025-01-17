@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+
+    let acao1 = function() {
+      alert('evento disparado')
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <input onkeydown="acao1()" type="text">
+  <input onkeypress="acao1()" type="text">
+   <input onkeyup="acao1()" type="text">
+
+  <h2>Explicações dos códigos comentados</h2>
+  <p>
+    O código acima contém três tipos de eventos que podem ser usados em campos de entrada de texto: <code>onkeydown</code>, <code>onkeypress</code> e <code>onkeyup</code>.
+    Eles são eventos que detectam as interações do usuário com o teclado.
+  </p>
+
+  <p>
+    O primeiro evento, <code>onkeydown</code>, é ativado quando qualquer tecla é pressionada. Neste código, ao pressionar qualquer tecla enquanto o foco estiver no campo de entrada de texto, a função <code>acao1()</code> será executada, mostrando um alerta com a mensagem "evento disparado".
+  </p>
+
+  <p>
+    O código comentado com <code>onkeypress</code> seria ativado quando uma tecla é pressionada e liberada. Ele é similar ao <code>onkeydown</code>, mas com algumas diferenças, como o fato de que o evento <code>onkeypress</code> não captura teclas de controle, como Shift ou Ctrl.
+  </p>
+
+  <p>
+    O código comentado com <code>onkeyup</code> seria ativado quando a tecla é liberada após ser pressionada. Esse evento pode ser útil quando você deseja capturar a interação do usuário apenas após a tecla ser solta, em vez de enquanto ela está pressionada.
+  </p>
+
+  <p>
+    Todos esses eventos têm a mesma função de disparar a função <code>acao1()</code> que exibe um alerta. Porém, os momentos em que eles são acionados são diferentes dependendo do tipo de interação com o teclado.
+  </p>
+
+</body>
+
+</html>

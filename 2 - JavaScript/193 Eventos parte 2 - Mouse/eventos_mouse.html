@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+   
+   <script>
+
+    //  function acao(){
+    //    alert('Evento disparado')
+    //  }
+     function acao1(){
+       alert('Elemento foi clicado')
+     }
+     function acao2(){
+       alert('O cursor do mouse deixou a região do elemento')
+     }
+
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- <div onclick="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+    <!-- <div ondblclick="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+    <!-- <div onmouseup="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+    <!-- <div onmouseover="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+    <!-- <div onmouseout="acao()" style="background-color: #ccc; height: 150px; width: 150px;"></div> -->
+    <div onclick="acao1()" onmouseout="acao2()" style="background-color: #ccc; height: 150px; width: 150px;"></div>
+    
+    <p>
+      Este código demonstra o uso de eventos em JavaScript aplicados a um elemento `<div>` estilizado como um quadrado cinza. 
+      Os eventos são configurados diretamente no HTML usando atributos de manipulação de eventos:
+    </p>
+    <ul>
+      <li>
+        O evento <code>onclick</code> está associado à função <code>acao1()</code>. Quando o quadrado é clicado, um alerta com 
+        a mensagem "Elemento foi clicado" é exibido.
+      </li>
+      <li>
+        O evento <code>onmouseout</code> está associado à função <code>acao2()</code>. Quando o cursor do mouse sai da área do 
+        quadrado, um alerta com a mensagem "O cursor do mouse deixou a região do elemento" é exibido.
+      </li>
+    </ul>
+    <h2>
+      Além disso, o código possui exemplos comentados de outros eventos do mouse, como:
+    </h2>
+    <ul>
+      <li>
+        <code>onclick</code>: Dispara quando o elemento é clicado.
+      </li>
+      <li>
+        <code>ondblclick</code>: Dispara quando o elemento é clicado duas vezes rapidamente.
+      </li>
+      <li>
+        <code>onmouseup</code>: Dispara quando o botão do mouse é liberado sobre o elemento.
+      </li>
+      <li>
+        <code>onmouseover</code>: Dispara quando o cursor do mouse entra na região do elemento.
+      </li>
+      <li>
+        <code>onmouseout</code>: Dispara quando o cursor do mouse sai da região do elemento.
+      </li>
+    </ul>
+    <p>
+      As funções JavaScript são chamadas apenas quando os eventos correspondentes ocorrem, permitindo que interações dinâmicas 
+      sejam adicionadas ao site. Esses exemplos são úteis para entender como eventos podem ser utilizados para melhorar a 
+      experiência do usuário.
+    </p>
+  </body>
+</html>

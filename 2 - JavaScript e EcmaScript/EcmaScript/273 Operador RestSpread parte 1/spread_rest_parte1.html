@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entendendo o Operador Spread</title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Contexto de uso do operador spread
+
+    // Uso em strings
+    let tituloArtigo = 'Como utilizar o operador rest/spread'; 
+    // String original
+    console.log(tituloArtigo); 
+    // Espalha cada caractere da string separadamente
+    console.log(...tituloArtigo); 
+    // Coloca os caracteres em um array
+    console.log([...tituloArtigo]);
+
+    // Uso em arrays
+    let listaCursos1 = ['NodeJS e MongoDB', 'ES6', 'TypeScript e Angular 4'];
+    let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux'];
+    // Criação de um novo array unindo outros arrays e valores individuais
+    let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2];
+
+    // Exibe o array completo
+    console.log(listaCursosCompleto);
+
+    // Uso em objetos
+    let pessoa = { nome: 'João', idade: 27 }; 
+    // Clonagem de objeto e adição de novas propriedades
+    let clone = { endereco: 'Rua Abc', ...pessoa };
+
+    // Exibe o novo objeto
+    console.log(clone);
+  </script>
+
+</head>
+
+<body>
+  <h1>Operador Spread no JavaScript</h1>
+  <p>
+    O operador <code>spread</code> (<code>...</code>) no JavaScript permite "espalhar" os elementos de um array, 
+    string ou objeto em um novo contexto, como outro array ou objeto.
+  </p>
+  <p>
+    <strong>Em strings:</strong> Cada caractere pode ser "espalhado" individualmente, 
+    facilitando sua manipulação ou conversão em arrays.
+  </p>
+  <p>
+    <strong>Em arrays:</strong> Permite combinar elementos de vários arrays em um único array ou adicionar elementos 
+    adicionais ao início, meio ou fim de outro array.
+  </p>
+  <p>
+    <strong>Em objetos:</strong> O operador é útil para clonar objetos, além de possibilitar 
+    a adição ou modificação de propriedades sem alterar o objeto original.
+  </p>
+  <p>
+    O operador spread simplifica a manipulação de dados e ajuda a evitar cópias profundas manuais, 
+    promovendo um código mais limpo e conciso.
+  </p>
+</body>
+
+</html>

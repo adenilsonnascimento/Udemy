@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    let x = 1
+
+    document.write('inicio <br />')
+    // Inicia o laço while. A condição de continuidade do laço é x <= 10 e x > 5.
+    // O laço irá continuar enquanto x for menor ou igual a 10 e maior que 5.
+
+    while (x <= 10 && x > 5) {
+      document.write(x + '<br />')
+      // Aqui, o valor de x será impresso na tela em cada iteração.
+
+      //  if(x===5){
+      //   break //interrompe o loop
+      // }
+      // Código comentado acima: Este "if" verificaria se x é igual a 5. Se verdadeiro, o comando 'break' interromperia o laço. 
+
+      x++ // A variável x é incrementada em 1 após cada iteração do laço.
+
+      if (x === 5) {
+        continue // O comando 'continue' faz com que a execução pule para a próxima iteração quando x for igual a 5.
+        // Isso pode gerar problemas se o 'continue' for mal utilizado, como em um laço infinito.
+      }
+      // O incremento x++ pode ser substituído por x+=3 para incrementar de 3 em 3, ou qualquer valor desejado.
+
+    }
+
+    document.write('fim <br />')
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código demonstra o uso da estrutura de repetição <code>while</code> em JavaScript. O loop continua enquanto as
+    condições <code>x <= 10 && x > 5</code> forem verdadeiras. Dentro do loop, o valor de <code>x</code> é impresso no
+    documento e é incrementado a cada iteração com o comando <code>x++</code>. Quando <code>x</code> atinge o valor 5, o
+    comando <code>continue</code> faz com que a execução pule a iteração e vá para a próxima, sem executar o restante do
+    código da iteração. Caso o código comentado com o <code>break</code> fosse descomentado, o loop seria interrompido
+    assim que <code>x</code> atingisse 5. No final do código, a palavra "fim" é impressa para indicar o término do laço.
+  </p>
+
+  <p>
+    Inicialização da variável x: <br />
+    A variável x é inicializada com o valor 1. <br />
+    <code>let x = 1;</code> <br /><br />
+
+    Estrutura while: <br />
+    O laço while executa enquanto a condição <code>x <= 10 && x > 5</code> for verdadeira. Isso significa que o laço
+    começa a execução com <code>x = 1</code>, mas a condição já falha logo no início. <br />
+    Quando <code>x</code> chega a 6, a condição se torna verdadeira, e o código dentro do laço começa a ser executado.
+    <br />
+    <code>while (x <= 10 && x > 5) {</code> <br />
+    <code>document.write(x + '&lt;br /&gt;');</code> <br />
+    <code>x++;</code> <br /><br />
+
+    Comandos dentro do laço: <br />
+    <code>document.write(x + '&lt;br /&gt;')</code>: Este comando imprime o valor de <code>x</code> no documento HTML a
+    cada iteração do laço. <br />
+    <code>x++</code>: A cada iteração, a variável <code>x</code> é incrementada em 1. <br />
+    <code>continue</code>: O comando <code>continue</code> é usado para pular a execução do código restante da iteração
+    atual e continuar para a próxima iteração do laço, caso <code>x</code> seja igual a 5. Isso pode causar um
+    comportamento inesperado e, em alguns casos, até gerar um loop infinito, caso o incremento de <code>x</code> não
+    seja tratado corretamente. <br />
+    Comentário com <code>break</code>: Se o código comentado com o <code>break</code> fosse descomentado, o laço seria
+    interrompido assim que <code>x</code> fosse igual a 5, ou seja, ele pararia imediatamente. <br /><br />
+
+    Execução do código: <br />
+    O loop começa com <code>x = 6</code> e vai até <code>x = 10</code>, imprimindo os números 6, 7, 8, 9, 10. <br />
+    O comando <code>continue</code> faz com que, quando <code>x</code> for igual a 5, o laço continue para a próxima
+    iteração sem executar o restante do código abaixo do <code>continue</code>. <br /><br />
+
+    Finalização: <br />
+    Depois que o laço termina, o comando <code>document.write('fim &lt;br /&gt;')</code> imprime a palavra "fim" para
+    indicar o fim da execução do laço.
+  </p>
+
+</body>
+
+</html>

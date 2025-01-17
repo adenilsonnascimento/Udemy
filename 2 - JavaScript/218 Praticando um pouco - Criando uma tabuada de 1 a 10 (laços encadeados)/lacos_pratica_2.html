@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Estrutura de repetição para gerar a tabuada de 1 a 10
+    for (let y = 1; y <= 10; y++) {
+      // Loop interno para calcular cada multiplicação
+      for (let x = 1; x <= 10; x++) {
+        // Escreve o resultado da multiplicação no documento
+        document.write(y + ' x ' + x + ' = ' + (y * x) + '<br />')
+      }
+      // Insere uma linha horizontal para separar as tabuadas
+      document.write('<hr />')
+    }
+
+    // Código comentado que seria usado para calcular a tabuada do número 2
+    // for(let x = 1; x <= 10; x++){
+    //   document.write('2 x ' + x + ' = ' + (2 * x) + '<br />')
+    // }
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código gera e exibe as tabuadas de multiplicação de 1 a 10 utilizando dois laços <code>for</code> aninhados em JavaScript. <br><br>
+
+    <strong>Funcionamento do código:</strong><br>
+    - O primeiro laço <code>for</code> utiliza a variável <code>y</code>, que representa o número cuja tabuada será calculada. Ele percorre os números de 1 a 10.<br>
+    - Para cada valor de <code>y</code>, um segundo laço <code>for</code> é executado utilizando a variável <code>x</code>, que percorre os números de 1 a 10.<br>
+    - Dentro do laço interno, a multiplicação de <code>y</code> por <code>x</code> é realizada, e o resultado é exibido utilizando <code>document.write</code> no formato "y x x = resultado".<br>
+    - Após a conclusão de todas as multiplicações para um valor de <code>y</code>, uma linha horizontal (<code>&lt;hr /&gt;</code>) é inserida para separar visualmente as tabuadas.<br><br>
+
+    <strong>Detalhes adicionais:</strong><br>
+    - O código comentado ao final demonstra como gerar apenas a tabuada do número 2 utilizando um único laço <code>for</code>. No entanto, ele está desativado no momento.<br><br>
+
+    <strong>Resultado esperado:</strong><br>
+    - O navegador exibirá as tabuadas completas de 1 a 10, com os resultados formatados e separados por linhas horizontais.
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Babel - Introdução e Configuração</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const getMessage = () => "Hello World";
+        document.getElementById('output').innerHTML = getMessage();
+    </script>
+</head>
+<body>
+    <div id="output"></div>
+
+    <h1>Babel - Introdução e Configuração</h1>
+    <p>Babel é uma ferramenta que permite que você escreva código JavaScript moderno, utilizando recursos das versões mais recentes da linguagem, e o converta (ou compile) para uma versão mais compatível com navegadores antigos. Ele ajuda a garantir que seu código funcione em todos os navegadores, independentemente da versão do JavaScript que eles suportam.</p>
+    
+    <h2>O que o Babel Faz?</h2>
+    <p>O Babel converte o código JavaScript escrito com sintaxe moderna (como funções arrow, let, const, classes, etc.) para uma versão mais antiga e compatível, chamada ES5. Por exemplo, ele pode transformar o código abaixo:</p>
+    <pre><code>
+        const greet = () => "Hello, world!";
+    </code></pre>
+    <p>O Babel converterá este código para algo assim:</p>
+    <pre><code>
+        var greet = function() {
+            return "Hello, world!";
+        };
+    </code></pre>
+
+    <h2>Como Configurar o Babel?</h2>
+    <p>No código acima, você está utilizando o Babel diretamente no navegador com o script do CDN. No entanto, em projetos maiores, o Babel é geralmente configurado com ferramentas como Webpack ou Gulp para processar seus arquivos de forma automatizada. Aqui está como você pode usar o Babel em um projeto com ferramentas como o Webpack:</p>
+    <pre><code>
+        // Passo 1: Instalar o Babel e as dependências
+        npm install --save-dev @babel/core @babel/preset-env babel-loader
+
+        // Passo 2: Configurar o Webpack (webpack.config.js)
+        module.exports = {
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        exclude: /node_modules/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
+                        }
+                    }
+                ]
+            }
+        };
+    </code></pre>
+
+    <h2>Como Funciona o Babel?</h2>
+    <p>O Babel funciona transformando o código fonte do seu projeto através de um processo chamado <em>transpiling</em>. Durante esse processo, ele analisa o código moderno e o converte em uma versão mais antiga, garantindo que funcione corretamente em navegadores que não suportam os recursos mais novos do JavaScript. Você pode escolher quais versões do JavaScript deseja usar e o Babel automaticamente cuida da conversão.</p>
+
+    <h2>Conclusão</h2>
+    <p>O Babel é uma ferramenta poderosa para desenvolver aplicativos em JavaScript moderno e garantir a compatibilidade com navegadores antigos. Em projetos modernos, é fundamental usar o Babel para transformar o código, especialmente quando se utiliza as últimas versões do JavaScript.</p>
+</body>
+</html>

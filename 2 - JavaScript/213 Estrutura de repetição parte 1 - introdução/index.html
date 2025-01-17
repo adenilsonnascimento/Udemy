@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando Estruturas de Repetição</title>
+</head>
+<body>
+
+    <h1>O que são e para que servem as Estruturas de Repetição?</h1>
+
+    <p>
+        As estruturas de repetição são um conceito fundamental na programação. Elas permitem que um bloco de código seja repetido várias vezes, com base em uma condição. Isso é útil quando precisamos realizar tarefas repetitivas de forma eficiente. Existem três principais tipos de estruturas de repetição em JavaScript:
+    </p>
+
+    <h2>Tipos de Estruturas de Repetição e para que cada uma delas serve:</h2>
+
+    <p>
+        <strong>1. For:</strong> A estrutura <code>for</code> é usada quando sabemos de antemão quantas vezes o código precisa ser repetido. Por exemplo, quando queremos percorrer um array ou realizar uma contagem específica.
+    </p>
+    <p>
+        <strong>2. While:</strong> A estrutura <code>while</code> é utilizada quando não sabemos quantas vezes o código precisa ser repetido, mas queremos que o código continue rodando enquanto uma condição for verdadeira.
+    </p>
+    <p>
+        <strong>3. Do...While:</strong> A estrutura <code>do...while</code> é semelhante ao <code>while</code>, mas a principal diferença é que o código dentro do <code>do</code> é executado pelo menos uma vez, antes de verificar a condição do <code>while</code>.
+    </p>
+
+    <h2>Código de cada estrutura de repetição em JavaScript:</h2>
+
+    <h3>1. Estrutura <code>for</code>:</h3>
+    <p>O laço <code>for</code> é utilizado para realizar uma repetição baseada em um contador.</p>
+    <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log('Repetição número ' + i);
+}
+    </code></pre>
+    <p>Este código vai imprimir os números de 0 a 4, repetindo 5 vezes.</p>
+
+    <h3>2. Estrutura <code>while</code>:</h3>
+    <p>O laço <code>while</code> executa o código enquanto a condição for verdadeira.</p>
+    <pre><code>
+let i = 0;
+while (i < 5) {
+    console.log('Repetição número ' + i);
+    i++;
+}
+    </code></pre>
+    <p>Este código também irá imprimir os números de 0 a 4, repetindo enquanto a condição <code>i < 5</code> for verdadeira.</p>
+
+    <h3>3. Estrutura <code>do...while</code>:</h3>
+    <p>O laço <code>do...while</code> é executado pelo menos uma vez, independentemente da condição.</p>
+    <pre><code>
+let i = 0;
+do {
+    console.log('Repetição número ' + i);
+    i++;
+} while (i < 5);
+    </code></pre>
+    <p>Este código também vai imprimir os números de 0 a 4, mas garantirá que o bloco de código seja executado pelo menos uma vez, mesmo que a condição <code>i < 5</code> já seja falsa.</p>
+
+</body>
+</html>

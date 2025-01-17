@@ -1,0 +1,49 @@
+body {
+	background-image: url(imagens/bg.jpg); /* Define a imagem de fundo para a página. */
+	background-repeat: no-repeat; /* Impede a repetição da imagem de fundo. */
+	background-size: 100%; /* Ajusta a imagem de fundo para cobrir toda a tela. */
+}
+
+.mosquito1 {
+	width: 50px; /* Define a largura do mosquito pequeno. */
+	height: 50px; /* Define a altura do mosquito pequeno. */
+}
+
+.mosquito2 {
+	width: 70px; /* Define a largura do mosquito médio. */
+	height: 70px; /* Define a altura do mosquito médio. */
+}
+
+.mosquito3 {
+	width: 90px; /* Define a largura do mosquito grande. */
+	height: 90px; /* Define a altura do mosquito grande. */
+}
+
+.ladoA {
+	transform: scaleX(1); /* Mantém a orientação normal do mosquito (lado esquerdo). */
+}
+
+.ladoB {
+	transform: scaleX(-1); /* Espelha o mosquito horizontalmente (lado direito). */
+}
+
+.painel {
+	position: absolute; /* Fixa o painel em relação ao viewport. */
+	width: 190px; /* Define a largura do painel. */
+	padding: 10px; /* Define o espaço interno (padding) dentro do painel. */
+	left: 0px; /* Posiciona o painel no lado esquerdo da tela. */
+	bottom: 0px; /* Posiciona o painel na parte inferior da tela. */
+	border-top: solid 1px #fff; /* Adiciona uma borda superior branca ao painel. */
+	background-color: #fff; /* Define a cor de fundo do painel como branco. */
+	opacity: 0.7; /* Define a transparência do painel. */
+}
+
+.vidas {
+	float: left; /* Alinha os elementos de vidas à esquerda dentro do painel. */
+}
+
+.cronometro {
+	float: left; /* Alinha o cronômetro à esquerda, após os elementos de vidas. */
+	font-size: 20px; /* Define o tamanho da fonte do cronômetro. */
+	font-weight: bold; /* Define a fonte do cronômetro como negrito. */
+}

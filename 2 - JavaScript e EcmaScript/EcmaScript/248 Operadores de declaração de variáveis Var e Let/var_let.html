@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escopos no ECMAScript</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // No ECMAScript, os escopos podem ser: global, função ou bloco.
+        // A seguir, exploramos esses conceitos com exemplos e destacamos diferenças entre var, let e const.
+
+        // Código comentado para mostrar o comportamento do 'var':
+        // var serie = "Friends"
+        // function x() {
+        //     // A variável 'serie' no escopo da função sobrescreve a variável global.
+        //     var serie = "Game Of Thrones"
+        //     console.log('função: ' + serie)
+        //     if (true) {
+        //         // 'var' não respeita o escopo de bloco, acessando a variável da função.
+        //         console.log('bloco dentro da função: ' + serie)
+        //     }
+        // }
+        // x()
+        // if (true) {
+        //     // Acessando a variável global fora da função.
+        //     console.log('global: ' + serie)
+        // }
+
+        //---------------------------------------------------------------------------
+        // Outro exemplo de escopos:
+        // function x() {
+        //     console.log('dentro da função: ' + serie) // Aqui, 'serie' seria undefined se declarada depois.
+        //     if (true) {
+        //         // 'var' declara a variável no escopo da função, não no bloco.
+        //         var serie = 'The Walking Dead'
+        //     }
+        // }
+        // x()
+        // if (true) {
+        //     var serie = 'The Walking Dead' // Declaração global por 'var'.
+        //     console.log(serie) // Mostra "The Walking Dead".
+        // }
+        // console.log(serie) // 'var' mantém a variável global acessível aqui.
+
+        //---------------------------------------------------------------------------
+        // Exemplo de uso do 'let':
+        if (true) {
+            let serie = "Friends"; // 'let' respeita o escopo de bloco.
+            console.log(serie) // Mostra "Friends".
+        }
+        // Aqui ocorre um erro porque 'serie' não está acessível fora do bloco.
+        console.log(serie) // ReferenceError: 'serie' is not defined
+    </script>
+</head>
+
+<body>
+    <h1>Por que o ECMAScript substituiu o uso de 'var' por 'let'?</h1>
+    <p>
+        O ECMAScript introduziu 'let' e 'const' para resolver limitações de 'var'. 
+        Enquanto 'var' possui escopo global ou de função, ele ignora escopos de bloco, 
+        podendo causar comportamento inesperado em códigos complexos. 'let' respeita o escopo de bloco, 
+        tornando o código mais seguro e previsível. Além disso, 'let' evita a re-declaração acidental 
+        de variáveis, o que era possível com 'var'. Isso reduz erros e melhora a legibilidade do código.
+    </p>
+    <div id="output"></div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Destructuring com Objetos</title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Exemplo de destructuring com objetos em JavaScript
+
+    let produto = {
+      descricao: 'Notebook',
+      preco: 1800,
+      detalhes: {
+        fabricante: 'abc',
+        modelo: 'xyz'
+      }
+    }
+
+    // Usando destructuring para extrair valores diretamente de um objeto
+    // Aqui estamos acessando a propriedade 'detalhes' do objeto 'produto' e, em seguida, 
+    // extraindo as propriedades 'fabricante' e 'modelo' de dentro de 'detalhes'.
+    let { detalhes: { fabricante: f, modelo = 'Não informado' } } = produto;
+
+    // O valor de 'fabricante' será atribuído à variável 'f' e o valor de 'modelo' será atribuído à variável 'modelo'.
+    // Caso a propriedade 'modelo' não seja encontrada, o valor padrão 'Não informado' será usado.
+    console.log(f, modelo); // Exibe: abc, xyz
+  </script>
+
+</head>
+
+<body>
+  <h1>Exemplo de Destructuring com Objetos</h1>
+  <p>
+    O <strong>destructuring</strong> é uma forma concisa de extrair dados de objetos ou arrays e atribuí-los a variáveis. Neste exemplo, usamos destructuring para acessar as propriedades de um objeto aninhado. 
+    Através da sintaxe de <code>{ detalhes: { fabricante: f, modelo = 'Não informado' } }</code>, conseguimos acessar diretamente as propriedades do objeto <code>detalhes</code>, atribuindo os valores às variáveis <code>f</code> e <code>modelo</code>, com um valor padrão para <code>modelo</code>.
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo Prototype e Herança</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        // Adiciona um atributo global ao protótipo base de todos os objetos.
+        Object.prototype.attr50 = 'Z'; 
+        // Atenção: Isso é perigoso porque afeta todos os objetos do programa.
+
+        // Objeto base: animal
+        let animal = { attr1: 'a' }; // Propriedade exclusiva do objeto 'animal'.
+
+        // Objeto 'vertebrado', que herda de 'animal'.
+        let vertebrado = { __proto__: animal, attr2: 'b' }; 
+        // '__proto__' define 'animal' como protótipo de 'vertebrado'.
+        // 'vertebrado' também possui uma propriedade própria 'attr2'.
+
+        // Objeto 'ave', que herda de 'vertebrado'.
+        let ave = { __proto__: vertebrado, attr3: 'c', attr2: 'x' }; 
+        // 'ave' redefine 'attr2', sobrescrevendo o valor herdado de 'vertebrado'.
+        // Também adiciona a propriedade exclusiva 'attr3'.
+
+        // Acessa propriedades através da cadeia de protótipos.
+        console.log(ave.attr3); // 'c' -> propriedade exclusiva de 'ave'.
+        console.log(ave.attr2); // 'x' -> propriedade de 'ave', sobrescreve a herdada.
+        console.log(ave.attr1); // 'a' -> herdada de 'animal' via 'vertebrado'.
+        console.log(ave.attr50); // 'Z' -> herdada globalmente de Object.prototype.
+    </script>
+</head>
+<body>
+    <h1>Prototype e Herança em JavaScript</h1>
+    <p>
+        O conceito de <code>prototype</code> em JavaScript é a base da herança na linguagem. Ele permite que objetos herdem 
+        propriedades e métodos de outros objetos através de uma cadeia de protótipos (<code>prototype chain</code>).
+    </p>
+    <p>
+        No código acima:
+        <ul>
+            <li>O objeto <code>animal</code> é a raiz da cadeia e define a propriedade <code>attr1</code>.</li>
+            <li>O objeto <code>vertebrado</code> usa <code>__proto__</code> para herdar de <code>animal</code>, adicionando <code>attr2</code>.</li>
+            <li>O objeto <code>ave</code> herda de <code>vertebrado</code>, redefine <code>attr2</code> e adiciona <code>attr3</code>.</li>
+        </ul>
+    </p>
+    <p>
+        Além disso, uma propriedade <code>attr50</code> foi adicionada diretamente ao protótipo global de 
+        <code>Object</code>, tornando-a acessível em qualquer objeto. Isso é considerado má prática, 
+        pois pode causar conflitos e efeitos colaterais indesejados em um programa.
+    </p>
+    <p>
+        Em resumo, a herança via <code>prototype</code> é poderosa, mas deve ser usada com cuidado. 
+        Alterar o protótipo global, como no exemplo acima, deve ser evitado para garantir a previsibilidade e estabilidade do código.
+    </p>
+</body>
+</html>

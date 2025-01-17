@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      /*
+      let data = new Date()
+
+      //document.write(data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear())
+      //23 / 11 / 2017
+
+      //adicionar / remover dias
+      document.write(data.toString())
+      data.setDate(data.getDate() + 720)
+      document.write('<hr />')
+      document.write(data.toString())
+      document.write('<br /><br /><hr />')
+      
+      //adicionar / remover meses
+      document.write(data.toString())
+      data.setMonth(data.getMonth() + 1)
+      document.write('<hr />')
+      document.write(data.toString())
+      document.write('<br /><br /><hr />')
+
+      //adicionar / remover anos
+      document.write(data.toString())
+      data.setFullYear(data.getFullYear() + 1)
+      document.write('<hr />')
+      document.write(data.toString())
+      */
+
+      //15/01/2017
+      let data1 = new Date(2017, 0, 15)
+
+      //23/02/2017
+      let data2 = new Date(2017, 1, 23)
+
+      document.write(data1.toString())
+      document.write('<hr />')
+      document.write(data2.toString())
+
+      document.write('<br /><br /><hr />')
+      //converter datas para algo que possamos calcular
+      document.write(data1.getTime())
+      document.write('<hr />')
+      document.write(data2.getTime())
+
+      //1 de janeiro de 1970
+
+      document.write('<br /><br /><hr />')
+      //encontrar a qtde de milissegundos entre data1 e data2
+      let milissegundos_entre_datas = Math.abs(data1.getTime() - data2.getTime())
+      document.write(milissegundos_entre_datas)
+
+      //1 dia tem 24 horas, cada hora tem 60 minutos, 
+      //cada minuto tem 60 segundos e 
+      //cada segundo tem 1000 milissegundos
+      //então quantos milissegundos existem em um dia?
+      let milissegundos_por_dia = (1 * 24 * 60 * 60 * 1000)
+      document.write(' 1 dia tem: ' + milissegundos_por_dia + ' milissegundos' )
+
+      document.write('<br /><br /><hr />')
+      document.write('A diferença entre data1 e data2 é de ' + Math.ceil(milissegundos_entre_datas / milissegundos_por_dia) + ' dia(s)')
+    </script>
+  </head>
+
+  <body>
+    <h1>Explicação do Código</h1>
+    <p>
+      Este código trabalha com manipulação de datas em JavaScript, utilizando o objeto <code>Date</code>. 
+      Ele demonstra como calcular diferenças entre datas, ajustar valores de dias, meses e anos, 
+      além de converter datas para milissegundos para realizar cálculos precisos.
+    </p>
+    <h2>A partir daqui, explicações dos códigos comentados</h2>
+    <p>
+      O primeiro bloco de código comentado cria uma data atual usando <code>new Date()</code>. 
+      Através do método <code>setDate()</code>, adiciona-se 720 dias à data inicial. Métodos semelhantes, 
+      como <code>setMonth()</code> e <code>setFullYear()</code>, permitem manipular meses e anos, respectivamente. 
+      Essa funcionalidade é útil para cálculos de prazos ou ajustes em datas futuras ou passadas.
+    </p>
+    <p>
+      Em seguida, duas datas fixas, <code>data1</code> e <code>data2</code>, são criadas com o construtor <code>new Date(ano, mês, dia)</code>. 
+      Lembre-se de que o índice dos meses começa em 0, então <code>0</code> representa janeiro e <code>1</code> representa fevereiro. 
+      Essas datas são exibidas com <code>toString()</code>, que converte os objetos de data para strings legíveis.
+    </p>
+    <p>
+      O código usa o método <code>getTime()</code> para transformar as datas em valores numéricos de milissegundos desde 1º de janeiro de 1970, 
+      conhecido como o marco inicial do tempo em JavaScript (*Unix Epoch*). Esses valores são úteis para cálculos precisos entre datas.
+    </p>
+    <p>
+      Para determinar a diferença de tempo entre <code>data1</code> e <code>data2</code>, a função <code>Math.abs()</code> calcula 
+      o valor absoluto da diferença em milissegundos. Isso garante que o resultado seja positivo, independentemente da ordem das datas.
+    </p>
+    <p>
+      A constante <code>milissegundos_por_dia</code> é calculada multiplicando 24 horas, 60 minutos por hora, 
+      60 segundos por minuto e 1000 milissegundos por segundo. Este valor é usado para converter a diferença de milissegundos 
+      entre as datas em uma quantidade de dias.
+    </p>
+    <p>
+      Por fim, o código usa <code>Math.ceil()</code> para arredondar o número de dias para cima, 
+      garantindo que mesmo frações de dias sejam contadas como um dia completo na diferença total.
+    </p>
+  </body>
+</html>

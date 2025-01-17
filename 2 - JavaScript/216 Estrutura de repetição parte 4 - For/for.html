@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    /* 
+    Estrutura do laço for:
+    for (variável; condição; controle) {
+      // código a ser repetido
+    }
+    Este formato é usado para executar um bloco de código repetidamente,
+    enquanto uma condição for verdadeira.
+    */
+
+    // Inicia a variável x com 10; verifica se x >= 0; a cada iteração, reduz 4 de x.
+    for (let x = 10; x >= 0; x -= 4) {
+      document.write(x + '<br />') // Imprime o valor de x no documento seguido de uma quebra de linha.
+    }
+
+    // Comentário: 
+    // O comando break poderia ser usado aqui para interromper o loop antes de sua conclusão.
+    // O comando continue poderia ser usado para pular a execução do restante do código em uma iteração específica.
+  </script>
+
+</head>
+
+<body>
+  <p>
+    O código acima demonstra o uso da estrutura de repetição <strong>for</strong> em JavaScript. <br><br>
+
+    <strong>Explicação da estrutura do laço for:</strong><br>
+    - O laço <code>for</code> é dividido em três partes: <code>inicialização</code>, <code>condição</code>, e <code>controle</code>. Essas partes controlam o comportamento do loop.<br>
+    <ul>
+      <li><strong>Inicialização:</strong> A variável <code>x</code> é definida com o valor 10 antes do início do loop.</li>
+      <li><strong>Condição:</strong> O loop continua enquanto <code>x &gt;= 0</code> for verdadeiro.</li>
+      <li><strong>Controle:</strong> A cada iteração, o valor de <code>x</code> é reduzido em 4 usando o operador <code>x -= 4</code>.</li>
+    </ul>
+
+    <strong>Execução do código:</strong><br>
+    - O valor inicial de <code>x</code> é 10.<br>
+    - O loop imprime o valor atual de <code>x</code> no documento seguido por uma quebra de linha.<br>
+    - A cada iteração, 4 é subtraído de <code>x</code>, até que <code>x</code> seja menor que 0.<br>
+    - Os valores impressos no documento serão: 10, 6, 2.<br><br>
+
+    <strong>Uso de comandos break e continue:</strong><br>
+    - O comando <code>break</code> poderia ser usado para interromper o loop antecipadamente, caso uma condição específica fosse atendida.<br>
+    - O comando <code>continue</code> poderia ser usado para pular a execução do restante do código em uma iteração específica e passar para a próxima.<br>
+  </p>
+</body>
+
+</html>

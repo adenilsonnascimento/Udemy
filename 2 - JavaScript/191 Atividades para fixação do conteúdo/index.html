@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora Simples</title>
+    <script>
+        let num1 = prompt("Digite um número: ");
+        let operacao = prompt("Digite a operação matemática (+ ou -): ");
+        let num2 = prompt("Digite outro número: ");
+
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        let resultado = 0;
+
+        if (operacao === "+") {
+            resultado = num1 + num2;
+        } else if (operacao === "-") {
+            resultado = num1 - num2;
+        } else {
+            document.write("Refaça escolhendo + ou -, operador inválido.");
+            throw new Error("Operador inválido.");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const p = document.createElement("p");
+            p.textContent = "A resposta é: " + resultado;
+            document.body.appendChild(p);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Calculadora de Soma e Subtração</h1>
+
+    <p>
+        Este código é uma calculadora simples que realiza operações de soma e subtração, recebendo as entradas do usuário por meio de prompts:
+        <ul>
+            <li><strong>let num1:</strong> recebe o primeiro número inserido pelo usuário.</li>
+            <li><strong>let operacao:</strong> recebe o operador matemático escolhido pelo usuário ("+" para soma ou "-" para subtração).</li>
+            <li><strong>let num2:</strong> recebe o segundo número inserido pelo usuário.</li>
+            <li><strong>parseFloat:</strong> converte os valores inseridos em números de ponto flutuante para realizar operações matemáticas.</li>
+            <li><strong>Bloco if-else:</strong> avalia o operador inserido e realiza a operação correspondente. Caso o operador seja inválido, uma mensagem de erro é exibida na página e o programa é encerrado com <code>throw</code>.</li>
+            <li><strong>DOMContentLoaded:</strong> espera o carregamento completo da página para exibir o resultado em um elemento <code>p</code> criado dinamicamente.</li>
+        </ul>
+    </p>
+</body>
+
+</html>

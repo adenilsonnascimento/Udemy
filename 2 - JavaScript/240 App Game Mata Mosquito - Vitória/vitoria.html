@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title> <!-- Título da página (atualmente vazio). -->
+
+		<!-- Importação do CSS do Bootstrap para facilitar a criação de layouts responsivos e aplicar estilos predefinidos. -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<!-- Link para o arquivo CSS personalizado para definir estilos específicos. -->
+		<link rel="stylesheet" href="estilo.css" />
+	</head>
+	<body>
+
+		<!-- Contêiner principal para agrupar todo o conteúdo centralizado na página. -->
+		<div class="container">
+			<!-- Primeira linha para exibir a imagem de vitória. -->
+			<div class="row">
+				<div class="col">
+					<!-- Centraliza a imagem horizontalmente usando a classe Bootstrap `d-flex justify-content-center`. -->
+					<div class="d-flex justify-content-center">
+						<img src="imagens/vitoria.png" /> <!-- Exibe a imagem de vitória. -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Segunda linha para exibir o botão de reiniciar o jogo. -->
+			<div class="row">
+				<div class="col">
+					<!-- Centraliza o botão horizontalmente usando as classes Bootstrap. -->
+					<div class="d-flex justify-content-center">
+						<!-- Botão estilizado com Bootstrap. Ao ser clicado, redireciona para a página 'app.html'. -->
+						<button type="button" class="btn btn-dark btn-lg" onclick="window.location.href = 'app.html' ">Reiniciar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

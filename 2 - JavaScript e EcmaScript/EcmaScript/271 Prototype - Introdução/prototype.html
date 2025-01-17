@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação sobre Prototype</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        // Objeto literal
+        let a1 = {
+            cor: 'Branco', // Atributo cor do objeto.
+            modelo: 'Airbus a380', // Atributo modelo do objeto.
+            levantarVoo: function() { console.log('Levantar voo'); } // Método para simular a ação de levantar voo.
+        };
+
+        // Função construtora
+        let AviaoF = function() {
+            this.cor = 'Azul', // Atributo cor definido no contexto da função.
+            this.modelo = 'Boeing 787', // Atributo modelo definido no contexto da função.
+            this.levantarVoo = function() { console.log('Levantar Voo'); }; // Método criado diretamente na instância.
+        };
+
+        let a2 = new AviaoF(); // Criação de uma nova instância do tipo AviaoF.
+
+        // Classe (sintaxe moderna do ECMAScript)
+        class AviaoC {
+            constructor() {
+                this.cor = 'Vermelho'; // Atributo cor inicializado no construtor.
+                this.modelo = 'Embraer E-Jets'; // Atributo modelo inicializado no construtor.
+            }
+
+            levantarVoo() {
+                console.log('Levantar Voo'); // Método declarado diretamente na classe.
+            }
+        }
+
+        let a3 = new AviaoC(); // Criação de uma nova instância da classe AviaoC.
+
+        // Exibe os três objetos criados no console.
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+    </script>
+</head>
+<body>
+    <h1>Entendendo o <code>Prototype</code></h1>
+    <p>
+        O <code>prototype</code> é um conceito fundamental em JavaScript, permitindo que objetos herdem métodos e propriedades. 
+        No código acima:
+    </p>
+    <p>
+        1. No objeto literal (<code>a1</code>), o método <code>levantarVoo</code> é diretamente anexado ao objeto. Ele não utiliza protótipos.
+    </p>
+    <p>
+        2. Na função construtora (<code>AviaoF</code>), cada instância (<code>a2</code>) cria uma cópia do método <code>levantarVoo</code>, 
+        resultando em maior uso de memória. Para otimização, métodos podem ser movidos para o <code>prototype</code>.
+    </p>
+    <p>
+        3. Na classe (<code>AviaoC</code>), o método <code>levantarVoo</code> é automaticamente associado ao protótipo, 
+        permitindo que todas as instâncias (<code>a3</code>) compartilhem a mesma implementação, economizando memória e melhorando a eficiência.
+    </p>
+    <p>
+        Assim, o <code>prototype</code> fornece uma maneira poderosa de criar métodos compartilhados entre várias instâncias, 
+        garantindo um uso eficiente de recursos e promovendo a reutilização de código.
+    </p>
+</body>
+</html>

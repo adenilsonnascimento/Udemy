@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>JavaScript</title>
+ <script>
+   // Função chamada quando o campo de texto recebe o foco
+   function acionaCampo() {
+     // Modifica o estilo de fundo do campo de texto para amarelo
+     document.getElementById('campo').style.background = "yellow";
+   }
+
+   // Função chamada quando o campo de texto perde o foco
+   function validaCampo() {
+     // Obtém o valor digitado no campo de texto
+     let valorCampo = document.getElementById('campo').value;
+
+     // Verifica se o comprimento do texto digitado é menor que 3
+     if(valorCampo.length < 3) {
+       // Se o texto for menor que 3 caracteres, o fundo do campo se torna vermelho
+       document.getElementById('campo').style.background = "red";
+     } else {
+       // Caso contrário, se o texto for maior ou igual a 3 caracteres, o fundo se torna verde
+       document.getElementById('campo').style.background = "green";
+     }
+   }
+ </script>
+ </head>
+ <body>
+   <!-- Campo de texto que chama as funções onfocus e onblur -->
+   <input id="campo" type="text" onfocus="acionaCampo()" onblur="validaCampo()" />
+
+   <h2>Explicação do código</h2>
+   <p>
+     Este código manipula o estilo de fundo de um campo de texto (`<input>`) com base em dois eventos: `onfocus` e `onblur`. Quando o campo de texto recebe o foco (quando o usuário clica ou navega até o campo), a função `acionaCampo()` é chamada, mudando a cor de fundo do campo para amarela. Quando o campo perde o foco (quando o usuário sai do campo), a função `validaCampo()` é chamada. Esta função verifica o comprimento do texto digitado no campo. Se o texto for menor que 3 caracteres, o fundo do campo é alterado para vermelho. Caso contrário, a cor de fundo do campo muda para verde. 
+   </p>
+ </body>
+</html>

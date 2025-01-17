@@ -1,0 +1,67 @@
+<html>
+    <head>
+       <script type="text/javascript">
+           // Definindo um array de objetos "funcionarios" com dados de nome, cargo, salário e status
+           let funcionarios = [
+               {
+                   nome: 'Fernanda', // Nome do funcionário
+                   cargo: 'Analista de RH', // Cargo
+                   salario: 3100, // Salário
+                   status: 'ativo' // Status do funcionário (ativo ou inativo)
+               },
+               { 
+                   nome: 'Miguel', // Nome do funcionário
+                   cargo: 'Assistente ADM', // Cargo
+                   salario: 1700, // Salário
+                   status: 'ativo' // Status
+               },
+               { 
+                   nome: 'Rosa', // Nome
+                   cargo: 'Auxiliar de contabilidade', // Cargo
+                   salario: 1600, // Salário
+                   status: 'inativo' // Status
+               },
+               { 
+                   nome: 'Roberto', // Nome
+                   cargo: 'Programador PHP', // Cargo
+                   salario: 4500, // Salário
+                   status: 'ativo' // Status
+               },
+               { 
+                   nome: 'Maria', // Nome
+                   cargo: 'Engenheira mecânica', // Cargo
+                   salario: 7500, // Salário
+                   status: 'ativo' // Status
+               }
+           ]
+
+           // Aplicando um filtro para retornar funcionários com salário inferior a 2000
+           let filtro1 = funcionarios.filter(function(f){
+                return f.salario < 2000 // Condição para o filtro (salário < 2000)
+           })
+
+           // Aplicando dois filtros consecutivos: primeiro para salário inferior a 2000, e depois para status 'ativo'
+           let filtro2 = funcionarios.filter(function(f){
+                return f.salario < 2000 // Filtro de salário
+           }).filter(function(f){
+               return f.status == 'ativo' // Filtro de status ativo
+           })
+
+           // Versão simplificada do filtro, utilizando a sintaxe de arrow function (f => f.salario < 2000)
+           let filtro3 = funcionarios.filter(f=>(f.salario < 2000))
+
+           // Exibindo o resultado do filtro1 no console
+           console.log('filtro1:')
+           console.log(filtro1)
+
+           // Exibindo o resultado do filtro2 no console
+           console.log('filtro2:')
+           console.log(filtro2)
+
+           // Exibindo o resultado do filtro3 no console
+           console.log('filtro3: ')
+           console.log(filtro3)
+
+       </script>
+    </head>
+</html>

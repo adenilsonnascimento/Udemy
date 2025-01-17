@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Criando um array de funcionários (com índices personalizados e valores associativos)
+    let listaFuncionarios = Array();
+
+    // Atribuindo valores ao array usando diferentes tipos de índices
+    listaFuncionarios['x'] = 'Viviane'; // Índice string
+    listaFuncionarios[false] = 'Rosângela'; // Índice booleano, convertido para string "false"
+    listaFuncionarios[3] = 'Miguel'; // Índice numérico válido
+    listaFuncionarios[27] = 'Lucas'; // Índice numérico válido
+    listaFuncionarios[-12] = 'Fernanda'; // Índice negativo (propriedade associativa)
+
+    // Observação: Apenas índices numéricos são iterados pelo método forEach.
+
+    // Definindo a função a ser usada no método forEach
+    let f = function (valor, indice) {
+      console.log(valor, indice); // Exibe no console o valor e o índice correspondente
+    };
+
+    // Tentativa de percorrer o array com forEach (somente índices numéricos válidos serão acessados)
+    listaFuncionarios.forEach(f);
+
+    /* 
+    Código comentado:
+    - Exemplo de forEach com lógica inline.
+    - Altera o array se encontrar o valor "Lucas".
+    */
+    /*
+    listaFuncionarios.forEach(function(valor, indice, array) {
+      console.log('Índice ' + indice + ' | Valor: ' + valor);
+      if (valor === 'Lucas') {
+        array[indice] = 'Um novo valor'; // Modifica o valor diretamente no array
+      }
+      console.log(array); // Exibe o array atualizado
+    });
+    */
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código demonstra o uso de arrays em JavaScript, explorando como diferentes tipos de índices afetam o comportamento de um array e o método <code>forEach</code>.<br><br>
+
+    <strong>Funcionamento:</strong><br>
+    1. O array <code>listaFuncionarios</code> é inicializado com diferentes tipos de índices:<br>
+    - Índice string (<code>'x'</code>) e booleano (<code>false</code>) são tratados como propriedades associativas.<br>
+    - Índices numéricos (<code>3</code> e <code>27</code>) são válidos e considerados na iteração.<br>
+    - Índice negativo (<code>-12</code>) também é tratado como propriedade associativa e ignorado por métodos como <code>forEach</code>.<br><br>
+
+    2. O método <code>forEach</code> é usado para iterar apenas sobre índices numéricos válidos.<br>
+    - A função <code>f</code>, passada como argumento, exibe o valor e o índice no console.<br><br>
+
+    3. O código comentado demonstra outra forma de uso do <code>forEach</code>, com lógica inline que modifica o valor do array.<br>
+    - Se o valor <code>'Lucas'</code> for encontrado, ele é substituído por <code>'Um novo valor'</code>.<br>
+    - O array atualizado é exibido no console para verificação.<br><br>
+
+    <strong>Observações:</strong><br>
+    - Arrays em JavaScript podem conter propriedades associativas, mas essas não são reconhecidas por métodos como <code>forEach</code>.<br>
+    - Apenas índices numéricos sequenciais (positivos) são percorridos por <code>forEach</code>.
+  </p>
+</body>
+
+</html>

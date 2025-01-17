@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operador Rest no JavaScript</title>
+
+  <script>
+    // Contexto de uso do operador Rest
+
+    // Função soma que aceita múltiplos parâmetros usando o operador Rest
+    function soma(...param) { 
+      let resultado = 0;
+
+      console.log(param); // Exibe os parâmetros recebidos como um array
+      // Soma cada valor do array usando forEach
+      param.forEach(v => resultado += v);
+
+      return resultado; // Retorna o resultado da soma
+    }
+
+    console.log(soma(3, 8, 5, 7, 8, 10, 115)); // Teste da função soma
+
+    // Função multiplicacao que aceita um multiplicador e múltiplos parâmetros
+    function multiplicacao(m, ...p) { 
+      console.log(m); // Exibe o multiplicador
+      let resultado = 0;
+      console.log(p); // Exibe os parâmetros restantes como um array
+
+      // Multiplica cada valor dos parâmetros pelo multiplicador e soma os resultados
+      p.forEach(v => resultado += m * v);
+
+      return resultado; // Retorna o resultado
+    }
+
+    console.log(multiplicacao(5, 7, 12, 3, 49)); // Teste da função multiplicacao
+
+    console.log(soma); // Exibe a referência da função soma
+  </script>
+
+</head>
+
+<body>
+  <h1>Operador Rest no JavaScript</h1>
+  <p>
+    O operador <code>rest</code> (<code>...</code>) permite agrupar múltiplos argumentos ou elementos em um único array.
+    Ele é utilizado em funções para coletar todos os argumentos adicionais passados durante a chamada, 
+    facilitando a manipulação de dados dinâmicos.
+  </p>
+  <p>
+    <strong>No código:</strong> 
+    <ul>
+      <li>
+        A função <code>soma</code> utiliza o operador rest para receber múltiplos números 
+        como um array, somá-los e retornar o resultado.
+      </li>
+      <li>
+        A função <code>multiplicacao</code> recebe um multiplicador fixo como primeiro parâmetro, 
+        enquanto os demais argumentos são agrupados com o operador rest, permitindo a multiplicação e soma dos valores.
+      </li>
+    </ul>
+  </p>
+  <p>
+    O operador rest promove flexibilidade no design de funções, permitindo trabalhar com um número variável de argumentos.
+  </p>
+</body>
+
+</html>

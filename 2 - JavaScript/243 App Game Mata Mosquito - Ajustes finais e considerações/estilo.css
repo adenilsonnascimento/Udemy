@@ -1,0 +1,60 @@
+/* Definindo o cursor customizado */
+html {
+	cursor: url(imagens/mata_mosquito.png) 30 30, auto;
+}
+
+/* Estilo de fundo da página */
+body {
+	background-image: url(imagens/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+/* Estilos para os mosquitos com diferentes tamanhos */
+.mosquito1 {
+	width: 50px;
+	height: 50px;
+}
+
+.mosquito2 {
+	width: 70px;
+	height: 70px;
+}
+
+.mosquito3 {
+	width: 90px;
+	height: 90px;
+}
+
+/* Transformação para mudar a orientação do mosquito */
+.ladoA {
+	transform: scaleX(1); /* Sem inversão horizontal */
+}
+
+.ladoB {
+	transform: scaleX(-1); /* Inversão horizontal */
+}
+
+/* Estilos para o painel de informações */
+.painel {
+	position: absolute;
+	width: 190px;
+	padding: 10px;
+	left: 0;
+	bottom: 0;
+	border-top: solid 1px #fff;
+	background-color: #fff;
+	opacity: 0.7; /* Adicionado ponto e vírgula */
+}
+
+/* Estilo para a área de vidas */
+.vidas {
+	float: left;
+}
+
+/* Estilo para o cronômetro */
+.cronometro {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+}

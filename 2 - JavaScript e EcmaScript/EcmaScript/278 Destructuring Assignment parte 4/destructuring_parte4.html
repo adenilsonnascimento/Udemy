@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Rest e Spread com Objetos</title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Exemplo do uso do operador Rest com objetos
+
+    // Criando um objeto 'obj' com várias propriedades
+    let obj = {
+      a: 10, 
+      b: 20, 
+      c: 30, 
+      d: 40
+    }
+
+    // Usando o operador 'rest' para extrair a propriedade 'a' e deixar o restante em 'y'
+    let { a, ...y } = obj;
+
+    // Exibindo 'a' (10) e 'y' ({b: 20, c: 30, d: 40})
+    console.log(a); // Exibe: 10
+    console.log(y); // Exibe: { b: 20, c: 30, d: 40 }
+
+    // A função teste foi chamada, mas não está definida no código fornecido.
+    // Isso causaria um erro caso o código fosse executado.
+    // teste(obj); // Comentado pois a função não existe.
+  </script>
+
+</head>
+
+<body>
+  <h1>Exemplo de Rest e Spread com Objetos</h1>
+  <p>
+    O operador <strong>Rest</strong> pode ser usado para agrupar as propriedades restantes de um objeto em uma nova variável. Neste exemplo, o objeto <code>obj</code> possui várias propriedades e, ao usar <code>{ a, ...y }</code>, extraímos a propriedade <code>a</code> e colocamos as demais propriedades do objeto em uma nova variável chamada <code>y</code>. O resultado é que a variável <code>a</code> tem o valor <code>10</code>, enquanto <code>y</code> contém um novo objeto com as propriedades restantes, ou seja, <code>{ b: 20, c: 30, d: 40 }</code>.
+  </p>
+</body>
+
+</html>

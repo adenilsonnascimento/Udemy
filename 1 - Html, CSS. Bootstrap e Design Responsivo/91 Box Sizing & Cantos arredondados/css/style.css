@@ -1,0 +1,36 @@
+#caixa {
+    width: 300px;
+    height: 300px;
+    background: green;
+    padding: 10px;
+    border-radius: 50%; /*Tambem pode usar px*/
+}
+
+.arredondamento {
+     border-radius: 10px 50px 80px 100px;
+}
+
+/*Em alguns navegadores a border-radius não funciona e para isso é necessário usar os prefixos, principalmente webkit e moz, normalmente usado para navegadores mais antigos*/
+
+#prefixos {
+    width: 300px;
+    height: 300px;
+    background: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 20px 90px;
+    -webkit-border-radius: 20px 90px; /*Prefixo webikt*/
+    -moz-border-radius: 20px 90px; /*Prefixo moz*/
+
+}
+
+#teste {
+    width: 300px;
+    height: 300px;
+    background: green;
+    padding: 50px;
+    box-sizing: border-box; /*Faz a largura e altura deixar de ser acrescida do padding*/
+    -webkit-box-sizing: border-box; /*Box-size tambem usa os prefixos*/
+    -moz-box-sizing: border-box;
+   
+}

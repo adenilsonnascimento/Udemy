@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Lista de nomes da família
+    let listaFamilia = ['Adenilson', 'Josyane', 'Jade', 'Kamilly', 'Maria'];
+
+    // Iteração sobre os índices da lista usando for...in
+    for (let y in listaFamilia) {
+      console.log('Índice ' + y + ' valor ' + listaFamilia[y]);
+    }
+
+    // Criação de um array vazio para os convidados
+    let listaConvidados = Array();
+
+    // Atribuindo valores ao array usando índices personalizados
+    listaConvidados['a'] = 'Adenilson'; // Índice de string
+    listaConvidados[10] = 'Josyane';    // Índice numérico
+    listaConvidados['zebra'] = 'Jade';  // Índice de string
+    listaConvidados[-1] = 'Kamilly';    // Índice negativo
+    listaConvidados[true] = 'Maria';    // Índice booleano (convertido para string "true")
+
+    // Exibindo o array no console para observação
+    console.log(listaConvidados);
+
+    // Iteração sobre os índices do array listaConvidados usando for...in
+    for (let x in listaConvidados) {
+      console.log('Índice ' + x + ' valor ' + listaConvidados[x]);
+    }
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código demonstra o uso de laços <code>for...in</code> para iterar sobre arrays em JavaScript, além de explorar como arrays podem receber índices personalizados.<br><br>
+
+    <strong>Funcionamento:</strong><br>
+    1. O array <code>listaFamilia</code> contém cinco nomes.<br>
+    - O laço <code>for...in</code> itera sobre os índices do array, e para cada índice, exibe o índice e o valor correspondente no console.<br><br>
+
+    2. O array <code>listaConvidados</code> é inicializado vazio, mas recebe valores associados a índices personalizados:<br>
+    - <code>'a'</code>: Atribuído ao valor <code>'Adenilson'</code>.<br>
+    - <code>10</code>: Atribuído ao valor <code>'Josyane'</code>.<br>
+    - <code>'zebra'</code>: Atribuído ao valor <code>'Jade'</code>.<br>
+    - <code>-1</code>: Atribuído ao valor <code>'Kamilly'</code>.<br>
+    - <code>true</code>: Atribuído ao valor <code>'Maria'</code> (convertido para o índice <code>'true'</code> como string).<br><br>
+
+    3. Um segundo laço <code>for...in</code> itera sobre os índices personalizados do array <code>listaConvidados</code>, exibindo o índice e o valor no console.<br><br>
+
+    <strong>Observação:</strong><br>
+    - Arrays em JavaScript podem usar índices numéricos ou não-numéricos, mas índices personalizados não são considerados no comprimento (<code>length</code>) do array.<br>
+    - A exibição no console do array <code>listaConvidados</code> permite observar como ele armazena esses índices e valores.<br>
+  </p>
+</body>
+
+</html>

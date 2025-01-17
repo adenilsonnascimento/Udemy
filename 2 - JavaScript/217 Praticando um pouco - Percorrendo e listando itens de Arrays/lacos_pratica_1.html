@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Cria um array vazio chamado lista_frutas
+    let lista_frutas = Array()
+
+    // Adiciona elementos ao array lista_frutas, atribuindo valores em posições específicas
+    lista_frutas[0] = 'Banana'
+    lista_frutas[1] = 'Maçã'
+    lista_frutas[2] = 'Morango'
+    lista_frutas[3] = 'Uva'
+
+    // Inicializa a variável y com o valor 0, que será usada como índice para percorrer o array
+    let y = 0
+
+    // Estrutura de repetição while para percorrer e exibir os elementos do array lista_frutas
+    while (y < lista_frutas.length) {
+      // Escreve o elemento atual do array no documento, seguido de uma quebra de linha
+      document.write(lista_frutas[y] + '<br />')
+
+      // Incrementa y para acessar o próximo elemento do array na próxima iteração
+      y++
+    }
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código demonstra como criar um array em JavaScript, adicionar elementos a ele e percorrê-lo utilizando uma estrutura de repetição <strong>while</strong>. <br><br>
+
+    <strong>Passo a passo do código:</strong><br>
+    - Um array vazio chamado <code>lista_frutas</code> é criado utilizando a função <code>Array()</code>.<br>
+    - Elementos como "Banana", "Maçã", "Morango" e "Uva" são adicionados ao array em posições específicas (índices 0 a 3).<br>
+    - Uma variável chamada <code>y</code> é inicializada com o valor 0 para ser usada como contador.<br>
+    - Um laço <code>while</code> percorre o array <code>lista_frutas</code>, exibindo cada elemento no documento. O loop continua enquanto <code>y</code> for menor que o comprimento do array (obtido com <code>lista_frutas.length</code>).<br>
+    - A cada iteração, o valor de <code>y</code> é incrementado em 1 para que o próximo elemento seja acessado na próxima execução do loop.<br>
+    - O comando <code>document.write</code> é utilizado para imprimir os elementos do array, seguidos de uma quebra de linha.<br><br>
+
+    <strong>Resultado:</strong><br>
+    - O navegador exibirá os elementos "Banana", "Maçã", "Morango" e "Uva", cada um em uma linha separada.
+  </p>
+</body>
+
+</html>

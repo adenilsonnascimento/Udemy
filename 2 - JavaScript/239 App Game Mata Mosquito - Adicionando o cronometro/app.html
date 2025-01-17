@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo do Mosquito</title> <!-- Define o título da página -->
+
+		<!-- Link para o arquivo de estilo CSS -->
+		<link rel="stylesheet" href="estilo.css" />
+
+		<!-- Link para o arquivo JavaScript principal -->
+		<script src="jogo.js"></script>
+	</head>
+	<body onresize="ajustaTamanhoPalcoJogo()"> <!-- Evento que ajusta o tamanho do palco ao redimensionar a janela -->
+
+		<!-- Painel superior com informações de vidas e cronômetro -->
+		<div class="painel">
+			<!-- Div que exibe as vidas do jogador -->
+			<div class="vidas">
+				<img id="v1" src="imagens/coracao_cheio.png" /> <!-- Ícone para a primeira vida -->
+				<img id="v2" src="imagens/coracao_cheio.png" /> <!-- Ícone para a segunda vida -->
+				<img id="v3" src="imagens/coracao_cheio.png" /> <!-- Ícone para a terceira vida -->
+			</div>
+
+			<!-- Div que exibe o cronômetro -->
+			<div class="cronometro">
+				Tempo restante: <span id="cronometro"></span> <!-- Local onde o tempo restante será atualizado -->
+			</div>
+		</div>
+
+		<script>
+			// Inicializa o cronômetro na página com o valor da variável 'tempo' definida no jogo.js
+			document.getElementById('cronometro').innerHTML = tempo;
+
+			// Define um intervalo para criar moscas na tela a cada 2 segundos
+			let criaMosca = setInterval(function() { 
+				posicaoRandomica(); // Chama a função para posicionar moscas aleatoriamente
+			}, 2000);
+		</script>
+	</body>
+</html>

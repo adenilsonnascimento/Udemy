@@ -1,0 +1,55 @@
+/* Estilização geral do body */
+body {
+    background-image: url(imagens/bg.jpg); /* Define uma imagem de fundo para a página */
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    background-size: 100%; /* Faz com que a imagem ocupe 100% do tamanho da tela */
+}
+
+/* Classes para definir diferentes tamanhos de mosquitos */
+.mosquito1 {
+    width: 50px; /* Largura do mosquito pequeno */
+    height: 50px; /* Altura do mosquito pequeno */
+}
+
+.mosquito2 {
+    width: 70px; /* Largura do mosquito médio */
+    height: 70px; /* Altura do mosquito médio */
+}
+
+.mosquito3 {
+    width: 90px; /* Largura do mosquito grande */
+    height: 90px; /* Altura do mosquito grande */
+}
+
+/* Classes para definir o lado do mosquito (virado para a esquerda ou para a direita) */
+.ladoA {
+    transform: scaleX(1); /* Escala padrão para manter a orientação original */
+}
+
+.ladoB {
+    transform: scaleX(-1); /* Espelha horizontalmente o mosquito */
+}
+
+/* Estilização do painel que exibe informações como vidas e cronômetro */
+.painel {
+    position: absolute; /* Posiciona o painel de forma absoluta dentro da tela */
+    width: 190px; /* Define a largura fixa do painel */
+    padding: 10px; /* Adiciona espaçamento interno */
+    left: 0px; /* Posiciona o painel no canto esquerdo da tela */
+    bottom: 0px; /* Posiciona o painel na parte inferior da tela */
+    border-top: solid 1px #fff; /* Adiciona uma borda superior branca */
+    background-color: #fff; /* Define o fundo branco para o painel */
+    opacity: 0.7; /* Torna o painel semitransparente */
+}
+
+/* Estilização para a área das vidas */
+.vidas {
+    float: left; /* Alinha os ícones de vidas à esquerda do painel */
+}
+
+/* Estilização para o cronômetro */
+.cronometro {
+    float: left; /* Alinha o texto do cronômetro à esquerda, ao lado das vidas */
+    font-size: 20px; /* Define o tamanho da fonte do cronômetro */
+    font-weight: bold; /* Deixa o texto do cronômetro em negrito */
+}

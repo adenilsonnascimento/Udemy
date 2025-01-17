@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Orçamento pessoal</title>
+
+    <!-- Bootstrap início -->
+    <!-- Link para o CSS do Bootstrap para estilizar os componentes da página -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Script do jQuery necessário para o funcionamento do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <!-- Script do Popper.js necessário para o Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <!-- Script do Bootstrap para funcionalidades como menus suspensos e modais -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap fim -->
+
+    <!-- Font Awesome para ícones -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!-- Referência ao arquivo JavaScript principal (app.js) -->
+    <script src="app.js"></script>
+
+  </head>
+
+  <body onload="carregaListaDespesas()"> <!-- Chama a função para carregar despesas ao carregar a página -->
+
+    <!-- Navbar de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+      <div class="container">
+        <!-- Logo da página -->
+        <a class="navbar-brand" href="#">
+           <img src="logo.png" width="50" height="35" alt="Orçamento pessoal"> <!-- Logo exibido no menu -->
+        </a>
+        <!-- Botão do menu hamburguer para telas pequenas -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu de navegação com links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Cadastro</a> <!-- Link para a página de cadastro -->
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="consulta.html">Consulta</a> <!-- Link para a página de consulta (ativa) -->
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Container para o conteúdo da página -->
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col">
+          <h1 class="display-4">Consulta de despesas</h1> <!-- Título da página -->
+        </div>
+      </div>
+
+      <!-- Filtros para a consulta -->
+      <div class="row mb-2">
+        <div class="col-md-2">
+          <!-- Seletor para o ano -->
+          <select class="form-control" id="ano">
+            <option value="">Ano</option>
+            <option value="2018">2018</option> <!-- Opções de anos -->
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <!-- Seletor para o mês -->
+          <select class="form-control" id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+        </div>
+        
+        <div class="col-md-2">
+          <!-- Campo de texto para inserir o dia -->
+          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+        </div>
+
+        <div class="col-md-6">
+          <!-- Seletor para o tipo de despesa -->
+          <select class="form-control" id="tipo">
+            <option>Tipo</option>
+            <option value="1">Alimentação</option>
+            <option value="2">Educação</option>
+            <option value="3">Lazer</option>
+            <option value="4">Saúde</option>
+            <option value="5">Transporte</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Filtros para descrição e valor -->
+      <div class="row  mb-5">
+        <div class="col-md-8">
+          <!-- Campo para a descrição da despesa -->
+          <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
+        </div>
+
+        <div class="col-md-2">
+          <!-- Campo para o valor da despesa -->
+          <input type="text" class="form-control" placeholder="Valor" id="valor" />
+        </div>
+
+        <div class="col-md-2 d-flex justify-content-end">
+          <!-- Botão de pesquisa -->
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i> <!-- Ícone de pesquisa -->
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabela para exibir os resultados das despesas -->
+      <div class="row">
+        <div class="col">
+          <table class="table" >
+            <thead>
+              <tr>
+                <th>Data</th> <!-- Cabeçalho da coluna de data -->
+                <th>Tipo</th> <!-- Cabeçalho da coluna de tipo -->
+                <th>Descrição</th> <!-- Cabeçalho da coluna de descrição -->
+                <th>Valor</th> <!-- Cabeçalho da coluna de valor -->
+                <th></th> <!-- Cabeçalho de uma coluna vazia para ações futuras -->
+              </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>  
+</html>

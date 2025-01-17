@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      //propriedade length
+      document.write('Jorge Sant Ana'.length)
+      
+      //retorna o caractere que pertence a este indice
+      document.write('Jorge Sant Ana'.charAt(7))
+
+      var nome = 'Jorge Sant Ana'
+      document.write(nome.indexOf('g'))
+
+      document.write(nome.replace('Sant Ana', 'Silva'))
+      
+      document.write(nome.substr(6,4))
+      
+      document.write(nome.toLocaleLowerCase())
+      document.write(nome.toLocaleUpperCase())
+
+      document.write('-'+ nome.trim() + '-')
+    </script>
+    
+  </head>
+
+  <body>
+
+    <p>
+      Vamos analisar e explicar cada parte do código JavaScript que demonstra algumas manipulações de strings utilizando métodos comuns. <br>
+
+1. Propriedade length<br><br>
+
+document.write('Jorge Sant Ana'.length)<br><br>
+
+A propriedade length retorna o número de caracteres de uma string.<br>
+No caso de 'Jorge Sant Ana', o valor retornado será 13 (incluindo os espaços em branco).<br>
+Saída esperada: 13<br>
+
+<br>
+2. Método charAt()<br><br>
+
+document.write('Jorge Sant Ana'.charAt(7))<br>
+O método charAt() retorna o caractere de uma string com base no índice fornecido.<br>
+No exemplo, o índice 7 corresponde ao caractere 'S', que é o oitavo caractere da string (a contagem começa em 0).<br>
+Saída esperada: <br>
+
+<br>
+3. Método indexOf()<br><br>
+
+var nome = 'Jorge Sant Ana'<br>
+document.write(nome.indexOf('g'))<br>
+O método indexOf() retorna o índice da primeira ocorrência de um caractere ou substring dentro da string.<br>
+No exemplo, o caractere 'g' aparece pela primeira vez no índice 2.<br>
+Saída esperada: 2<br>
+
+<br>
+4. Método replace()<br><br>
+
+document.write(nome.replace('Sant Ana', 'Silva'))<br>
+O método replace() substitui uma parte específica da string por outra.<br>
+Aqui, 'Sant Ana' é substituído por 'Silva'.<br>
+Saída esperada: Jorge Silva<br>
+
+<br>
+5. Método substr()<br><br>
+
+document.write(nome.substr(6,4))<br>
+O método substr() retorna uma parte da string a partir de um índice inicial, com base no número de caracteres a serem extraídos.<br>
+O primeiro argumento (6) é o índice inicial, e o segundo argumento (4) indica a quantidade de caracteres a serem retornados.<br>
+A partir do índice 6, os quatro caracteres são 'Sant'.<br>
+Saída esperada: Sant<br>
+
+<br>
+6. Método toLowerCase() e toUpperCase()<br>
+<br>
+document.write(nome.toLocaleLowerCase())<br>
+document.write(nome.toLocaleUpperCase())<br>
+O método toLowerCase() transforma todos os caracteres da string em letras minúsculas.<br>
+O método toUpperCase() transforma todos os caracteres em letras maiúsculas.<br>
+Saída esperada (para toLowerCase): jorge sant ana <br> Saída esperada (para toUpperCase): JORGE SANT ANA<br>
+
+<br>
+7. Método trim()<br><br>
+
+document.write('-'+ nome.trim() + '-')<br>
+O método trim() remove os espaços em branco do início e do fim de uma string.<br>
+No exemplo, é usado para garantir que qualquer espaço no início ou fim seja removido, e a string é exibida entre dois hifens ('-').<br>
+Saída esperada: -Jorge Sant Ana-<br>
+
+<br>
+Resumo dos métodos usados:<br>
+length: retorna o comprimento de uma string.<br>
+charAt(index): retorna o caractere no índice especificado.<br>
+indexOf(value): retorna o índice da primeira ocorrência do valor especificado.<br>
+replace(searchValue, newValue): substitui parte da string por outra.<br>
+substr(start, length): retorna uma parte da string, iniciando no índice especificado e com o comprimento indicado.<br>
+toLowerCase(): transforma a string em letras minúsculas.<br>
+toUpperCase(): transforma a string em letras maiúsculas.<br>
+trim(): remove os espaços em branco das extremidades da string.<br>
+
+
+
+
+
+
+
+
+
+    </p>
+  </body>
+</html>

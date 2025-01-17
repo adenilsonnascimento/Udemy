@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        let serie = 'Friends'
+        {
+            let serie = "The Walking Dead"
+            //var serie = "The Walking Dead" (conflito!)
+            console.log('dentro do bloco: ' + serie)
+        }
+        console.log('fora do bloco: ' + serie)
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <h1>Comportamento de <code>let</code> no ECMAScript</h1>
+    <p>O código demonstra o uso de <code>let</code> e como ele difere de <code>var</code> no gerenciamento de escopo:</p>
+
+    <pre>
+        <code>
+let serie = 'Friends'; // Variável declarada com escopo global.
+
+{
+    // Uma nova variável 'serie' é criada dentro do bloco.
+    let serie = "The Walking Dead"; 
+    console.log('dentro do bloco: ' + serie); // Mostra "The Walking Dead".
+}
+
+// Fora do bloco, a variável global 'serie' permanece inalterada.
+console.log('fora do bloco: ' + serie); // Mostra "Friends".
+        </code>
+    </pre>
+
+    <h2>Diferença entre <code>var</code> e <code>let</code></h2>
+    <p><strong>Escopo de Bloco:</strong></p>
+    <p>
+        <code>var</code> não respeita escopos de bloco (<code>{ }</code>), o que pode levar à sobrescrita de variáveis fora do bloco. 
+        Já <code>let</code> respeita o escopo de bloco, permitindo que variáveis com o mesmo nome coexistam em diferentes blocos sem interferência.
+    </p>
+
+    <p><strong>Conflitos e Erros:</strong></p>
+    <p>
+        No exemplo, se você substituir <code>let serie = "The Walking Dead"</code> dentro do bloco por <code>var serie</code>, ocorre um conflito de escopo. 
+        Isso acontece porque <code>var</code> reatribui a variável global, enquanto <code>let</code> cria uma nova variável válida apenas dentro do bloco.
+    </p>
+
+    <p><strong>Benefícios do <code>let</code>:</strong></p>
+    <p>
+        Protege variáveis locais de serem acidentalmente modificadas no escopo global. Facilita o rastreamento e a depuração, pois limita o escopo das variáveis.
+    </p>
+
+    <h2>Aplicação Prática</h2>
+    <p>
+        <strong>Quando usar <code>let</code>:</strong> Sempre que uma variável for usada temporariamente dentro de um bloco, como em loops ou condições, evitando alterações indesejadas no escopo global.
+    </p>
+    <p>
+        <strong>Quando não usar <code>var</code>:</strong> Em novos projetos, prefira <code>let</code> (ou <code>const</code>, para valores imutáveis) em vez de <code>var</code>, pois oferece mais segurança e previsibilidade.
+    </p>
+
+    <p>Se precisar de mais detalhes ou exemplos, é só pedir! 😊</p>
+</body>
+
+</html>

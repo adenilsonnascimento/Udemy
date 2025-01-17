@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+
+        var parametro = prompt('Digite um número:')
+
+        switch(parseInt(parametro)){
+            case 1:
+                document.write('Parametro 1')
+                break
+            case 2:
+                document.write('Parametro 2')
+                break
+            default:
+                document.write('Default')
+        }
+    </script>
+</head>
+<body>
+
+    <p>
+        Em JavaScript, o switch é uma estrutura condicional que permite avaliar uma expressão e executar diferentes blocos de código com base no valor dessa expressão. É uma alternativa ao uso de vários if...else quando você precisa verificar múltiplos valores possíveis para uma variável ou expressão. <br> <br>
+
+Estrutura básica: <br>
+javascript <br>
+Copiar código <br>
+switch (expressao) { <br>
+  case valor1:
+    // Bloco de código se expressao === valor1 <br>
+    break; <br>
+  case valor2: <br>
+    // Bloco de código se expressao === valor2 <br>
+    break; <br>
+  default: <br>
+    // Bloco de código se nenhum dos valores anteriores for correspondente <br>
+} <br> <br>
+
+Como funciona: <br> <br>
+
+expressao: É o valor ou variável que você quer comparar. <br>
+case: Cada caso é uma possível correspondência. Se a expressão avaliada no switch for igual ao valor do case, o código dentro desse bloco será executado. <br>
+break: Usado para encerrar o caso. Sem ele, o código continuará sendo executado nos casos seguintes, mesmo que não sejam correspondentes. <br>
+default: Este é um bloco opcional que será executado se nenhum dos case corresponder ao valor da expressão. <br><br>
+
+Exemplo prático:<br><br>
+
+javascript<br>
+Copiar código <br><br>
+
+let cor = "verde"; <br> <br>
+
+switch (cor) { <br>
+  case "vermelho": <br>
+    console.log("A cor é vermelha."); <br>
+    break; <br>
+  case "azul": <br>
+    console.log("A cor é azul."); <br>
+    break; <br>
+  case "verde": <br>
+    console.log("A cor é verde."); <br>
+    break; <br>
+  default: <br>
+    console.log("Cor não reconhecida."); <br>
+}<br><br>
+
+Saída: A cor é verde. <br><br>
+
+Nesse exemplo, o valor da variável cor é comparado com cada case. Quando cor === "verde", o código dentro do bloco correspondente é executado, e o break impede que os outros casos sejam verificados. <br><br>
+
+Sem break:<br><br>
+
+Se você não usar break, todos os blocos abaixo do case correspondente serão executados, independentemente do valor. <br><br>
+
+javascript<br>
+Copiar código <br><br>
+
+let cor = "verde"; <br><br>
+
+switch (cor) { <br>
+  case "vermelho": <br>
+    console.log("A cor é vermelha."); <br>
+  case "azul": <br>
+    console.log("A cor é azul."); <br>
+  case "verde": <br>
+    console.log("A cor é verde."); <br>
+  default: <br>
+    console.log("Cor não reconhecida."); <br>
+} <br><br>
+
+Saída: <br><br>
+
+css <br>
+Copiar código <br>
+A cor é verde. <br>
+Cor não reconhecida. <br>
+No exemplo acima, a ausência de break faz com que tanto o caso verde quanto o default sejam executados. <br><br>
+
+O switch é útil quando você tem múltiplas condições para verificar e quer manter o código organizado e mais legível do que com vários if...else.
+    </p>
+   
+</body>
+</html>

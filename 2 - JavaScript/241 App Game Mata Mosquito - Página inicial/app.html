@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Jogo</title> 
+	
+    <!-- Link para o arquivo CSS externo que contém os estilos do jogo -->
+    <link rel="stylesheet" href="estilo.css">
+    
+    <!-- Link para o arquivo JavaScript que contém a lógica do jogo -->
+    <script src="jogo.js" defer></script> <!-- O atributo defer garante que o script será executado após o carregamento do HTML -->
+</head>
+<body onresize="ajustaTamanhoPalcoJogo()"> <!-- O evento onresize chama uma função para ajustar o tamanho do palco do jogo quando a janela é redimensionada -->
+
+    <!-- Painel superior com informações do jogador -->
+    <div class="painel">
+
+        <!-- Área que exibe a quantidade de vidas restantes do jogador -->
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png" alt="Vida 1"> <!-- Ícone de coração cheio representando uma vida -->
+            <img id="v2" src="imagens/coracao_cheio.png" alt="Vida 2"> <!-- Ícone de coração cheio representando uma vida -->
+            <img id="v3" src="imagens/coracao_cheio.png" alt="Vida 3"> <!-- Ícone de coração cheio representando uma vida -->
+        </div>
+
+        <!-- Cronômetro exibindo o tempo restante do jogo -->
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span> <!-- O tempo restante será inserido dinamicamente pelo JavaScript -->
+        </div>
+    </div>
+
+    <!-- Script que inicializa o cronômetro e a criação de moscas -->
+    <script>
+        // Exibe o valor inicial do tempo no elemento de cronômetro
+        document.getElementById('cronometro').innerHTML = tempo;
+
+        // Define um intervalo para criar uma mosca a cada 2 segundos
+        let criaMosca = setInterval(function() { 
+            posicaoRandomica(); // Função que posiciona a mosca de forma aleatória no palco
+        }, 2000);
+    </script>
+</body>
+</html>

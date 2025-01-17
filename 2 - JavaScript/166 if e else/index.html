@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if e else</title>
+</head>
+<body>
+    
+   <p>
+
+    O if e else são estruturas condicionais em JavaScript que permitem executar diferentes blocos de código com base em condições específicas. Elas são usadas para tomar decisões no código, verificando se uma condição é verdadeira ou falsa. <br> <br>
+
+1. if (se) <br>
+A instrução if executa um bloco de código se a condição dentro dos parênteses for verdadeira (true). <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+if (condicao) { <br>
+    // Bloco de código a ser executado se a condição for verdadeira <br>
+} <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let idade = 18; <br><br>
+
+if (idade >= 18) { <br>
+    console.log("Você é maior de idade."); <br>
+} <br>
+Saída: Você é maior de idade. <br><br>
+
+2. else (senão) <br>
+A instrução else é usada para definir um bloco de código a ser executado se a condição do if for falsa. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+if (condicao) { <br>
+    // Bloco de código se a condição for verdadeira <br>
+} else { <br>
+    // Bloco de código se a condição for falsa <br>
+} <br><br>
+
+Exemplo: <br>
+
+javascript <br>
+Copiar código <br>
+let idade = 16; <br>
+ 
+if (idade >= 18) { <br>
+    console.log("Você é maior de idade."); <br>
+} else { <br>
+    console.log("Você é menor de idade."); <br>
+} <br>
+Saída: Você é menor de idade. <br><br>
+
+3. else if <br>
+A instrução else if permite verificar condições adicionais se a primeira condição for falsa. Ela funciona como uma cadeia de verificações. <br><br>
+
+Sintaxe: <br><br>
+
+javascript <br>
+Copiar código <br>
+if (condicao1) { <br> 
+    // Bloco de código se condicao1 for verdadeira <br>
+} else if (condicao2) { <br>
+    // Bloco de código se condicao2 for verdadeira <br>
+} else { <br>
+    // Bloco de código se nenhuma das condições for verdadeira <br>
+} <br><br>
+
+Exemplo: <br> <br>
+
+javascript <br>
+Copiar código <br>
+let hora = 15; <br> <br>
+ 
+if (hora < 12) { <br>
+    console.log("Bom dia!"); <br>
+} else if (hora < 18) { <br>
+    console.log("Boa tarde!"); <br>
+} else { <br>
+    console.log("Boa noite!"); <br>
+} <br>
+Saída: Boa tarde! <br><br>
+
+4. Encadeamento de if...else <br>
+Você pode ter várias condições verificadas em sequência, e o JavaScript vai executar o primeiro bloco cujo teste for verdadeiro. Se nenhum teste for verdadeiro, o bloco else é executado. <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let nota = 75; <br><br>
+
+if (nota >= 90) { <br>
+    console.log("Excelente!"); <br>
+    console.log("Bom trabalho!"); <br>
+} else { <br>
+    console.log("Precisa melhorar."); <br>
+} <br>
+Saída: Bom trabalho! <br><br>
+
+5. Uso de várias condições com operadores lógicos <br>
+Você pode combinar condições com os operadores lógicos, como && (AND) e || (OR), dentro do if. <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+let idade = 20; <br>
+let possuiCarteira = true; <br><br>
+
+if (idade >= 18 && possuiCarteira) { <br>
+    console.log("Pode dirigir."); <br>
+} else { <br>
+    console.log("Não pode dirigir."); <br>
+} <br>
+Saída: Pode dirigir. <br><br>
+
+Resumo <br>
+if: Executa um bloco se a condição for verdadeira. <br>
+else: Executa um bloco se a condição do if for falsa. <br>
+else if: Permite verificar múltiplas condições.
+
+   </p>
+
+</body>
+</html>

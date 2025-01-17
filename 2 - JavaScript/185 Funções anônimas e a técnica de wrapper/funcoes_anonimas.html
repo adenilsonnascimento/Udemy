@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      var exibirSaudacao = function(nome) {
+        document.write('Olá ' + nome + ' ,tudo bem?')
+      }
+
+      exibirSaudacao('Jorge')
+    </script>
+    
+  </head>
+
+  <body>
+
+<p>
+  Funções Anônimas <br><br>
+
+
+Uma função anônima em JavaScript é uma função que não possui um nome definido. Essas funções são frequentemente usadas quando você precisa de uma função temporária, especialmente como funções de callback ou dentro de expressões. A função anônima é geralmente atribuída a uma variável ou passada diretamente como argumento para outra função. <br> <br>
+
+Exemplo de função anônima atribuída a uma variável: <br> <br>
+
+javascript <br>
+Copiar código <br>
+var soma = function(a, b) { <br>
+  return a + b; <br>
+}; <br> <br>
+
+console.log(soma(5, 3)); // Saída: 8 <br>
+Exemplo de função anônima como callback: <br> <br>
+
+javascript <br>
+Copiar código <br>
+setTimeout(function() { <br>
+  console.log("Função anônima executada após 3 segundos!"); <br>
+}, 3000);<br><br>
+
+Aqui, uma função anônima é passada como argumento para a função setTimeout, que a executa após 3 segundos.<br><br>
+
+Vantagens de Funções Anônimas<br><br>
+
+São úteis quando a função é usada apenas uma vez e não precisa ser referenciada posteriormente. <br>
+Simplificam o código em callbacks, como em eventos ou temporizadores. <br>
+Podem ser imediatamente invocadas, o que ajuda a encapsular código. <br>
+Wrapper Functions (Funções Wrapper) <br>
+Uma função wrapper ou função "invólucro" é uma função que "envolve" outra função, adicionando alguma lógica extra antes ou depois de executar a função original. Wrappers são  úteis para modificar, melhorar ou adicionar funcionalidades sem alterar o código da função original. <br><br>
+
+Exemplo de função wrapper: <br><br>
+
+javascript <br>
+Copiar código <br>
+function logExecution(func) { <br>
+  return function() { <br>
+    console.log("Executando função..."); <br>
+    return func.apply(this, arguments); <br>
+  }; <br>
+} <br><br>
+
+var soma = function(a, b) { <br>
+  return a + b; <br>
+}; <br><br>
+ 
+var somaComLog = logExecution(soma); <br><br>
+
+console.log(somaComLog(2, 3)); // Saída: "Executando função..." e depois 5 <br>
+Neste exemplo, logExecution é uma função wrapper que adiciona um console.log antes de executar a função passada como argumento. A função original (soma) não é alterada, mas sua execução agora é "envolvida" pela função wrapper. <br><br>
+
+IIFE (Immediately Invoked Function Expression) <br>
+Uma técnica muito usada com funções anônimas é o IIFE (Immediately Invoked Function Expression), que permite a criação de uma função anônima e sua execução imediata, sem precisar de uma referência posterior. <br><br>
+
+Exemplo de IIFE: <br><br>
+
+javascript <br>
+Copiar código <br>
+(function() { <br>
+  console.log("Esta função foi executada imediatamente!"); <br>
+})();<br><br>
+
+Essa técnica é usada para evitar que variáveis dentro da função poluam o escopo global, criando um escopo isolado. <br><br>
+
+Diferenças entre Função Anônima e Wrapper <br>
+Função Anônima: Uma função sem nome que pode ser usada como callback ou atribuída a uma variável. <br>
+Função Wrapper: Uma função que envolve outra função, adicionando comportamento extra antes ou depois de sua execução. <br> <br>
+Essas duas técnicas podem ser usadas juntas ou separadamente, dependendo da necessidade de encapsulamento ou controle de escopos no código.
+
+
+</p>
+
+
+  </body>
+</html>

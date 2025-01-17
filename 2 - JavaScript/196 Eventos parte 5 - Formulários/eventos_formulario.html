@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+   
+   <script>
+      // Aqui, no momento, não há nenhuma variável a ser declarada com `let`, mas futuramente, 
+      // se houver necessidade de manipulação de variáveis, elas podem ser declaradas dessa forma para 
+      // garantir um escopo mais seguro.
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- O evento onfocus é acionado quando o campo de entrada de texto recebe foco. O evento onblur ocorre 
+         quando o campo perde o foco. Isso é útil para validar a entrada ou fornecer feedback ao usuário. -->
+    <input onfocus="console.log('recebeu o foco')" onblur="console.log('perdeu o foco')" type="text">
+
+    <!-- O evento onchange é disparado sempre que a opção do <select> é alterada, indicando que o estado foi modificado -->
+    <select onchange="console.log('Estado foi modificado')">
+      <option>-- Selecione --</option>
+      <option value="1">Primeira opção</option>
+      <option value="2">Segunda opção</option>
+    </select>
+    
+    <h2>Explicações dos códigos comentados</h2>
+    <p>
+      No código acima, temos dois tipos de eventos: <code>onfocus</code>, <code>onblur</code>, e <code>onchange</code>. Cada um desses eventos é associado a diferentes elementos da interface do usuário, permitindo capturar interações específicas com o formulário.
+    </p>
+
+    <p>
+      O evento <code>onfocus</code> é acionado quando o campo de entrada (input) recebe foco, ou seja, quando o usuário clica ou começa a digitar dentro do campo. Quando o foco é recebido, a mensagem "recebeu o foco" é exibida no console do navegador. Já o evento <code>onblur</code> é disparado quando o campo perde o foco, ou seja, quando o usuário clica fora do campo ou navega para outro lugar. A mensagem "perdeu o foco" será exibida no console quando esse evento ocorrer.
+    </p>
+
+    <p>
+      O evento <code>onchange</code> no elemento <select> é ativado quando o valor da seleção é alterado. Ou seja, sempre que o usuário escolher uma nova opção do menu suspenso, o evento dispara a função que imprime a mensagem "Estado foi modificado" no console. Esse tipo de evento é útil quando você precisa rastrear mudanças em campos de seleção, como menus de opções.
+    </p>
+  </body>
+</html>

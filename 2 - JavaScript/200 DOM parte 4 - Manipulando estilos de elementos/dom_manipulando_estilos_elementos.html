@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+   
+   <script>
+    function modificaEstilo(corDeFundo, l, a){
+      //Selecionar o elemento 'quadrado' e modificar o estilo
+      let quadrado = document.getElementById('quadrado');
+      quadrado.style.backgroundColor = corDeFundo; // Muda a cor de fundo
+      quadrado.style.width = l; // Modifica a largura
+      quadrado.style.height = a; // Modifica a altura
+    }
+
+    </script>
+    
+  </head>
+
+  <body >
+    <h3>Manipulando estilo</h3>
+
+    <button type="button" onclick="modificaEstilo('#FF0000', '200px')">Vermelho</button>
+    <button type="button" onclick="modificaEstilo('#00FF00', '150px', '20px')">Verde</button>
+    <button type="button" onclick="modificaEstilo('#0000FF', '150px', '200px')">Azul</button>
+   
+    <div id="quadrado" style="border: solid 1px #000; width: 100px; height: 100px;"></div>
+
+    <h2>Explicações dos códigos</h2>
+    <p>
+      O código permite alterar dinamicamente o estilo de um quadrado na tela. A função `modificaEstilo` recebe três parâmetros: a cor de fundo, a largura e a altura do quadrado. 
+      Dentro dessa função, o método `document.getElementById('quadrado')` é utilizado para acessar o elemento com o ID "quadrado". Em seguida, são modificados três estilos do quadrado:
+      - `backgroundColor` para mudar a cor de fundo.
+      - `width` para definir a largura do quadrado.
+      - `height` para definir a altura.
+      Esses valores são passados quando o usuário clica nos botões, que chamam a função `modificaEstilo` com diferentes parâmetros para cada cor e tamanho.
+    </p>
+   
+  </body>
+</html>

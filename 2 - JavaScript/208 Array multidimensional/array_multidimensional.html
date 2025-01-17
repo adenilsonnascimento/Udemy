@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Declaração de um objeto lista_coisas utilizando let
+    let lista_coisas = Array()
+
+    // Adicionando a propriedade 'frutas' ao objeto lista_coisas
+    // 'frutas' é um array contendo várias frutas
+    lista_coisas['frutas'] = Array('Banana', 'Maçã', 'Morango', 'Uva')
+    
+    /*
+      // Outra forma de adicionar elementos ao array 'frutas', utilizando índices explícitos
+      lista_coisas['frutas'][1] = 'Banana';  // Índice 1
+      lista_coisas['frutas'][2] = 'Maçã';    // Índice 2
+      lista_coisas['frutas'][3] = 'Morango'; // Índice 3
+      lista_coisas['frutas'][4] = 'Uva';     // Índice 4
+    */
+
+    // Adicionando a propriedade 'pessoas' ao objeto lista_coisas
+    // 'pessoas' é um objeto com propriedades 'a', 'b' e 'c' associadas a nomes
+    lista_coisas['pessoas'] = []
+    lista_coisas['pessoas']['a'] = 'João'
+    lista_coisas['pessoas']['b'] = 'José'
+    lista_coisas['pessoas']['c'] = 'Maria'
+
+    // Exibe no console o objeto completo lista_coisas
+    console.log(lista_coisas)
+    // Exibe no console o valor da fruta no índice 3 (que é 'Uva')
+    console.log(lista_coisas['frutas'][3])
+    // Escreve o valor da fruta no índice 3 (que é 'Uva') diretamente na página
+    document.write(lista_coisas['frutas'][3])
+    // Escreve o nome associado à propriedade 'b' de pessoas (que é 'José') diretamente na página
+    document.write(lista_coisas['pessoas']['b'])
+  </script>
+
+</head>
+
+<body>
+  <p>
+    O código define um objeto <code>lista_coisas</code> e dentro dele são adicionadas duas propriedades: 
+    <code>frutas</code> e <code>pessoas</code>. 
+    <br>
+    Na primeira parte, um array chamado <code>frutas</code> é atribuído à propriedade do mesmo nome dentro de <code>lista_coisas</code>, com as frutas 'Banana', 'Maçã', 'Morango' e 'Uva'.
+    <br>
+    O código comentado, mostra como adicionar as frutas uma a uma usando índices explícitos, mas o array já foi inicializado de forma compacta com os valores diretamente dentro da propriedade <code>frutas</code>.
+    <br>
+    Na segunda parte, a propriedade <code>pessoas</code> é definida como um array vazio, mas são atribuídos valores usando índices como 'a', 'b' e 'c' para associar nomes às letras. As propriedades são: 'a' = 'João', 'b' = 'José' e 'c' = 'Maria'.
+    <br>
+    Depois, o código exibe no console o objeto inteiro <code>lista_coisas</code>, e também escreve na página a fruta no índice 3 (que é 'Uva') e o nome associado ao índice 'b' em pessoas (que é 'José').
+  </p>
+</body>
+
+</html>

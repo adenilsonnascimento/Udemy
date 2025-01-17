@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Captura a altura disponível da tela do usuário
+    let altura = window.screen.availHeight;
+    // Captura a largura disponível da tela do usuário
+    let largura = window.screen.availWidth;
+
+    // Verifica se a largura da tela é menor que 500 pixels
+    if (largura < 500) {
+      // Exibe mensagem indicando lógica para versão mobile
+      document.write('Lógica para impressão do menu versão mobile');
+    } else {
+      // Exibe mensagem indicando lógica para versão web
+      document.write('Lógica para impressão do menu versão web');
+    }
+  </script>
+
+</head>
+
+<body>
+  <!-- Explicação sobre o código -->
+  <p>
+    Este código utiliza JavaScript para verificar as dimensões disponíveis da tela do usuário e exibir mensagens específicas dependendo da largura da tela. 
+    <br /><br />
+    As variáveis <code>altura</code> e <code>largura</code> são declaradas com <code>let</code> e recebem os valores de altura (<code>window.screen.availHeight</code>) e largura (<code>window.screen.availWidth</code>) da área de exibição disponível do dispositivo. 
+    <br /><br />
+    Um bloco condicional <code>if</code> verifica se a largura é menor que 500 pixels. Caso seja, é exibida a mensagem "Lógica para impressão do menu versão mobile". Caso contrário, é exibida "Lógica para impressão do menu versão web". 
+    <br /><br />
+    Esse tipo de verificação é útil para ajustar o layout da página dependendo do dispositivo, facilitando a adaptação para versões mobile e desktop.
+  </p>
+</body>
+
+</html>

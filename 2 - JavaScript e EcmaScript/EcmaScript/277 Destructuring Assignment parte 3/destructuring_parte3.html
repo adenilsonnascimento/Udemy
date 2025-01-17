@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Destructuring com Objetos</title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Exemplo de destructuring em funções com objetos
+
+    // Criando um objeto 'obj' com várias propriedades
+    let obj = {
+      a: 10,
+      b: 20,
+      c: 30,
+      d: 40
+    }
+
+    // Função 'teste' utilizando destructuring para extrair propriedades do objeto
+    function teste({ a: x, d, z = 10 }) {
+      // Dentro da função, o valor de 'a' será atribuído à variável 'x', 
+      // 'd' será extraído diretamente e 'z' terá um valor padrão de 10 caso não seja fornecido no objeto.
+      console.log(x, d); // Exibe: 10 40
+    }
+
+    // Chamando a função e passando o objeto 'obj' como argumento
+    teste(obj);
+  </script>
+
+</head>
+
+<body>
+  <h1>Exemplo de Destructuring com Objetos</h1>
+  <p>
+    O <strong>destructuring</strong> é uma técnica poderosa no JavaScript que permite desestruturar objetos e arrays, facilitando a extração de valores diretamente para variáveis. Neste exemplo, utilizamos destructuring dentro de uma função para acessar propriedades específicas de um objeto. A função <code>teste</code> recebe um objeto como parâmetro e, através da sintaxe <code>{ a: x, d, z = 10 }</code>, extrai as propriedades <code>a</code>, <code>d</code>, e atribui um valor padrão para <code>z</code> caso não esteja presente no objeto. Ao chamar a função, as propriedades extraídas são exibidas no console.
+  </p>
+</body>
+
+</html>

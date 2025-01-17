@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+
+      //void
+      //retorno
+
+      /* var largura = prompt('Digite a largura do terreno em metros')
+      var comprimento = prompt('Digite o comprimento do terreno em metros')
+
+      var area = calcularAreaTerreno(largura, comprimento)
+
+      document.write('O terreno possui ' + area + ' metros quadrados')
+
+      function calcularAreaTerreno ( largura, comprimento ) {
+      
+        //lógica
+        var area = largura * comprimento
+
+        return area
+
+      } */
+
+      function soma(a, b){
+        return a + b
+      }
+      
+      console.log(soma(7,7))
+      console.log(soma(7, 7, 9, 15))
+      console.log(soma(7))
+      console.log(soma())
+    </script>
+    
+  </head>
+
+  <body>
+
+<p>
+
+  O código apresentado trata de funções em JavaScript e demonstra o uso de funções com retorno e a forma como os parâmetros são manipulados. Aqui está uma explicação completa sobre o código.<br> <br>
+
+Explicação do código:<br>
+javascript <br>
+Copiar código <br>
+function soma(a, b) { <br>
+  return a + b; <br>
+}<br><br>
+
+A função soma(a, b) recebe dois argumentos, a e b, e retorna a soma deles. Se os dois argumentos forem fornecidos corretamente, o resultado será a soma esperada.<br><br>
+
+Agora, são realizados vários testes com a função soma:<br> <br>
+
+javascript <br>
+Copiar código <br>
+console.log(soma(7, 7)); // Saída: 14 <br>
+Aqui, a função recebe os valores 7 e 7, então ela retorna a soma 14.<br><br>
+
+javascript <br>
+Copiar código <br>
+console.log(soma(7, 7, 9, 15)); // Saída: 14<br><br>
+
+Embora quatro argumentos sejam passados, a função só leva em consideração os dois primeiros. Em JavaScript, se uma função espera dois parâmetros e recebe mais, os parâmetros adicionais são ignorados. Portanto, o retorno será novamente 14 (7 + 7).<br><br>
+
+javascript <br>
+Copiar código <br>
+console.log(soma(7)); // Saída: NaN <br><br>
+
+Neste caso, apenas um argumento (7) é passado. Como a função espera dois parâmetros e o segundo não foi fornecido, o valor de b será undefined. Ao tentar somar um número (7) com undefined, o resultado será NaN (Not a Number).<br><br>
+
+javascript <br>
+Copiar código <br>
+console.log(soma()); // Saída: NaN <br><br>
+
+Aqui, nenhum argumento foi passado, então tanto a quanto b serão undefined. Tentar somar undefined + undefined resultará em NaN.<br> <br>
+
+Comentários adicionais sobre o código:<br> <br>
+
+Função com retorno (return): A função soma retorna explicitamente o valor calculado. O comando return encerra a execução da função e devolve o valor resultante para ser usado ou exibido.<br> <br>
+
+Tratamento de parâmetros: A função soma lida diretamente com os dois primeiros parâmetros. JavaScript permite passar mais ou menos argumentos do que o esperado, mas isso pode causar resultados inesperados, como NaN, se a função não tratar essas situações corretamente.<br><br>
+
+Sugestões de melhorias:<br> <br>
+
+Para evitar resultados como NaN quando os argumentos não são fornecidos, você pode adicionar valores padrão para os parâmetros:<br> <br>
+
+javascript <br>
+Copiar código <br>
+function soma(a = 0, b = 0) { <br>
+  return a + b; <br>
+} <br><br>
+
+Com isso:<br> <br>
+
+console.log(soma(7)); resultaria em 7, pois o valor de b seria automaticamente 0.<br> <br>
+
+console.log(soma()); resultaria em 0, pois ambos os parâmetros seriam 0.<br><br>
+
+Isso garante que a função sempre retorne um valor válido, mesmo se algum argumento estiver faltando.<br>
+
+
+
+
+
+
+
+
+</p>
+    
+  </body>
+</html>

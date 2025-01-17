@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+   
+   <script>
+      // Não há nenhum código aqui, mas normalmente você poderia adicionar funções ou inicializações de variáveis.
+    </script>
+    
+  </head>
+
+  <body>
+    <input 
+    type="text"
+    placeholder="Digite seu nome"
+    id="nome_usuario"
+    class="campo_texto"
+    name="nome"
+    >
+
+    <script>
+      // Seleciona o elemento com o ID 'nome_usuario' e exibe no console
+      let nomeUsuario = document.getElementById('nome_usuario');
+      console.log(nomeUsuario);
+
+      // Seleciona todos os elementos <input> na página e exibe no console
+      let inputs = document.getElementsByTagName('input');
+      console.log(inputs);
+
+      // Seleciona todos os elementos com a classe 'campo_texto' e exibe no console
+      let camposTexto = document.getElementsByClassName('campo_texto');
+      console.log(camposTexto);
+
+      // Seleciona todos os elementos com o nome 'nome' e exibe no console
+      let nomeElementos = document.getElementsByName('nome');
+      console.log(nomeElementos);
+    </script>
+
+    <h2>Explicações dos códigos comentados</h2>
+    <p>
+      O código acima utiliza alguns dos métodos mais comuns do DOM para selecionar e manipular elementos HTML. Vamos entender o que está acontecendo:
+    </p>
+
+    <h3>1. Seleção pelo ID:</h3>
+    <p>
+      O método <code>document.getElementById('nome_usuario')</code> seleciona o elemento com o ID 'nome_usuario'. Ele retorna um único elemento, já que IDs devem ser únicos em uma página. Esse método é muito útil quando queremos acessar um único elemento de forma eficiente.
+    </p>
+
+    <h3>2. Seleção por Tag Name:</h3>
+    <p>
+      O método <code>document.getElementsByTagName('input')</code> seleciona todos os elementos do tipo <code>&lt;input&gt;</code> na página. Ele retorna uma coleção de todos os inputs, o que pode ser útil quando precisamos acessar múltiplos elementos de uma vez.
+    </p>
+
+    <h3>3. Seleção por Class Name:</h3>
+    <p>
+      O método <code>document.getElementsByClassName('campo_texto')</code> seleciona todos os elementos com a classe 'campo_texto'. Esse método retorna uma coleção de todos os elementos que compartilham essa classe, permitindo modificar vários elementos ao mesmo tempo.
+    </p>
+
+    <h3>4. Seleção por Name:</h3>
+    <p>
+      O método <code>document.getElementsByName('nome')</code> seleciona todos os elementos que têm o atributo <code>name="nome"</code>. Esse método pode ser útil para selecionar elementos de formulários, como campos de texto, com o mesmo nome.
+    </p>
+
+  </body>
+</html>

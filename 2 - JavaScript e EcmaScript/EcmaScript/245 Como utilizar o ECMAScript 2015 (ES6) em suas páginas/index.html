@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como utilizar o EcmaScript</title>
+</head>
+<body>
+    <h1>Como utilizar o EcmaScript 2015</h1>
+    <p>O EcmaScript 2015 (ES6) trouxe diversas melhorias para o JavaScript, tornando o código mais legível e eficiente. A seguir, abordaremos algumas das principais características e como utilizá-las.</p>
+
+    <h2>1. Declaração de variáveis com <code>let</code> e <code>const</code></h2>
+    <p>O ES6 introduziu os blocos de escopo com as palavras-chave <code>let</code> e <code>const</code>, que são alternativas ao tradicional <code>var</code>.</p>
+    <pre><code>
+// Exemplo de uso do let
+let nome = 'João';
+nome = 'Maria';  // Variável pode ser reatribuída
+
+// Exemplo de uso do const
+const idade = 30;
+// idade = 31;  // Erro! 'const' não permite reatribuição
+    </code></pre>
+
+    <h2>2. Arrow Functions</h2>
+    <p>As arrow functions permitem uma forma mais concisa de declarar funções, além de manter o <code>this</code> do contexto onde a função foi criada.</p>
+    <pre><code>
+// Exemplo de arrow function
+const somar = (a, b) => a + b;
+
+console.log(somar(2, 3));  // Resultado: 5
+    </code></pre>
+
+    <h2>3. Classes</h2>
+    <p>O ES6 trouxe a sintaxe de classes para o JavaScript, facilitando a criação e organização de objetos e métodos.</p>
+    <pre><code>
+// Exemplo de classe no ES6
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    apresentar() {
+        console.log(`Meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+    }
+}
+
+const pessoa1 = new Pessoa('Carlos', 28);
+pessoa1.apresentar();  // Resultado: "Meu nome é Carlos e tenho 28 anos."
+    </code></pre>
+
+    <h2>4. Promises</h2>
+    <p>O ES6 introduziu as Promises, que ajudam a lidar com operações assíncronas de forma mais clara e legível.</p>
+    <pre><code>
+// Exemplo de Promise
+const minhaPromise = new Promise((resolve, reject) => {
+    let sucesso = true;
+    
+    if(sucesso) {
+        resolve("Operação bem-sucedida!");
+    } else {
+        reject("Houve um erro.");
+    }
+});
+
+minhaPromise
+    .then(result => console.log(result))  // Resultado: "Operação bem-sucedida!"
+    .catch(error => console.log(error));  // Caso ocorra erro
+    </code></pre>
+
+    <h2>5. Módulos (Importação e Exportação)</h2>
+    <p>O ES6 introduziu a capacidade de dividir código em módulos, facilitando a organização do código e a reutilização.</p>
+    <pre><code>
+// Exemplo de exportação (arquivo pessoa.js)
+export class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+// Exemplo de importação (arquivo principal.js)
+import { Pessoa } from './pessoa.js';
+
+const pessoa1 = new Pessoa('Ana', 25);
+console.log(pessoa1.nome);  // Resultado: "Ana"
+    </code></pre>
+
+</body>
+</html>

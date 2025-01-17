@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando Arrays</title>
+</head>
+
+<body>
+
+    <h1>Explicando Arrays</h1>
+    <p>
+        Um array é uma estrutura de dados que permite armazenar vários valores em uma única variável. 
+        Em vez de declarar várias variáveis para armazenar dados relacionados, você pode usar um array.
+    </p>
+
+    <h2>Exemplos de arrays e como utilizá-los</h2>
+
+    <p>
+        Veja abaixo alguns exemplos de como criar e acessar arrays em JavaScript.
+    </p>
+
+    <h3>Exemplo 1: Array de números</h3>
+    <p>
+        Um array pode armazenar números. Veja o exemplo:
+    </p>
+    <pre>
+        // Criando um array de números
+        let numeros = [10, 20, 30, 40, 50];
+        
+        // Acessando um valor específico no array
+        console.log(numeros[0]); // Exibe o primeiro número do array (10)
+        console.log(numeros[3]); // Exibe o quarto número do array (40)
+    </pre>
+
+    <h3>Exemplo 2: Array de strings</h3>
+    <p>
+        Arrays também podem armazenar strings. Exemplo:
+    </p>
+    <pre>
+        // Criando um array de strings
+        let frutas = ["maçã", "banana", "laranja", "uva"];
+        
+        // Acessando um valor específico no array
+        console.log(frutas[1]); // Exibe "banana"
+        console.log(frutas[2]); // Exibe "laranja"
+    </pre>
+
+    <h3>Exemplo 3: Array misto (números e strings)</h3>
+    <p>
+        Arrays também podem conter diferentes tipos de dados. Veja um exemplo com números e strings misturados:
+    </p>
+    <pre>
+        // Criando um array com números e strings
+        let misto = [25, "João", 12, "Maria"];
+        
+        // Acessando valores
+        console.log(misto[0]); // Exibe 25
+        console.log(misto[1]); // Exibe "João"
+    </pre>
+
+    <h3>Exemplo 4: Alterando elementos de um array</h3>
+    <p>
+        É possível alterar o valor de um elemento de um array. Exemplo:
+    </p>
+    <pre>
+        let carros = ["Fusca", "Brasília", "Chevette"];
+        
+        // Alterando o primeiro elemento
+        carros[0] = "Civic";
+        console.log(carros[0]); // Exibe "Civic"
+    </pre>
+
+    <h3>Exemplo 5: Adicionando elementos a um array</h3>
+    <p>
+        Podemos adicionar elementos a um array usando o método <code>push()</code>. Veja o exemplo:
+    </p>
+    <pre>
+        let cores = ["azul", "verde", "vermelho"];
+        
+        // Adicionando um novo elemento no final
+        cores.push("amarelo");
+        console.log(cores); // Exibe ["azul", "verde", "vermelho", "amarelo"]
+    </pre>
+
+    <h3>Exemplo 6: Percorrendo um array com laços (loops)</h3>
+    <p>
+        Você pode percorrer um array usando loops, como o <code>for</code>. Exemplo:
+    </p>
+    <pre>
+        let animais = ["gato", "cachorro", "pássaro", "peixe"];
+        
+        // Usando um loop for para percorrer o array
+        for (let i = 0; i < animais.length; i++) {
+            console.log(animais[i]);
+        }
+    </pre>
+
+</body>
+
+</html>

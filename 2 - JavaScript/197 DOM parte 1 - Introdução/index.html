@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando o DOM</title>
+</head>
+<body>
+
+    <h1>Explicando o DOM e listando vários e os mais usados códigos de DOM</h1>
+
+    <h2>Explicando DOM</h2>
+    <p>
+        O DOM (Document Object Model) é uma interface de programação que permite acessar, modificar e interagir com a estrutura de um documento HTML ou XML. Ele representa o documento como uma árvore de nós, onde cada nó pode ser um elemento, atributo ou texto.
+        Com o DOM, podemos alterar o conteúdo e a estrutura de um site de maneira dinâmica, adicionando, removendo ou modificando elementos e atributos em tempo real. Isso é feito usando JavaScript, permitindo que o comportamento da página seja interativo e responsivo.
+    </p>
+
+    <h2>Listando e explicando o código de vários e os mais utilizados do DOM</h2>
+    
+    <h3>1. Selecionando elementos com JavaScript</h3>
+    <p>
+        Para selecionar um elemento no DOM, podemos usar os métodos como <code>getElementById()</code>, <code>getElementsByClassName()</code>, <code>querySelector()</code>, entre outros. Esses métodos permitem que você acesse e manipule qualquer parte do HTML.
+    </p>
+    <pre>
+        <code>
+        // Selecionando um elemento pelo ID
+        let elemento = document.getElementById("meuElemento");
+        
+        // Selecionando um elemento pela classe
+        let elementos = document.getElementsByClassName("minhaClasse");
+        
+        // Selecionando o primeiro elemento que corresponde ao seletor CSS
+        let primeiroElemento = document.querySelector(".minhaClasse");
+        </code>
+    </pre>
+
+    <h3>2. Alterando o conteúdo de um elemento</h3>
+    <p>
+        Após selecionar um elemento, podemos alterar seu conteúdo com a propriedade <code>innerHTML</code>, <code>textContent</code>, entre outras.
+    </p>
+    <pre>
+        <code>
+        let paragrafo = document.getElementById("meuParagrafo");
+        paragrafo.innerHTML = "Novo conteúdo do parágrafo!";
+        </code>
+    </pre>
+
+    <h3>3. Modificando o estilo de um elemento</h3>
+    <p>
+        Para modificar o estilo de um elemento, podemos acessar a propriedade <code>style</code> e modificar suas propriedades CSS diretamente.
+    </p>
+    <pre>
+        <code>
+        let elemento = document.getElementById("meuElemento");
+        elemento.style.color = "blue";
+        elemento.style.fontSize = "20px";
+        </code>
+    </pre>
+
+    <h3>4. Adicionando e removendo elementos</h3>
+    <p>
+        Podemos criar novos elementos e inseri-los na página ou remover elementos existentes usando métodos como <code>createElement()</code>, <code>appendChild()</code> e <code>removeChild()</code>.
+    </p>
+    <pre>
+        <code>
+        // Criando um novo elemento e adicionando-o
+        let novoParagrafo = document.createElement("p");
+        novoParagrafo.textContent = "Este é um novo parágrafo.";
+        document.body.appendChild(novoParagrafo);
+        
+        // Removendo um elemento
+        let elementoParaRemover = document.getElementById("meuElemento");
+        document.body.removeChild(elementoParaRemover);
+        </code>
+    </pre>
+
+    <h3>5. Adicionando eventos aos elementos</h3>
+    <p>
+        Podemos adicionar eventos como <code>click</code>, <code>mouseover</code>, <code>keydown</code>, etc., aos elementos para tornar a página interativa.
+    </p>
+    <pre>
+        <code>
+        let meuBotao = document.getElementById("meuBotao");
+        meuBotao.addEventListener("click", function() {
+            alert("O botão foi clicado!");
+        });
+        </code>
+    </pre>
+
+</body>
+</html>

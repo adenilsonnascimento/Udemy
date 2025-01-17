@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculadora</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <style>
+    /* Estilo da calculadora */
+    .calculadora {
+      margin-top: 40px;
+      border: solid 1px #000;
+      padding: 20px;
+      background-color: #2E2E2E;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px #000;
+    }
+
+    /* Estilo dos botões */
+    .btn {
+      width: 60px;
+      height: 50px;
+      margin: 5px;
+      box-shadow: 1px 1px 1px #000;
+    }
+
+    /* Estilo do botão C (limpar) */
+    .clear {
+      width: 130px;
+    }
+
+    /* Estilo do botão Enter (=) */
+    .enter {
+      height: 110px;
+    }
+
+    /* Estilo do botão 0 */
+    .zero {
+      width: 130px;
+    }
+
+    /* Estilo da caixa de resultado */
+    .resultado {
+      text-align: right;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: solid 1px #000;
+      box-shadow: 1px 1px 1px #000;
+    }
+  </style>
+</head>
+
+<body style="background: #D9D9D9">
+
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <br />
+
+        <!-- Caixa da calculadora -->
+        <div class="calculadora">
+          <!-- Caixa de resultado, desabilitada para não permitir edição direta -->
+          <input type="text" class="form-control resultado" placeholder="0" disabled="disabled" />
+
+          <!-- Linhas de botões da calculadora -->
+          <div class="row">
+            <!-- Botões de ação (limpar, divisão, multiplicação) -->
+            <button onclick="calcular('acao', 'c')" type="button"
+              class="btn btn-dark btn-lg clear font-weight-light">C</button>
+            <button onclick="calcular('acao', '/')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">/</button>
+            <button onclick="calcular('acao', '*')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">x</button>
+          </div>
+
+          <div class="row">
+            <!-- Botões numéricos (7, 8, 9, subtração) -->
+            <button onclick="calcular('valor', '7')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">7</button>
+            <button onclick="calcular('valor', '8')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">8</button>
+            <button onclick="calcular('valor', '9')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">9</button>
+            <button onclick="calcular('acao', '-')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">-</button>
+          </div>
+
+          <div class="row">
+            <!-- Botões numéricos (4, 5, 6, soma) -->
+            <button onclick="calcular('valor', '4')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">4</button>
+            <button onclick="calcular('valor', '5')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">5</button>
+            <button onclick="calcular('valor', '6')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">6</button>
+            <button onclick="calcular('acao', '+')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">+</button>
+          </div>
+
+          <div class="row">
+            <!-- Botões numéricos (1, 2, 3, igual) -->
+            <button onclick="calcular('valor', '1')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">1</button>
+            <button onclick="calcular('valor', '2')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">2</button>
+            <button onclick="calcular('valor', '3')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">3</button>
+            <button onclick="calcular('acao', '=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+          </div>
+
+          <div class="row" style="margin-top: -60px">
+            <!-- Botões (0, ponto) -->
+            <button onclick="calcular('valor', '0')" type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
+            <button onclick="calcular('acao', '.')" type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Este código implementa uma calculadora simples usando HTML, CSS e JavaScript. A estrutura da calculadora consiste em um campo de entrada para exibir os resultados e vários botões para números, operações e ações.
+    
+    - **HTML**: O HTML organiza os elementos da interface, como os botões de números e operações. Cada botão tem um evento de clique associado, que chama a função `calcular()` e envia o tipo de ação (como "valor" ou "ação") e o valor correspondente (como números ou operadores). A caixa de resultado exibe o número ou a operação atual, mas não pode ser editada diretamente, pois tem o atributo `disabled`.
+    
+    - **CSS**: O CSS estiliza a aparência da calculadora, incluindo os botões e a caixa de resultado. A calculadora tem uma borda, sombra e fundo escuro, além de uma estrutura de grid para os botões, usando o Bootstrap. Os botões têm diferentes tamanhos dependendo de sua função, e a caixa de resultado tem um tamanho adequado para exibir os valores.
+    
+    - **JavaScript**: A função `calcular(tipo, valor)` é responsável por lidar com as interações do usuário. Quando um botão é clicado, a função é chamada, e os valores correspondentes são passados. Por enquanto, a função apenas imprime esses valores no console para facilitar os testes e o entendimento.
+  </p>
+
+  <script>
+    // Função que é chamada quando um botão da calculadora é pressionado
+    function calcular(tipo, valor) {
+      console.log(tipo, valor); // Exibe o tipo (valor ou ação) e o valor pressionado no console
+    }
+  </script>
+</body>
+
+</html>

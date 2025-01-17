@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript - Tratamentos de Erros com Try, Catch, Throw e Finally</title>
+
+  <script>
+    /**
+     * Exemplo de uma aplicação fictícia que simula o comportamento de recuperar
+     * informações de vídeos, utilizando estruturas de tratamento de erros.
+     */
+
+    // Simula uma estrutura de dados com informações de vídeos (exemplo: um catálogo da Netflix).
+    let video = Array();
+
+    video[1] = Array();
+    video[1]['nome'] = 'Fullmetal Alchemist'; // Nome do vídeo.
+    video[1]['categoria'] = 'Anime'; // Categoria do vídeo.
+
+    /**
+     * Função para recuperar informações de vídeo de um servidor simulado.
+     * @param {Array} video - O array contendo os dados dos vídeos.
+     */
+    function getVideo(video) {
+      try {
+        // Lógica para tentar recuperar um vídeo pelo índice 0.
+        // Aqui ocorre um erro porque `video[0]` não está definido.
+        console.log(video[0]['nome']);
+      } catch (erro) {
+        // Caso ocorra um erro, o bloco `catch` é acionado.
+        tratarErro(erro); // Chama a função para tratar o erro.
+        console.log('Agora sim podemos tratar esse erro.');
+
+        // Lança um erro personalizado.
+        throw new Error(
+          'Houve um erro, mas não se preocupe, estamos trabalhando nisso agora!'
+        );
+      } finally {
+        // Este bloco será executado sempre, independentemente de ter ocorrido erro ou não.
+        console.log('Sempre passa por aqui (try / catch).');
+      }
+
+      // Esta linha será executada se o erro não for crítico.
+      console.log('A aplicação não morreu.');
+    }
+
+    /**
+     * Função para tratar erros.
+     * @param {Error} e - O erro capturado no bloco `catch`.
+     */
+    function tratarErro(e) {
+      console.log(e); // Exibe o erro no console.
+    }
+
+    // Chama a função para tentar recuperar os dados do vídeo.
+    getVideo(video);
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este exemplo demonstra o uso das estruturas de tratamento de erros em JavaScript:
+    <ul>
+      <li><code>try</code>: Define o bloco onde a lógica principal é executada. Caso ocorra um erro, ele será capturado no bloco <code>catch</code>.</li>
+      <li><code>catch</code>: Este bloco é executado se um erro ocorrer no <code>try</code>. Aqui, o erro pode ser tratado de forma segura.</li>
+      <li><code>throw</code>: Permite lançar um erro personalizado, útil para criar mensagens específicas.</li>
+      <li><code>finally</code>: Este bloco sempre será executado, independentemente de um erro ter ocorrido ou não. É útil para ações que devem ocorrer em qualquer caso (exemplo: fechar conexões).</li>
+    </ul>
+    No exemplo, um erro ocorre porque o índice <code>video[0]</code> não foi definido. O erro é tratado no bloco <code>catch</code> e exibido no console. Em seguida, um novo erro é lançado com uma mensagem personalizada.
+  </p>
+</body>
+
+</html>

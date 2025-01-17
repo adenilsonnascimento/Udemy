@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // O método setTimeout executa uma função após um intervalo de tempo especificado (em milissegundos).
+    // Aqui, após 3000ms (3 segundos), a mensagem "Teste" seria escrita no documento.
+    // setTimeout(function(){document.write('Teste')}, 3000)
+
+    // Variável que define o número inicial da contagem regressiva.
+    let i = 5;
+
+    // setInterval executa uma função repetidamente em intervalos de tempo definidos (em milissegundos).
+    // Aqui, a função é chamada a cada 1000ms (1 segundo).
+    let x = setInterval(function() {
+      // Escreve o valor atual de `i` no documento.
+      document.write(i);
+      // Decrementa o valor de `i`.
+      i--;
+      // Quando `i` chega a 0, o método clearInterval é chamado para parar o intervalo.
+      if (i === 0) {
+        clearInterval(x);
+      }
+    }, 1000);
+
+    // Outro exemplo de setInterval que escreveria "Teste" repetidamente a cada 2000ms (2 segundos).
+    // setInterval(function(){document.write('Teste' + '<br />')}, 2000)
+  </script>
+
+</head>
+
+<body>
+  <h1>Explicação: O que é e quando usar o DOM Timing</h1>
+  <p>
+    O DOM Timing refere-se a métodos do JavaScript que permitem controlar eventos baseados no tempo, como executar uma função após
+    um atraso (com <code>setTimeout</code>) ou repetir uma função em intervalos regulares (com <code>setInterval</code>). 
+    Esses métodos são amplamente utilizados para criar interações dinâmicas, como contagens regressivas, animações e atrasos.
+    <br><br>
+    No exemplo acima, usamos <code>setTimeout</code> para executar um comando único após um intervalo, e <code>setInterval</code>
+    para executar um comando repetidamente a cada intervalo de tempo. O <code>clearInterval</code> é usado para parar o
+    <code>setInterval</code> quando a condição desejada é atendida.
+  </p>
+  
+  <h2>Explicando TODOS os códigos do DOM Timing</h2>
+  <p>
+    <ul>
+      <li>
+        <code>setTimeout</code>: Executa uma função ou bloco de código após um atraso especificado em milissegundos. 
+        Exemplo comentado no código executaria <code>document.write('Teste')</code> após 3 segundos.
+      </li>
+      <li>
+        <code>setInterval</code>: Chama repetidamente uma função em intervalos regulares. 
+        No exemplo, escrevemos uma contagem regressiva começando de 5, com decremento a cada segundo.
+      </li>
+      <li>
+        <code>clearInterval</code>: Interrompe um intervalo criado com <code>setInterval</code>. 
+        No exemplo, ele é chamado quando a contagem regressiva chega a zero.
+      </li>
+      <li>
+        Segundo exemplo comentado de <code>setInterval</code>: Escreveria repetidamente "Teste" no documento a cada 2 segundos.
+      </li>
+    </ul>
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#caixa {
+    width: 300px;
+    height: 300px;
+    background: #009670;
+    padding: 8px;
+    margin: 20px;
+}
+
+#caixa h1 {
+  color: white;
+  text-shadow: 20px 20px 5px black; /*TEXT-shadow,  Cria a Sombra em letras*/
+  /*o primeiro movimenta para dirita e para esquerda*/
+  /*o segundo movimenta para cima e para baixo*/
+  /*o terceiro faz a sobra ficar embaçada*/
+}
+
+#caixa2 {
+    width: 300px;
+    height: 300px;
+    background: #009670;
+    padding: 8px;
+    margin: 20px;
+    box-shadow: 20px 20px 5px 20px rgb(113, 7, 7); /*BOX-shadow, cria a sombra em caixas*/
+    /*o quarto aumenta o tamanho da sombra*/
+}

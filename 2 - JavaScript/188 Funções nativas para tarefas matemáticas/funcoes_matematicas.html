@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      var x = Math.ceil(10.380) //forçar arredondamento para cima
+      document.write(x)
+     
+      var y = Math.floor(10.380) //forçar arredondamento para baixo
+      document.write(y)
+      
+      
+      var z = Math.round(10.380) //verifica se deve arredondar para cima ou para baixo
+      document.write(z)
+      
+      
+      var c = Math.random() //sortear valores entre 0 e 1
+      document.write(c)
+
+
+
+      </script>
+    
+  </head>
+
+  <body>
+
+    <p>
+
+      Vamos explicar cada parte do código JavaScript, onde estão sendo usados métodos do objeto Math para realizar diferentes operações matemáticas.   <br>  <br>
+
+      1. Método Math.ceil()   <br>  <br>
+    
+      var x = Math.ceil(10.380)    <br>
+      document.write(x)  <br>
+      O método Math.ceil() arredonda um número para cima, ou seja, para o próximo número inteiro mais alto.  <br>
+      No exemplo, 10.380 será arredondado para 11.   <br>
+      Saída esperada: 11   <br>
+      
+      <br>
+      2. Método Math.floor()  <br>  <br>
+      
+      var y = Math.floor(10.380)   <br>
+      document.write(y)  <br>
+      O método Math.floor() arredonda um número para baixo, ou seja, para o próximo número inteiro mais baixo.  <br>
+      No exemplo, 10.380 será arredondado para 10.  <br>
+      Saída esperada: 10  <br>
+      
+      <br>
+      3. Método Math.round()  <br>  <br>
+   
+      var z = Math.round(10.380)   <br>
+      document.write(z)  <br>
+      O método Math.round() arredonda um número para o inteiro mais próximo. Se a parte decimal for 0.5 ou maior, arredonda para cima; caso contrário, arredonda para baixo.  <br>
+      No exemplo, como 10.380 tem uma parte decimal menor que 0.5, será arredondado para 10.  <br>
+      Saída esperada: 10  <br>
+      
+      <br>
+      4. Método Math.random()  <br>  <br>
+      
+      var c = Math.random()   <br>
+      document.write(c)  <br>
+      O método Math.random() retorna um número pseudoaleatório entre 0 (inclusivo) e 1 (exclusivo), ou seja, o resultado será um número decimal entre 0 e quase 1.  <br>
+      A saída será um valor diferente a cada execução, e sempre será um valor decimal menor que 1.  <br>
+      Saída esperada: Um número aleatório entre 0 e 1, como 0.73242.  <br>
+      
+      <br>
+      Resumo dos métodos usados:  <br>
+      Math.ceil(): Arredonda um número para cima, para o próximo número inteiro.  <br>
+      Math.floor(): Arredonda um número para baixo, para o próximo número inteiro mais baixo.  <br>
+      Math.round(): Arredonda um número para o inteiro mais próximo.  <br>
+      Math.random(): Gera um número pseudoaleatório entre 0 e 1.  <br>
+      
+      
+      
+      
+      
+      
+
+    </p>
+  </body>
+</html>

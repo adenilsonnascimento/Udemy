@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Declaração de array usando let em vez de var
+    let lista_frutas = Array()
+
+    /* 
+      // Outra forma de declarar um array vazio, mas sem preencher valores. Essa forma 
+      // também usa 'let' ao invés de 'var' (comentado aqui).
+      var lista_frutas = []
+    */
+    
+    // Atribuindo valores aos índices do array
+    lista_frutas[5] = 'Banana';  // Adiciona 'Banana' no índice 5
+    lista_frutas[6] = 'Maçã';    // Adiciona 'Maçã' no índice 6
+    lista_frutas[7] = 'Morango'; // Adiciona 'Morango' no índice 7
+    lista_frutas[8] = 'Uva';     // Adiciona 'Uva' no índice 8
+
+    /*
+      // Outra forma de declarar um array com valores já definidos. O array tem 4 frutas: 
+      // 'Banana', 'Maçã', 'Morango', 'Uva'. (comentado)
+      var lista_frutas = Array('Banana', 'Maçã', 'Morango', 'Uva')
+    */
+    
+    // Outra forma de declarar um array diretamente com valores já atribuídos
+    // var lista_frutas = ['Banana', 'Maçã', 'Morango', 'Uva'] (comentado)
+
+    // A variável 'length' foi mencionada, mas não está sendo usada corretamente
+    length // Está incompleto, possivelmente pretendia-se usar lista_frutas.length para exibir o tamanho do array
+
+    // Exibe o conteúdo do array no console
+    console.log(lista_frutas)
+
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Este código mostra diferentes maneiras de declarar e manipular arrays em JavaScript.
+    O primeiro exemplo declara um array vazio usando <code>let lista_frutas = Array()</code>, e então valores são atribuídos aos índices 5, 6, 7 e 8 com os nomes de frutas.
+    <br>
+    O segundo exemplo (comentado) mostra outra forma de declarar um array vazio, mas usando uma notação mais simples <code>let lista_frutas = []</code>.
+    <br>
+    Também há exemplos comentados que demonstram duas formas diferentes de inicializar um array diretamente com valores: utilizando <code>Array()</code> ou a notação simplificada de colchetes <code>[]</code>.
+    <br>
+    No código também temos a tentativa de usar a propriedade <code>length</code>, mas ela não está sendo corretamente aplicada. O correto seria <code>lista_frutas.length</code> para obter o tamanho do array.
+    <br>
+    Finalmente, o código imprime o conteúdo de <code>lista_frutas</code> no console para que possamos ver os valores que foram armazenados no array.
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    // Declarando a variável lista_frutas com let
+    let lista_frutas = Array()
+
+    // Atribuindo elementos ao array lista_frutas, usando índices explícitos
+    lista_frutas[0] = 'Banana'
+    lista_frutas[1] = 'Maça'
+    lista_frutas[2] = 'Morango'
+    lista_frutas[3] = 'Uva'
+
+    // Procurando a posição do item 'Morango' no array e exibindo o índice no console
+    console.log(lista_frutas.indexOf('Morango')) 
+
+    // Procurando a posição do item 'Abacaxi' no array e exibindo -1, pois o item não existe
+    console.log(lista_frutas.indexOf('Abacaxi')) //retorna -1
+
+    // Atribuindo à variável auxiliar o valor retornado pela pesquisa de 'Banana'
+    let auxiliar = lista_frutas.indexOf('Banana')
+    
+    // Verificando se o elemento 'Banana' existe no array
+    if(auxiliar === -1) {
+      console.log('Elemento não existe')
+    } else {
+      console.log('Elemento existe e está na posição' + auxiliar)
+    }
+
+    // Lembre-se, a pesquisa é case sensitive! Ou seja, diferencia maiúsculas de minúsculas.
+  </script>
+
+</head>
+
+<body>
+  <p>
+    O código começa declarando o array <code>lista_frutas</code> com a variável <code>let</code> e atribuindo alguns elementos, como 'Banana', 'Maça', 'Morango' e 'Uva'. 
+    <br>
+    O método <code>indexOf()</code> é usado para encontrar a posição de um item dentro do array:
+    <ul>
+      <li>Quando procuramos por 'Morango', o método retorna o índice do item no array (que é 2) e é impresso no console;</li>
+      <li>Quando procuramos por 'Abacaxi', que não existe no array, o método retorna -1, indicando que o item não foi encontrado.</li>
+    </ul>
+    <br>
+    O código ainda verifica se o item 'Banana' existe no array, e imprime a posição do elemento se ele for encontrado. Caso o elemento não exista, a mensagem 'Elemento não existe' é exibida.
+    <br>
+    Por fim, é importante notar que a pesquisa feita pelo método <code>indexOf()</code> é <strong>case sensitive</strong>, o que significa que o método diferencia letras maiúsculas de minúsculas. Por exemplo, a pesquisa por 'banana' (minúsculo) não retornaria a posição de 'Banana' (com B maiúsculo).
+  </p>
+</body>
+
+</html>

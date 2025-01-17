@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+
+      //void
+      //retorno
+
+      var largura = prompt('Digite a largura do terreno em metros')
+      var comprimento = prompt('Digite o comprimento do terreno em metros')
+
+      var area = calcularAreaTerreno(largura, comprimento)
+
+      document.write('O terreno possui ' + area + ' metros quadrados')
+
+      function calcularAreaTerreno ( largura, comprimento ) {
+      
+        //lógica
+        var area = largura * comprimento
+
+        return area
+
+      }
+
+    </script>
+    
+  </head>
+
+  <body>
+
+
+    <p>Em JavaScript, uma função é um bloco de código projetado para realizar uma tarefa específica. Ela pode ser definida uma vez e usada repetidamente em diferentes partes do código, o que ajuda a organizar e evitar repetição de código. <br> <br>
+
+Como funciona: <br>
+Declaração de uma função: Para criar uma função, você usa a palavra-chave function, seguida por um nome para a função, parênteses que podem conter parâmetros (valores que a função pode receber), e um bloco de código dentro de chaves {} que define o que a função faz. <br> <br>
+ 
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+function saudacao() { <br>
+    console.log("Olá, bem-vindo!"); <br>
+}<br>
+Chamada de uma função: Depois de declarar uma função, você pode chamá-la em qualquer lugar do código para executar o que foi definido dentro dela.<br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+saudacao();  // Saída: Olá, bem-vindo! <br>
+Parâmetros e Argumentos: Funções podem receber valores (parâmetros) que afetam seu comportamento. Esses valores são passados na chamada da função como argumentos. <br><br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+function saudacao(nome) { <br>
+    console.log("Olá, " + nome + "!"); <br>
+} <br><br>
+
+saudacao("Adenilson");  // Saída: Olá, Adenilson! <br>
+Retornando Valores: Funções podem retornar valores usando a palavra-chave return. Isso permite que a função envie um valor de volta para onde ela foi chamada. <br> <br>
+
+Exemplo: <br><br>
+
+javascript <br>
+Copiar código <br>
+function soma(a, b) { <br>
+    return a + b; <br>
+} <br><br>
+
+let resultado = soma(5, 3);  // resultado agora é 8 <br>
+console.log(resultado);      // Saída: 8 <br>
+Funções são uma parte essencial de JavaScript, permitindo modularização, reutilização de código e simplificação de tarefas complexas. 
+</p>
+  </body>
+</html>

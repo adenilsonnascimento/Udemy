@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<!-- Título da página -->
+	<title>Jogo</title>
+
+	<!-- Definindo o conjunto de caracteres como UTF-8, que é uma prática recomendada em HTML5 -->
+	<meta charset="UTF-8" />
+
+	<!-- A tag meta viewport ajuda a tornar a página responsiva em dispositivos móveis -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Link para o Bootstrap 4.0 para utilizar os estilos prontos -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Link para o seu arquivo de estilo CSS -->
+	<link rel="stylesheet" href="estilo.css" />
+
+	<!-- Script JavaScript para a lógica do jogo -->
+	<script>
+		// Função para iniciar o jogo após a seleção do nível
+		function iniciarJogo() {
+			// Usando 'let' para a variável 'nivel'
+			let nivel = document.getElementById('nivel').value;
+
+			// Verifica se o nível foi selecionado
+			if (nivel === '') {
+				// Alerta caso o nível não seja selecionado
+				alert('Selecione um nível para iniciar o jogo');
+				return false;
+			}
+
+			// Redireciona para a página 'app.html' com o nível selecionado na URL
+			window.location.href = "app.html?" + nivel;
+		}
+	</script>
+</head>
+
+<body>
+	<!-- Container do Bootstrap para centralizar e organizar o conteúdo -->
+	<div class="container">
+		<!-- Linha para a imagem do jogo -->
+		<div class="row">
+			<div class="col">
+				<!-- Centraliza a imagem do jogo -->
+				<div class="d-flex justify-content-center">
+					<img src="imagens/game.png" alt="Imagem do Jogo" />
+				</div>
+			</div>
+		</div>
+
+		<!-- Linha para o seletor de nível -->
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<div class="mb-2">
+						<!-- Seletor de nível (Normal, Difícil, Chuck Norris) -->
+						<select class="form-control" id="nivel">
+							<option value="">-- Selecione o nível --</option>
+							<option value="normal">Normal</option>
+							<option value="dificil">Difícil</option>
+							<option value="chucknorris">Chuck Norris</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Linha para o botão de iniciar o jogo -->
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<!-- Botão que chama a função 'iniciarJogo' ao ser clicado -->
+					<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Jogo</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Completo de Eventos</title>
+    <style>
+        button,
+        input {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Estudo Completo sobre Eventos em JavaScript</h1>
+    <p>
+        Eventos em JavaScript são ações que ocorrem na página, como cliques, digitação, alterações na janela ou interações com formulários. Aqui estão exemplos de eventos agrupados em categorias:
+    </p>
+
+    <h2>Eventos do Mouse</h2>
+    <button id="mouseClick">Clique Aqui</button>
+    <button id="mouseDblClick">Clique Duplo</button>
+    <button id="mouseEnter">Passe o Mouse Aqui</button>
+    <button id="mouseLeave">Saia do Mouse</button>
+    <p id="mouseOutput"></p>
+
+    <h2>Eventos do Teclado</h2>
+    <input type="text" id="keyboardInput" placeholder="Digite algo">
+    <p id="keyboardOutput"></p>
+
+    <h2>Eventos de Janela</h2>
+    <button id="windowResize">Redimensione a Janela</button>
+    <button id="windowScroll">Role a Página</button>
+    <p id="windowOutput"></p>
+
+    <h2>Eventos de Formulário</h2>
+    <form id="formExample">
+        <input type="text" id="nameInput" placeholder="Digite seu nome" required>
+        <input type="email" id="emailInput" placeholder="Digite seu e-mail" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="formOutput"></p>
+
+    <script>
+        // Eventos do Mouse
+        document.getElementById('mouseClick').addEventListener('click', () => {
+            document.getElementById('mouseOutput').textContent = "Você clicou no botão!";
+        });
+
+        document.getElementById('mouseDblClick').addEventListener('dblclick', () => {
+            document.getElementById('mouseOutput').textContent = "Você deu um duplo clique!";
+        });
+
+        document.getElementById('mouseEnter').addEventListener('mouseenter', () => {
+            document.getElementById('mouseOutput').textContent = "Você passou o mouse sobre o botão!";
+        });
+
+        document.getElementById('mouseLeave').addEventListener('mouseleave', () => {
+            document.getElementById('mouseOutput').textContent = "Você tirou o mouse do botão!";
+        });
+
+        // Eventos do Teclado
+        document.getElementById('keyboardInput').addEventListener('keydown', (event) => {
+            document.getElementById('keyboardOutput').textContent = `Tecla pressionada: ${event.key}`;
+        });
+
+        document.getElementById('keyboardInput').addEventListener('keyup', (event) => {
+            document.getElementById('keyboardOutput').textContent = `Tecla liberada: ${event.key}`;
+        });
+
+        document.getElementById('keyboardInput').addEventListener('input', (event) => {
+            document.getElementById('keyboardOutput').textContent = `Texto atual: ${event.target.value}`;
+        });
+
+        // Eventos de Janela
+        window.addEventListener('resize', () => {
+            document.getElementById('windowOutput').textContent = `A janela foi redimensionada para ${window.innerWidth}x${window.innerHeight}px.`;
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('windowOutput').textContent = `A página foi rolada. Posição: ${window.scrollY}px.`;
+        });
+
+        // Eventos de Formulário
+        document.getElementById('formExample').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('emailInput').value;
+            document.getElementById('formOutput').textContent = `Formulário enviado! Nome: ${name}, E-mail: ${email}`;
+        });
+
+        document.getElementById('nameInput').addEventListener('focus', () => {
+            document.getElementById('formOutput').textContent = "Você focou no campo de nome.";
+        });
+
+        document.getElementById('nameInput').addEventListener('blur', () => {
+            document.getElementById('formOutput').textContent = "Você saiu do campo de nome.";
+        });
+    </script>
+</body>
+
+</html>

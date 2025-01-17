@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando o BOM em JavaScript</title>
+</head>
+<body>
+
+    <h1>Explicando o que é o BOM</h1>
+
+    <p>O BOM (Browser Object Model) é uma interface que permite interagir com o navegador através do JavaScript. Ele fornece métodos e propriedades para manipular a janela do navegador, o histórico, os cookies, entre outros.</p>
+
+    <h2>Como e onde usar o BOM</h2>
+
+    <p>O BOM pode ser usado em várias situações, como redirecionar o usuário para outra página, abrir uma nova janela, verificar informações sobre o navegador ou atualizar a URL atual. É utilizado principalmente em aplicativos web que precisam interagir com o ambiente do navegador.</p>
+
+    <h2>Códigos do BOM</h2>
+
+    <p>Segue alguns exemplos de uso do BOM:</p>
+
+    <ul>
+        <li><strong>Abrir uma nova janela:</strong></li>
+        <pre><code>window.open("https://www.example.com", "_blank");</code></pre>
+
+        <li><strong>Exibir um alerta:</strong></li>
+        <pre><code>window.alert("Bem-vindo ao site!");</code></pre>
+
+        <li><strong>Redirecionar para outra página:</strong></li>
+        <pre><code>window.location.href = "https://www.example.com";</code></pre>
+
+        <li><strong>Verificar o tamanho da janela:</strong></li>
+        <pre><code>
+console.log("Largura: " + window.innerWidth);
+console.log("Altura: " + window.innerHeight);
+        </code></pre>
+
+        <li><strong>Interagir com o histórico do navegador:</strong></li>
+        <pre><code>window.history.back(); // Volta uma página
+window.history.forward(); // Avança uma página</code></pre>
+    </ul>
+
+</body>
+</html>

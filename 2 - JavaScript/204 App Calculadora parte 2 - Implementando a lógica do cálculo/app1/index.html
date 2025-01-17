@@ -1,0 +1,158 @@
+<html>
+
+<head>
+  <title>Calculadora</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <style>
+    /* Estilo da calculadora */
+    .calculadora {
+      margin-top: 40px;
+      border: solid 1px #000;
+      padding: 20px;
+      background-color: #2E2E2E;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px #000;
+    }
+
+    /* Estilo para os botões da calculadora */
+    .btn {
+      width: 60px;
+      height: 50px;
+      margin: 5px;
+      box-shadow: 1px 1px 1px #000;
+    }
+
+    /* Estilo para o botão de limpar (C) */
+    .clear {
+      width: 130px;
+    }
+
+    /* Estilo para o botão Enter */
+    .enter {
+      height: 110px;
+    }
+
+    /* Estilo para o botão Zero */
+    .zero {
+      width: 130px;
+    }
+
+    /* Estilo do visor onde o resultado será mostrado */
+    .resultado {
+      text-align: right;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: solid 1px #000;
+      box-shadow: 1px 1px 1px #000;
+    }
+  </style>
+</head>
+
+<body style="background: #D9D9D9">
+
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <br />
+
+        <!-- Caixa da calculadora -->
+        <div class="calculadora">
+          <input type="text" id="resultado" class="form-control resultado" placeholder="0" disabled="disabled" />
+
+          <!-- Botões da calculadora -->
+          <div class="row">
+            <button onclick="calcular('acao', 'c')" type="button"
+              class="btn btn-dark btn-lg clear font-weight-light">C</button>
+            <button onclick="calcular('acao', '/')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">/</button>
+            <button onclick="calcular('acao', '*')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">x</button>
+          </div>
+
+          <div class="row">
+            <button onclick="calcular('valor', 7)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">7</button>
+            <button onclick="calcular('valor', 8)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">8</button>
+            <button onclick="calcular('valor', 9)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">9</button>
+            <button onclick="calcular('acao', '-')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">-</button>
+          </div>
+
+          <div class="row">
+            <button onclick="calcular('valor', 4)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">4</button>
+            <button onclick="calcular('valor', 5)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">5</button>
+            <button onclick="calcular('valor', 6)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">6</button>
+            <button onclick="calcular('acao', '+')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">+</button>
+          </div>
+
+          <div class="row">
+            <button onclick="calcular('valor', 1)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">1</button>
+            <button onclick="calcular('valor', 2)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">2</button>
+            <button onclick="calcular('valor', 3)" type="button"
+              class="btn btn-dark btn-lg font-weight-light">3</button>
+            <button onclick="calcular('acao', '=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+          </div>
+
+          <div class="row" style="margin-top: -60px">
+            <button onclick="calcular('valor', 0)" type="button"
+              class="btn btn-dark zero btn-lg font-weight-light">0</button>
+            <button onclick="calcular('acao', '.')" type="button"
+              class="btn btn-dark btn-lg font-weight-light">.</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explicação do código -->
+  <p>
+    O código acima é uma calculadora simples feita em HTML, CSS e JavaScript. A calculadora possui um visor (input) onde os números e os resultados das operações serão exibidos. Ao clicar nos botões, eles são processados pela função JavaScript chamada "calcular", que adiciona números ou operadores ao visor e executa cálculos quando o botão "=" é pressionado.
+    Os botões são organizados dentro de uma estrutura de grid (Bootstrap) para facilitar o layout responsivo e a centralização da calculadora. O estilo CSS adiciona um fundo escuro e bordas arredondadas para tornar a calculadora mais visualmente atraente.
+  </p>
+
+  <script>
+    /* Função para processar os botões */
+    function calcular(tipo, valor) {
+      // Se o tipo for 'acao', significa que o botão é uma ação (como limpar ou calcular resultado)
+      if (tipo === 'acao') {
+        if (valor === 'c') {
+          // Limpa o visor
+          let resultado = document.getElementById('resultado');
+          resultado.value = '';
+        }
+        // Se o valor for um operador (+, -, *, /, .), adiciona ao visor
+        if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.') {
+          let resultado = document.getElementById('resultado');
+          resultado.value += valor;
+        }
+        // Se o valor for '=', avalia a expressão e exibe o resultado
+        if (valor === '=') {
+          let valor_campo = eval(document.getElementById('resultado').value);
+          let resultado = document.getElementById('resultado');
+          resultado.value = valor_campo;
+        }
+      } 
+      // Se o tipo for 'valor', significa que o botão é um número, e ele será adicionado ao visor
+      else if (tipo === 'valor') {
+        let resultado = document.getElementById('resultado');
+        resultado.value += valor;
+      }
+    }
+  </script>
+</body>
+
+</html>

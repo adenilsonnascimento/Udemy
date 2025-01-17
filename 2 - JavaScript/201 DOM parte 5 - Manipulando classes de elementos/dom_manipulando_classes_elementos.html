@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <style>
+    .estilo1 {
+      background: #FF0000;
+      color: #FFF;
+    }
+
+    .estilo2 {
+      width: 400px;
+      height: 50px;
+      background-color: #FF0000;
+      text-align: center;
+      font-size: 25px;
+      color: #FFF;
+      padding: 25px;
+    }
+  </style>
+  <script>
+    function modificaClasse() {
+      document.getElementById('mensagem').className = 'estilo2'
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div id="mensagem" class="estilo1">Modificando a classe do elemento</div>
+  <hr />
+  <button type="button" onclick="modificaClasse()">Aplicar classe</button>
+
+  <h2>Explicações dos códigos comentados</h2>
+  <p>
+    O código tem como objetivo modificar a classe CSS de um elemento HTML, alterando seu estilo de apresentação. Inicialmente, o elemento `<div>` possui a classe `estilo1`, que define a cor de fundo como vermelha e o texto como branco. Quando o usuário clica no botão, a função `modificaClasse()` é acionada, e a classe do elemento com o ID `mensagem` é alterada para `estilo2`, que aplica um estilo diferente: uma largura de 400px, altura de 50px, texto centralizado, tamanho de fonte maior (25px) e um padding de 25px. Isso faz com que a aparência do elemento mude ao ser clicado no botão.
+  </p>
+  
+</body>
+
+</html>

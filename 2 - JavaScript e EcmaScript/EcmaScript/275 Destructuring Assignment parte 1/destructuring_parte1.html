@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destructuring no JavaScript</title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Exemplo de Destructuring no JavaScript
+
+    // Criando um array de frutas
+    let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+    // Usando destructuring para atribuir valores de cada posição do array
+    // A variável 'b' recebe um valor padrão de 'Abacate' caso não seja atribuído valor
+    // 'e' também tem valor padrão 'Banana'
+    let [a, b = 'Abacate', c, d, e = 'Banana'] = frutas;
+
+    // Aqui, 'a' recebe 'Abacaxi', 'b' recebe 'Uva', 'c' recebe 'Pera', 
+    // 'd' recebe 'Mamão' e 'e' recebe o valor padrão 'Banana' (porque não há um valor em 'frutas' para o índice 4)
+    // console.log(a,b,c,d,e);
+
+    // Criando um array de arrays
+    let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+
+    // Usando destructuring aninhado para acessar o segundo elemento de cada sub-array
+    // A primeira vírgula no destructuring ignora o primeiro sub-array
+    // O segundo elemento do segundo sub-array é atribuído à variável 'n2'
+    let [,[,n2]] = coisas;
+
+    console.log(n2); // Exibe 'Maria'
+  </script>
+
+</head>
+
+<body>
+  <h1>Destructuring no JavaScript</h1>
+  <p>
+    O <strong>destructuring</strong> é uma sintaxe no JavaScript que permite a extração de valores de arrays ou propriedades de objetos e atribuí-los a variáveis de forma mais compacta.
+  </p>
+  <p>
+    <strong>Explicação do código:</strong>
+    <ul>
+      <li>
+        No primeiro exemplo, usamos destructuring para pegar os elementos de um array de frutas e atribuí-los a variáveis específicas.
+        Caso não haja valor para uma posição, um valor padrão pode ser atribuído à variável.
+      </li>
+      <li>
+        No segundo exemplo, o destructuring é usado de forma aninhada para acessar elementos dentro de arrays dentro de um array, 
+        extraindo o nome 'Maria' da segunda posição do segundo sub-array.
+      </li>
+    </ul>
+  </p>
+</body>
+
+</html>

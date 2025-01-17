@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#conteudo {
+    background: #dcdcdc;
+    width: 600px;
+    height: 500px;
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.item {
+    border: 1px solid red;
+    background: white;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}

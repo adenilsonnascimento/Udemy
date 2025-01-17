@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8" /> <!-- Define o padrão de codificação como UTF-8 -->
+
+		<!-- Link para o CSS do Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<!-- Link para o arquivo de estilos personalizados -->
+		<link rel="stylesheet" href="estilo.css" />
+
+		<script>
+			/* Função para iniciar o jogo */
+			function iniciarJogo() {
+				let nivel = document.getElementById('nivel').value; // Obtém o nível selecionado pelo usuário
+
+				// Verifica se o nível foi selecionado
+				if (nivel === '') {
+					alert('Selecione um nível para iniciar o jogo'); // Exibe um alerta caso o nível não esteja definido
+					return false; // Interrompe a execução
+				}
+
+				// Redireciona o usuário para a página do jogo com o nível como parâmetro na URL
+				window.location.href = 'app.html?' + nivel;
+			}
+		</script>
+	</head>
+	<body>
+		<!-- Container principal -->
+		<div class="container">
+			<!-- Linha com o logotipo -->
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<img src="imagens/game.png" alt="Logotipo do Jogo" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Linha com o seletor de nível -->
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<div class="mb-2">
+							<select class="form-control" id="nivel">
+								<option value="">-- Selecione o nível --</option> <!-- Opção padrão vazia -->
+								<option value="normal">Normal</option> <!-- Opção de nível Normal -->
+								<option value="dificil">Difícil</option> <!-- Opção de nível Difícil -->
+								<option value="chucknorris">Chuck Norris</option> <!-- Opção de nível Chuck Norris -->
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Linha com o botão para iniciar o jogo -->
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Jogo</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

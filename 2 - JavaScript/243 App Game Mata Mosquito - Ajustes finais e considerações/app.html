@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<html lang="pt-BR"></html>
+	<head>
+		<title>Jogo do Mosquito</title> <!-- Defina um título para a página -->
+		<meta charset="UTF-8" /> <!-- Define o conjunto de caracteres como UTF-8 -->
+		<link rel="stylesheet" href="estilo.css" /> <!-- Link para o arquivo de estilos CSS -->
+		<script src="jogo.js"></script> <!-- Script do jogo (lógica do jogo deve estar aqui) -->
+	</head>
+	<body onresize="ajustaTamanhoPalcoJogo()"> <!-- Ajusta o tamanho da tela quando redimensionada -->
+
+		<div class="painel"> <!-- Painel com as informações de vidas e cronômetro -->
+			<div class="vidas"> <!-- Div que contém as imagens de vidas -->
+				<img id="v1" src="imagens/coracao_cheio.png" /> <!-- Exibe as vidas com corações cheios -->
+				<img id="v2" src="imagens/coracao_cheio.png" />
+				<img id="v3" src="imagens/coracao_cheio.png" />
+			</div>
+
+			<div class="cronometro"> <!-- Exibe o cronômetro com o tempo restante -->
+				Tempo restante: <span id="cronometro"></span>
+			</div>
+		</div>
+
+		<script>
+			// Certifique-se de que a variável 'tempo' esteja inicializada corretamente no seu script principal (jogo.js)
+			document.getElementById('cronometro').innerHTML = tempo; // Atualiza a exibição do tempo
+
+			// Cria o mosquito em intervalos de tempo definidos pela variável 'criaMosquitoTempo'
+			var criaMosca = setInterval(function() { 
+				posicaoRandomica(); // Chama a função que posiciona o mosquito de forma aleatória
+			}, criaMosquitoTempo); // Executa a cada 'criaMosquitoTempo' milissegundos
+		</script>
+	</body>
+</html>

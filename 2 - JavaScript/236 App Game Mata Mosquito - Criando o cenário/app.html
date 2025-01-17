@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Mata Mosquito</title>
+</head>
+<!-- O script externo "jogo.js" será vinculado ao documento. Ele contém a lógica principal do jogo. -->
+<script src="jogo.js"></script>
+</head>
+
+<body onresize="ajustaTamanhoPalcoJogo()"> <!-- O atributo `onresize` define um manipulador de eventos que é acionado sempre que a janela do navegador é redimensionada. Aqui, ele chama a função `ajustaTamanhoPalcoJogo()`, presumivelmente definida no arquivo "jogo.js". -->
+
+	<div class="painel">
+		<div class="vidas">
+			<img src="imagens/coracao_vazio.png" />
+			<img src="imagens/coracao_cheio.png" />
+			<img src="imagens/coracao_cheio.png" />
+		</div>
+
+		<div class="cronometro">Tempo restante: ?</div>
+	</div>
+
+
+	<script>
+		setInterval(function () { // A cada 1000ms (1 segundo), a função `posicaoRandomica` é chamada.
+			posicaoRandomica(); /* Chama a função `posicaoRandomica()` definida no arquivo "jogo.js".
+			 Essa função, presumivelmente, gera uma posição aleatória para os elementos do jogo,
+			 como os mosquitos que o jogador deve eliminar. */
+		}, 1000)
+	</script>
+
+	<script>
+
+	</script>
+</body>
+
+</html>

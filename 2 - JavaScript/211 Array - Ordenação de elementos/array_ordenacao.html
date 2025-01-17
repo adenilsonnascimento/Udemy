@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+    /* 
+    let lista_frutas = Array()
+
+    lista_frutas[0] = 'Maçã'
+    lista_frutas[1] = 'Uva'
+    lista_frutas[2] = 'Banana'
+    lista_frutas[3] = 'Morango'
+
+    // Exibindo a lista de frutas ordenada em ordem alfabética
+    console.log(lista_frutas.sort()) 
+    */
+
+    let lista_numeros = Array()
+
+    // Atribuindo números ao array
+    lista_numeros[0] = 12
+    lista_numeros[1] = 40
+    lista_numeros[2] = 3
+    lista_numeros[3] = 7
+    lista_numeros[4] = 19
+    lista_numeros[5] = 1
+
+    // Ordenando a lista de números e exibindo no console
+    console.log(lista_numeros.sort(ordenaNumeros))
+
+    // Função para ordenar números em ordem crescente
+    function ordenaNumeros(a, b) {
+      return a - b
+    }
+  </script>
+
+</head>
+
+<body>
+  <p>
+    O código começa com um exemplo de array de frutas, onde elementos como 'Maçã', 'Uva', 'Banana' e 'Morango' são atribuídos a um array. A função <code>sort()</code> é utilizada para ordenar esse array em ordem alfabética.
+    <br><br>
+    A seguir, um novo array chamado <code>lista_numeros</code> é criado e preenchido com números. A função <code>sort()</code> também é aplicada, mas, ao contrário da ordenação de strings, a ordenação de números precisa de uma função personalizada para garantir que a ordem seja numérica. 
+    <br><br>
+    A função <code>ordenaNumeros(a, b)</code> recebe dois parâmetros e retorna a diferença entre eles. Se o valor retornado for negativo, o item <code>a</code> ficará antes de <code>b</code>. Caso contrário, <code>b</code> ficará antes de <code>a</code>, realizando a ordenação crescente.
+    <br><br>
+    Em resumo, a função <code>sort()</code> sem um parâmetro apenas ordena os itens como se fossem strings, o que pode causar resultados inesperados para números, como no caso do array <code>lista_numeros</code> que precisa da função de comparação para uma ordenação numérica correta.
+  </p>
+</body>
+
+</html>

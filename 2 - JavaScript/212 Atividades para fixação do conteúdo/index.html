@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>JavaScript</title>
+ <script>
+ let objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+ function adicionarObjetos() {
+   // Recupera o valor inserido no campo de texto com id 'objeto'
+   let objeto = document.getElementById('objeto').value
+
+   // Caso o campo não esteja vazio, entra no if
+   if (objeto != '') {
+     // Verifica se o valor já existe no array
+     // Se existir, exibe um alerta informando que o objeto já foi adicionado
+     // Caso contrário, adiciona o novo valor ao array
+     if (objetos.indexOf(objeto) !== -1) {
+       alert('Objeto já foi adicionado')
+     } else {
+       objetos.push(objeto)  // Adiciona o objeto ao array
+       console.log(objetos)   // Exibe o array no console
+
+       // Limpa o campo de texto após adicionar o objeto
+       document.getElementById('objeto').value = ''
+     }
+
+   } else {
+     // Exibe um alerta caso o campo esteja vazio
+     alert('Informe um objeto válido')
+   }
+ }
+
+ function ordenarObjetos() {
+   // Ordena o array de objetos em ordem alfabética
+   objetos.sort()
+   console.log(objetos)  // Exibe o array ordenado no console
+ }
+ </script>
+
+ </head>
+ <body>
+
+ <input type="text" id="objeto" />
+ <button onclick="adicionarObjetos()">Adicionar</button>
+ <button onclick="ordenarObjetos()">Ordenar</button>
+
+ <p>
+   O código acima realiza a manipulação de um array de objetos, permitindo que o usuário adicione novos itens ao array, e também ordene esse array. A função <code>adicionarObjetos</code> verifica se o campo de texto não está vazio e se o objeto já foi adicionado anteriormente. Se o objeto não existir no array, ele será adicionado, e o campo de texto será limpo. Caso contrário, um alerta será exibido informando que o objeto já foi adicionado. 
+   <br><br>
+   A função <code>ordenarObjetos</code> é responsável por ordenar os objetos do array em ordem alfabética, utilizando o método <code>sort()</code>, e exibindo o resultado no console. Caso o usuário insira um objeto vazio, o código irá alertá-lo para preencher um valor válido.
+ </p>
+
+ </body>
+</html>

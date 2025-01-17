@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Slugs Racer";
+    src: url("../fontes/Slugs-Racer.woff");
+}
+@font-face {
+    font-family: "Ancient Medium";
+    src: url(../fontes/Ancient-Medium.woff);
+}
+h1 {
+    font-size: 4em;
+    font-family:"Slugs Racer";
+}
+h2 {
+    font-size: 6em;
+    font-family: "Ancient Medium";
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+  <script>
+
+    let janela
+    // Função para abrir uma nova janela (pop-up)
+    function abrirPopUp() {
+      // Cria uma nova janela apontando para o Google, com dimensões específicas
+       janela = window.open('http://www.google.com.br', 'nova_janela', 'width=200, height=100');
+    }
+
+    // Função para fechar a janela aberta pela função abrirPopUp
+    function fecharPopUp() {
+      // Fecha a janela aberta pela função anterior
+      janela.close();
+    }
+  </script>
+
+</head>
+
+<body>
+  <!-- Botão para abrir a janela pop-up -->
+  <button onclick="abrirPopUp()">Abrir janela</button>
+
+  <!-- Botão para fechar a janela pop-up -->
+  <button onclick="fecharPopUp()">Fechar janela</button>
+
+  <!-- Botão para imprimir a página atual -->
+  <button onclick="window.print()">Imprimir página</button>
+
+  <!-- Explicação sobre o código -->
+  <p>
+    Este código implementa funcionalidades de controle de uma janela pop-up e impressão da página atual. O botão "Abrir janela" chama a função <code>abrirPopUp</code>, que utiliza <code>window.open</code> para abrir uma nova janela apontando para o site do Google, com dimensões definidas (200x100 pixels). O botão "Fechar janela" chama a função <code>fecharPopUp</code>, que fecha a janela criada pela função anterior usando <code>janela.close()</code>. Por fim, o botão "Imprimir página" utiliza <code>window.print()</code> para abrir a interface de impressão do navegador para a página atual. 
+    <br /><br />
+    No código comentado, as variáveis foram modificadas para utilizar <code>let</code>, garantindo melhor escopo e práticas modernas de JavaScript. O código comentado explica o uso de variáveis locais para armazenar referências às janelas criadas.
+  </p>
+</body>
+
+</html>

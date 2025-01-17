@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      function exibirArtigo(id, callbackSucesso, callbackErro){
+        //lógica: recuperar o id via requisição HTTP
+        if(true){
+          callbackSucesso('Funções de callback em JS', 'Funções de callback são muitas utilizadas....')
+        } else {
+          callbackErro('Erro ao recuperar os dados')
+        }
+      }
+
+      var callbackSucesso = function(titulo, descricao){
+        document.write('<h1>' + titulo + '</h1>')
+        document.write('<hr />')
+        document.write('<p>' + descricao + '</p>')
+        
+      }
+      var callbackErro = function(erro){
+        document.write('<p><b>Erro:</br>' + erro + '</p>')
+      }
+
+      exibirArtigo(1, callbackSucesso , callbackErro)
+    </script>
+    
+  </head>
+
+  <body>
+
+<p>
+
+  Esse código JavaScript demonstra o uso de funções de callback, que são funções passadas como argumento para outras funções e são chamadas (ou "devolvidas") dependendo do fluxo da lógica da função principal. <br><br>
+
+  Vamos explicar cada parte do código: <br><br>
+  
+  Função exibirArtigo <br> <br>
+
+  function exibirArtigo(id, callbackSucesso, callbackErro) { <br>
+    //lógica: recuperar o id via requisição HTTP <br>
+    if(true) { <br>
+      callbackSucesso('Funções de callback em JS', 'Funções de callback são muitas utilizadas....') <br>
+    } else { <br>
+      callbackErro('Erro ao recuperar os dados') <br>
+    } <br>
+  } <br><br>
+
+  Parâmetros: <br><br>
+  
+  id: seria o identificador do artigo que se deseja recuperar. Embora não esteja sendo utilizado, em uma implementação real, isso poderia ser usado em uma requisição para buscar um artigo no servidor. <br>
+  callbackSucesso: é a função que será chamada caso a requisição seja bem-sucedida (simulando a recuperação do artigo). <br>
+  callbackErro: é a função que será chamada se houver um erro ao recuperar o artigo. <br><br>
+
+  Fluxo da Função: <br><br>
+  
+  O código faz uma verificação (nesse caso, sempre true, simulando uma recuperação bem-sucedida). <br>
+  Se o resultado for positivo, chama-se callbackSucesso passando o título e a descrição do artigo. <br>
+  Caso contrário, chamaria o callbackErro passando a mensagem de erro. <br><br>
+
+  Função callbackSucesso <br><br>
+
+  var callbackSucesso = function(titulo, descricao) { <br>
+    document.write('<h1>' + titulo + '</h1>') <br>
+    document.write('<hr />') <br>
+    document.write('<p>' + descricao + '</p>') <br>
+  }<br><br>
+
+  Essa função é executada quando o artigo é recuperado com sucesso. <br>
+  Ela recebe dois parâmetros: o titulo e a descricao do artigo. <br>
+  Usa document.write() para exibir o título como um h1, e a descrição dentro de um parágrafo <p>, formatados com uma linha horizontal (<hr />). <br><br>
+
+  Função callbackErro <br><br>
+
+  var callbackErro = function(erro) { <br>
+    document.write('<p><b>Erro:</b>' + erro + '</p>') <br>
+  } <br><br>
+
+  Essa função é chamada se ocorrer um erro na recuperação dos dados. <br>
+  Recebe uma mensagem de erro (erro), e usa document.write() para exibi-la em negrito. <br><br>
+
+  Chamando a função principal <br><br>
+
+  exibirArtigo(1, callbackSucesso, callbackErro) <br><br>
+
+  Aqui, a função exibirArtigo é chamada, passando três argumentos: <br>
+  O ID do artigo (1), que neste exemplo é irrelevante. <br>
+  A função callbackSucesso, que exibe o artigo se tudo der certo. <br>
+  A função callbackErro, que exibe uma mensagem se ocorrer um erro. <br>
+  Explicação sobre Funções de Callback <br>
+  As funções de callback são extremamente úteis em JavaScript para controle de fluxo, especialmente em operações assíncronas como requisições de API, onde você não sabe exatamente quando uma operação terminará (por exemplo, esperar uma resposta de um servidor). <br><br>
+  
+  O callback de sucesso (callbackSucesso) é executado quando uma tarefa ou operação é realizada com êxito. <br>
+  O callback de erro (callbackErro) é acionado se algo der errado. <br>
+  Nesse exemplo, estamos simulando um cenário onde a função principal (exibirArtigo) executa uma lógica e, dependendo do resultado, chama o callback adequado.<br> <br>
+  
+  Finalidade de Uso<br>
+  Esse tipo de estrutura é muito usada para: <br><br>
+  
+  Requisições HTTP/AJAX. <br>
+  Manipulação de eventos. <br>
+  Operações assíncronas (como setTimeout, setInterval, e promessas).
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Chat
+
+</p>
+
+  </body>
+</html>

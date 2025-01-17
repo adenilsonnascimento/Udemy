@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Fixação</title>
+</head>
+
+<body>
+    <p>
+        Este código tem dois blocos principais: um que manipula uma lista de frutas e outro que exibe a tabuada de 1 a
+        10. Ambos são implementados com estruturas de laço.<br><br>
+
+        <strong>Manipulação da lista de frutas:</strong><br>
+        1. Uma array chamada <code>lista_frutas</code> é criada e inicializada com quatro elementos: 'Banana', 'Maçã',
+        'Morango' e 'Uva'.<br>
+        2. Um laço <code>for</code> é usado para percorrer o array, exibindo cada fruta no documento HTML com
+        <code>document.write</code> e também no console com <code>console.log</code>.<br><br>
+
+        <strong>Exibição da tabuada:</strong><br>
+        1. Dois laços <code>while</code> são utilizados para gerar a tabuada de 1 a 10.<br>
+        2. O laço externo controla o número base (variável <code>x</code>), enquanto o laço interno percorre os
+        multiplicadores (variável <code>y</code>).<br>
+        3. Para cada combinação de <code>x</code> e <code>y</code>, o resultado da multiplicação é exibido no documento
+        HTML e no console.<br>
+        4. Após cada ciclo completo de multiplicadores, uma linha horizontal (<code>&lt;hr/&gt;</code>) é inserida no
+        HTML para separar as tabuadas.<br><br>
+
+        Este exercício demonstra o uso de arrays e loops para resolver problemas básicos de lógica e exibir os
+        resultados no navegador e no console.
+    </p>
+
+    <script>
+        // Criação de uma lista (array) com frutas
+        let lista_frutas = Array();
+        lista_frutas[0] = 'Banana';
+        lista_frutas[1] = 'Maçã';
+        lista_frutas[2] = 'Morango';
+        lista_frutas[3] = 'Uva';
+
+        // Percorrendo o array com um laço 'for' para exibir cada elemento
+        for (let i = 0; i < lista_frutas.length; i++) {
+            document.write(lista_frutas[i] + '<br>'); // Exibe no HTML
+            console.log(lista_frutas[i]); // Exibe no console
+        }
+
+        // Declaração de variáveis para gerar a tabuada
+        let x = 1; // Número base da tabuada
+        let y = 1; // Multiplicador
+
+        // Laço externo para os números base
+        while (x <= 10) {
+            y = 1; // Reinicia o multiplicador para cada número base
+
+            // Laço interno para os multiplicadores
+            while (y <= 10) {
+                // Exibe o cálculo no console e no HTML
+                console.log(x + ' x ' + y + ' = ' + x * y);
+                document.write(x + ' x ' + y + ' = ' + x * y + '<br>');
+                y++; // Incrementa o multiplicador
+            }
+
+            // Adiciona uma linha horizontal no HTML após cada tabuada
+            console.log("\n"); // Adiciona quebra de linha no console
+            document.write("<hr/>");
+            x++; // Incrementa o número base
+        }
+    </script>
+</body>
+
+</html>

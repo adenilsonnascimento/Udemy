@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<link rel="stylesheet" href="estilo.css" />
+		<script src="jogo.js"></script>
+	</head>
+	<body onresize="ajustaTamanhoPalcoJogo()"> <!-- A cada redimensionamento da janela, a função `ajustaTamanhoPalcoJogo()` será chamada. -->
+    
+		<!-- A área do painel onde as vidas e o cronômetro serão exibidos -->
+		<div class="painel">
+			
+			<!-- A seção que exibe as vidas restantes -->
+			<div class="vidas">
+				<!-- Imagens que representam as vidas, inicialmente com corações cheios -->
+				<img id="v1" src="imagens/coracao_cheio.png" />
+				<img id="v2" src="imagens/coracao_cheio.png" />
+				<img id="v3" src="imagens/coracao_cheio.png" />
+			</div>
+	
+			<!-- A seção do cronômetro, que mostrará o tempo restante do jogo -->
+			<div class="cronometro">Tempo restante: ?</div>
+		</div>
+	
+		<!-- Script para incluir a lógica do jogo (game.js), que lida com a lógica de movimentação e interação dos mosquitos -->
+		<script src="jogo.js"></script>
+	
+		<!-- Script que cria o comportamento do jogo. A cada 1 segundo, a função `posicaoRandomica` será chamada, criando um novo mosquito em uma posição aleatória -->
+		<script>
+			setInterval(function () {
+				posicaoRandomica(); // Chama a função posicaoRandomica, que provavelmente cria e posiciona o mosquito aleatoriamente na tela
+			}, 1000); // A função é chamada a cada 1000ms (1 segundo)
+		</script>
+	
+</html>
