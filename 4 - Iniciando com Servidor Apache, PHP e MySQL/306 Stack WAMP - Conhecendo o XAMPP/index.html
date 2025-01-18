@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack WAMP - Conhecendo o XAMPP</title>
+</head>
+<body>
+    <h1>Stack WAMP - Conhecendo o XAMPP</h1>
+    <p>O XAMPP é uma ferramenta popular que fornece uma stack de desenvolvimento web no formato WAMP (Windows, Apache, MySQL, PHP), permitindo que você crie e teste sites localmente. Ele é multiplataforma e pode ser instalado em sistemas operacionais como Windows, macOS e Linux.</p>
+
+    <h2>1. O que é o XAMPP?</h2>
+    <p><strong>XAMPP</strong> é uma distribuição de código aberto que inclui Apache, MariaDB, PHP e Perl, projetada para facilitar o desenvolvimento web. Ele oferece um ambiente completo para criar e testar sites em PHP sem a necessidade de se preocupar com a instalação e configuração de servidores e bancos de dados manualmente.</p>
+
+    <h2>2. Como usar o XAMPP</h2>
+    <p>Após instalar o XAMPP, você pode iniciar e parar os serviços Apache e MySQL diretamente pela interface gráfica do XAMPP.</p>
+    <ul>
+        <li>Inicie o XAMPP e abra a interface gráfica.</li>
+        <li>Clique em "Start" ao lado de "Apache" para iniciar o servidor web.</li>
+        <li>Clique em "Start" ao lado de "MySQL" para iniciar o banco de dados MariaDB.</li>
+        <li>Quando ambos os serviços estiverem em execução, você verá as palavras "Running" ao lado deles.</li>
+    </ul>
+
+    <h2>3. O que o XAMPP faz?</h2>
+    <p>O XAMPP oferece os seguintes componentes principais:</p>
+    <ul>
+        <li><strong>Apache</strong>: Servidor web que processa as requisições HTTP e exibe suas páginas no navegador.</li>
+        <li><strong>MariaDB</strong>: Sistema de gerenciamento de banco de dados (relacional) usado para armazenar dados das aplicações web.</li>
+        <li><strong>PHP</strong>: Linguagem de programação usada para criar sites dinâmicos e interativos.</li>
+        <li><strong>Perl</strong>: Linguagem de programação adicional que pode ser usada para tarefas de automação e processamento de texto.</li>
+    </ul>
+
+    <h2>4. Portas do XAMPP</h2>
+    <p>O XAMPP, por padrão, utiliza as seguintes portas:</p>
+    <ul>
+        <li><strong>Apache:</strong> Porta 80 para HTTP (padrão), porta 443 para HTTPS.</li>
+        <li><strong>MySQL:</strong> Porta 3306 para o banco de dados MariaDB.</li>
+    </ul>
+    <p>Se você já tiver outro servidor web em execução (como o IIS ou Nginx), pode ser necessário mudar a porta padrão do Apache. Para fazer isso, siga os passos abaixo:</p>
+    <ol>
+        <li>Abra o XAMPP e clique em "Config" ao lado de Apache.</li>
+        <li>Escolha "httpd.conf" para editar o arquivo de configuração do Apache.</li>
+        <li>Procure por <code>Listen 80</code> e altere o número 80 para outra porta, como 8080.</li>
+        <li>Salve o arquivo e reinicie o Apache.</li>
+    </ol>
+    <p>Agora, ao acessar o servidor local, você precisará digitar a nova porta na URL, como <code>http://localhost:8080</code>.</p>
+
+    <h2>5. Criando o Primeiro Arquivo PHP</h2>
+    <p>Agora que o XAMPP está funcionando corretamente, você pode começar a criar seu primeiro arquivo PHP. Siga os passos abaixo:</p>
+    <ul>
+        <li>Abra o diretório <code>/htdocs</code> dentro da pasta onde o XAMPP foi instalado. No Windows, isso geralmente fica em <code>C:\xampp\htdocs</code>. No macOS e Linux, o caminho é <code>/opt/lampp/htdocs</code>.</li>
+        <li>Crie um novo arquivo de texto e salve-o como <code>index.php</code> no diretório <code>/htdocs</code>.</li>
+        <li>Abra o arquivo <code>index.php</code> em um editor de texto e adicione o seguinte código:</li>
+        <pre>
+            &lt;?php
+                echo "Olá, mundo! Meu primeiro arquivo PHP!";
+            ?&gt;
+        </pre>
+        <li>Salve o arquivo e abra o navegador.</li>
+        <li>Digite <code>http://localhost/index.php</code> na barra de endereços. Você deve ver a mensagem "Olá, mundo! Meu primeiro arquivo PHP!" exibida na tela.</li>
+    </ul>
+
+    <h2>6. Conclusão</h2>
+    <p>O XAMPP facilita a criação e o teste de sites dinâmicos, oferecendo todos os componentes necessários (Apache, MySQL, PHP e Perl) em uma única instalação. Ao configurar corretamente as portas e criar seus primeiros arquivos PHP, você estará pronto para desenvolver e testar suas aplicações web localmente antes de colocá-las em produção.</p>
+    
+    <p>Para mais informações sobre o XAMPP e como configurá-lo, acesse o site oficial: <a href="https://www.apachefriends.org/index.html" target="_blank">Apache Friends</a>.</p>
+</body>
+</html>

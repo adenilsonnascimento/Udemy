@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Linux] - Stack WAMP - Configurando o back-end com XAMPP</title>
+</head>
+<body>
+    <h1>[Linux] - Stack WAMP - Configurando o back-end com XAMPP</h1>
+    <p>Embora a sigla <strong>WAMP</strong> (Windows, Apache, MySQL, PHP) se refira originalmente ao ambiente Windows, os componentes desta stack também podem ser utilizados no <strong>Linux</strong> com a ajuda do <strong>XAMPP</strong>. O XAMPP oferece uma maneira simples e eficiente de configurar um ambiente de desenvolvimento web no Linux.</p>
+
+    <h2>1. O que é o XAMPP?</h2>
+    <p><strong>XAMPP</strong> é uma distribuição que inclui Apache, MariaDB, PHP e Perl, projetada para facilitar o desenvolvimento web local. Ele é multiplataforma, tornando-se uma escolha popular para desenvolvedores que trabalham em Linux.</p>
+
+    <h2>2. Instalando o XAMPP no Linux</h2>
+    <p>Para instalar o XAMPP no Linux, siga os passos abaixo:</p>
+    <ol>
+        <li>Visite o site oficial do XAMPP em <a href="https://www.apachefriends.org/index.html" target="_blank">Apache Friends</a>.</li>
+        <li>Baixe o instalador do XAMPP para Linux.</li>
+        <li>Abra o terminal e navegue até o diretório onde o instalador foi baixado.</li>
+        <li>Execute o comando <code>sudo chmod +x xampp-linux-*-installer.run</code> para tornar o instalador executável.</li>
+        <li>Execute o instalador com o comando <code>sudo ./xampp-linux-*-installer.run</code> e siga as instruções na tela.</li>
+    </ol>
+
+    <h2>3. Configurando o Servidor Apache</h2>
+    <p>Após instalar o XAMPP, você pode configurar o servidor Apache no Linux:</p>
+    <ul>
+        <li>Abra o terminal e inicie o XAMPP com o comando <code>sudo /opt/lampp/lampp start</code>.</li>
+        <li>Para verificar se o Apache está funcionando, abra o navegador e acesse <a href="http://localhost" target="_blank">http://localhost</a>. Se estiver tudo certo, a página inicial do XAMPP será exibida.</li>
+    </ul>
+
+    <h2>4. Configurando o Banco de Dados com MariaDB</h2>
+    <p>O XAMPP usa MariaDB como sistema de gerenciamento de banco de dados. Para configurá-lo no Linux:</p>
+    <ul>
+        <li>O MariaDB é iniciado automaticamente com o XAMPP. Para verificar, acesse <a href="http://localhost/phpmyadmin" target="_blank">http://localhost/phpmyadmin</a> no navegador.</li>
+        <li>O phpMyAdmin fornece uma interface gráfica para gerenciar bancos de dados MariaDB.</li>
+    </ul>
+
+    <h2>5. Executando Aplicações PHP</h2>
+    <p>Para executar seus scripts PHP no Linux:</p>
+    <ul>
+        <li>Salve seus arquivos PHP no diretório <code>/opt/lampp/htdocs</code>.</li>
+        <li>Acesse seus scripts PHP digitando <code>http://localhost/nome_do_seu_arquivo.php</code> no navegador.</li>
+    </ul>
+
+    <h2>6. Vantagens de Usar XAMPP no Linux</h2>
+    <p>O XAMPP oferece diversas vantagens para os desenvolvedores Linux:</p>
+    <ul>
+        <li>Instalação simples e rápida de um ambiente de desenvolvimento completo.</li>
+        <li>Inclui todos os componentes necessários para o desenvolvimento web em um único pacote.</li>
+        <li>Suporte para diferentes distribuições Linux.</li>
+    </ul>
+
+    <p>Para mais informações sobre como usar e configurar o XAMPP no Linux, visite o site oficial em <a href="https://www.apachefriends.org/index.html" target="_blank">Apache Friends</a>.</p>
+</body>
+</html>

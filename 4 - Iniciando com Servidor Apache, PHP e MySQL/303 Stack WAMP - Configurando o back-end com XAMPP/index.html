@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack WAMP - Configurando o back-end com XAMPP</title>
+</head>
+<body>
+    <h1>Stack WAMP - Configurando o back-end com XAMPP</h1>
+    <p>A <strong>Stack WAMP</strong> (Windows, Apache, MySQL, PHP) é uma das configurações de servidor mais populares para desenvolvimento web em ambientes Windows. Para facilitar a configuração, muitos desenvolvedores utilizam o <strong>XAMPP</strong>, um pacote de software que inclui todos os componentes necessários para rodar um servidor local.</p>
+
+    <h2>1. O que é o XAMPP?</h2>
+    <p><strong>XAMPP</strong> é uma distribuição Apache totalmente gratuita e fácil de instalar, que contém MariaDB (um fork do MySQL), PHP e Perl. Ele foi projetado para tornar o desenvolvimento web mais simples e é multiplataforma, funcionando em Windows, Linux e macOS.</p>
+
+    <h2>2. Instalando o XAMPP</h2>
+    <p>Para instalar o XAMPP no Windows, siga estes passos:</p>
+    <ol>
+        <li>Acesse o site oficial do XAMPP em <a href="https://www.apachefriends.org/index.html" target="_blank">Apache Friends</a>.</li>
+        <li>Baixe o instalador do XAMPP para Windows.</li>
+        <li>Execute o instalador e siga as instruções na tela.</li>
+        <li>Durante a instalação, você pode escolher os componentes que deseja instalar. Certifique-se de que Apache, MySQL e PHP estejam selecionados.</li>
+        <li>Conclua a instalação e inicie o XAMPP Control Panel.</li>
+    </ol>
+
+    <h2>3. Configurando o Servidor Apache</h2>
+    <p>Após instalar o XAMPP, você pode configurar o servidor Apache para rodar suas aplicações web:</p>
+    <ul>
+        <li>No XAMPP Control Panel, clique em "Start" ao lado de Apache para iniciar o servidor.</li>
+        <li>Para verificar se o Apache está funcionando, abra o navegador e acesse <a href="http://localhost" target="_blank">http://localhost</a>. Se tudo estiver configurado corretamente, você verá a página inicial do XAMPP.</li>
+    </ul>
+
+    <h2>4. Configurando o Banco de Dados com MariaDB</h2>
+    <p>MariaDB é usado como o sistema de gerenciamento de banco de dados no XAMPP. Para configurá-lo:</p>
+    <ul>
+        <li>No XAMPP Control Panel, clique em "Start" ao lado de MySQL para iniciar o servidor de banco de dados.</li>
+        <li>Acesse <a href="http://localhost/phpmyadmin" target="_blank">http://localhost/phpmyadmin</a> no navegador para abrir o phpMyAdmin, uma interface gráfica para gerenciar bancos de dados MariaDB.</li>
+        <li>Você pode criar novos bancos de dados, tabelas, inserir dados e executar consultas SQL diretamente no phpMyAdmin.</li>
+    </ul>
+
+    <h2>5. Executando Aplicações PHP</h2>
+    <p>Para executar suas aplicações PHP, salve seus arquivos na pasta <code>htdocs</code> dentro do diretório onde o XAMPP foi instalado (normalmente <code>C:\xampp\htdocs</code>).</p>
+    <p>Acesse seus scripts PHP através do navegador, digitando a URL <code>http://localhost/nome_do_seu_arquivo.php</code>.</p>
+
+    <h2>6. Vantagens de Usar XAMPP</h2>
+    <p>O XAMPP oferece várias vantagens para desenvolvedores, incluindo:</p>
+    <ul>
+        <li>Facilidade de instalação e configuração.</li>
+        <li>Inclui todos os componentes necessários para o desenvolvimento web em um único pacote.</li>
+        <li>Suporte a múltiplas plataformas.</li>
+        <li>Ferramentas adicionais como o phpMyAdmin para gerenciar bancos de dados.</li>
+    </ul>
+
+    <p>Para mais informações sobre como usar e configurar o XAMPP, visite o site oficial em <a href="https://www.apachefriends.org/index.html" target="_blank">Apache Friends</a>.</p>
+</body>
+</html>
