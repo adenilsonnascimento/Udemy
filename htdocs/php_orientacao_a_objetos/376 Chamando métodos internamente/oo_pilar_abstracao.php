@@ -2,93 +2,59 @@
 // Definição da classe Funcionario
 class Funcionario
 {
-    // Atributos da classe inicializados com valor null (nulo)
-    public $nome = null; // Armazena o nome do funcionário
-    public $telefone = null; // Armazena o telefone do funcionário
-    public $numFilhos = null; // Armazena o número de filhos do funcionário
-    public $cargo = null; // Armazena o cargo do funcionário
-    public $salario = null; // Armazena o salário do funcionário
 
-    // Método mágico __set para definir dinamicamente o valor de um atributo
+    public $nome = null;
+    public $telefone = null;
+    public $numFilhos = null;
+    public $cargo = null;
+    public $salario = null;
+
+
     function __set($atributo, $valor)
     {
-        /*
-                O método __set é chamado automaticamente quando se tenta atribuir um valor a um atributo inacessível ou não declarado explicitamente.
-                $atributo: Nome do atributo que está sendo definido.
-                $valor: Valor que será atribuído ao atributo.
-            */
-        $this->$atributo = $valor; // Define o valor do atributo dinamicamente
+        $this->$atributo = $valor;
     }
 
-    // Método mágico __get para obter dinamicamente o valor de um atributo
+
     function __get($atributo)
     {
-        /*
-                O método __get é chamado automaticamente quando se tenta acessar um atributo inacessível ou não declarado explicitamente.
-                $atributo: Nome do atributo que está sendo acessado.
-            */
-        return $this->$atributo; // Retorna o valor do atributo dinamicamente
+        return $this->$atributo;
     }
 
-    /* 
-        // Métodos "setter" e "getter" comentados, pois os métodos mágicos __set e __get substituem sua funcionalidade
-        function setNome($nome) {
-            $this->nome = $nome;
-        }
-        function setNumFilhos($numFilhos) {
-            $this->numFilhos = $numFilhos;
-        }
-        function getNome() {
-            return $this->nome;
-        }
-        function getNumFilhos() {
-            return $this->numFilhos;
-        }
-        */
-
-    // Método para resumir os dados do funcionário
     function resumirCadFunc()
     {
-        /* 
-                O operador $this refere-se ao próprio objeto que está chamando o método.
-                Aqui, estamos usando o método mágico __get para acessar os atributos 'nome' e 'numFilhos'.
-            */
-        return $this->__get('nome') . " possui " . $this->__get('numFilhos') . " filho(s)";
+        return $this->__get('nome') . " possui " . $this->__get('numFilhos') . " filho(s) e o telefone " . $this->__get('telefone') . " e o cargo " . $this->__get('cargo') . " e o salario " . $this->__get('salario') . "";
     }
 
-    // Método para modificar o número de filhos do funcionário
-    function modificarNumFilhos($numFilhos)
+    function cadastrarFuncionario($nome, $telefone, $numFilhos, $cargo, $salario)
     {
-        /*
-                A variável $this->numFilhos refere-se ao atributo numFilhos do objeto atual.
-                Já $numFilhos é o parâmetro recebido pelo método, que será usado para atualizar o valor do atributo.
-            */
+        $this->nome = $nome;
+        $this->telefone = $telefone;
         $this->numFilhos = $numFilhos;
+        $this->cargo = $cargo;
+        $this->salario = $salario;
     }
 }
 
-// Criação de uma instância da classe Funcionario
-$y = new Funcionario(); // $y é um objeto da classe Funcionario
 
-// Define o nome do funcionário $y como 'José' usando o método mágico __set
+$y = new Funcionario();
+
 $y->__set('nome', 'José');
-
-// Define o número de filhos do funcionário $y como 2 usando o método mágico __set
 $y->__set('numFilhos', 2);
+$y->__set('telefone', '1234-5678');
+$y->__set('cargo', 'Desenvolvedor');
+$y->__set('salario', 'R$ 1.000,00');
 
 // Exibe o resumo do cadastro do funcionário $y usando o método resumirCadFunc()
 echo $y->resumirCadFunc(); // Exibe: "José possui 2 filho(s)"
 
-echo '<br />'; // Quebra de linha para melhor visualização
+echo '<br />';
 
-// Criação de outra instância da classe Funcionario
-$x = new Funcionario(); // $x é outro objeto da classe Funcionario
 
-// Define o nome do funcionário $x como 'Maria' usando o método mágico __set
-$x->__set('nome', 'Maria');
+$x = new Funcionario();
 
-// Define o número de filhos do funcionário $x como 0 usando o método mágico __set
-$x->__set('numFilhos', 0);
+
+$x->cadastrarFuncionario('Maria', '9876-5432', 0, 'Garçonete', 'R$ 1.500,00');
 
 // Exibe o resumo do cadastro do funcionário $x usando o método resumirCadFunc()
 echo $x->resumirCadFunc(); // Exibe: "Maria possui 0 filho(s)"

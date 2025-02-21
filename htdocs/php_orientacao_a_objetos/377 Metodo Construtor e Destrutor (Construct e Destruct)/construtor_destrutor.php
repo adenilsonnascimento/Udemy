@@ -2,21 +2,23 @@
 // Definição da classe Pessoa
 class Pessoa
 {
-	public $nome = null; // Atributo público para armazenar o nome da pessoa
+	public $nome = null; 
 
 	// Método construtor (__construct) é chamado automaticamente ao criar uma nova instância da classe
 	function __construct($nome)
 	{
-		echo 'Objeto iniciado'; // Exibe uma mensagem quando o objeto é criado
+		echo 'Objeto iniciado'; 
 		$this->nome = $nome; // Define o valor do atributo $nome com o valor passado como parâmetro
 	}
 
 	// Método destrutor (__destruct) é chamado automaticamente quando o objeto é removido da memória
 	function __destruct()
 	{
-		echo 'Objeto removido'; // Exibe uma mensagem quando o objeto é destruído
+		echo 'Objeto removido'; 
 	}
+     
 
+	//________________________________________________________________
 	// Método mágico __get para acessar dinamicamente os atributos do objeto
 	function __get($atributo)
 	{
@@ -30,13 +32,13 @@ class Pessoa
 	}
 }
 
-// Criação de uma instância da classe Pessoa, passando 'Jorge' como nome
-$pessoa = new Pessoa('Jorge'); // O construtor é chamado automaticamente aqui
+//________________________________________________________________
+// Criação de uma instância da classe Pessoa
+$pessoa = new Pessoa('Adenilson'); // O construtor é chamado automaticamente aqui
 
-echo '<br />Nome: ' . $pessoa->__get('nome'); // Exibe o nome da pessoa usando o método mágico __get
+echo '<br />Nome: ' . $pessoa->__get('nome'); 
 
-echo '<br />' . $pessoa->correr(); // Chama o método correr() e exibe a mensagem formatada
+echo '<br />' . $pessoa->correr(); 
+echo '<br />'; 
 
-echo '<br />'; // Quebra de linha para melhorar a visualização
-
-// unset($pessoa); // Linha comentada propositalmente. Se descomentada, remove o objeto da memória, chamando o destrutor
+ unset($pessoa);  //remove o objeto da memória, chamando o destrutor

@@ -2,14 +2,16 @@
 // Definição da classe Funcionario
 class Funcionario
 {
-    // Atributos da classe inicializados com valor null (nulo)
-    public $nome = null; // Armazena o nome do funcionário
-    public $telefone = null; // Armazena o telefone do funcionário
-    public $numFilhos = null; // Armazena o número de filhos do funcionário
-    public $cargo = null; // Armazena o cargo do funcionário
-    public $salario = null; // Armazena o salário do funcionário
+    
+    public $nome = null; 
+    public $telefone = null; 
+    public $numFilhos = null; 
+    public $cargo = null; 
+    public $salario = null; 
 
-    // Método mágico __set para definir dinamicamente o valor de um atributo
+
+    //________________________________________________________________
+    // Método mágico __set para definir dinamicamente o valor de um atributo (overloading/sobrecarga)
     function __set($atributo, $valor)
     {
         /*
@@ -20,6 +22,7 @@ class Funcionario
         $this->$atributo = $valor; // Define o valor do atributo dinamicamente
     }
 
+    //________________________________________________________________
     // Método mágico __get para obter dinamicamente o valor de um atributo
     function __get($atributo)
     {
@@ -30,65 +33,44 @@ class Funcionario
         return $this->$atributo; // Retorna o valor do atributo dinamicamente
     }
 
-    /* 
-        // Métodos "setter" e "getter" comentados, pois os métodos mágicos __set e __get substituem sua funcionalidade
-        function setNome($nome) {
-            $this->nome = $nome;
-        }
-        function setNumFilhos($numFilhos) {
-            $this->numFilhos = $numFilhos;
-        }
-        function getNome() {
-            return $this->nome;
-        }
-        function getNumFilhos() {
-            return $this->numFilhos;
-        }
-        */
-
+    //________________________________________________________________
     // Método para resumir os dados do funcionário
     function resumirCadFunc()
     {
-        /* 
-                O operador $this refere-se ao próprio objeto que está chamando o método.
-                Aqui, estamos acessando os atributos $nome e $numFilhos do objeto atual.
-            */
         return "$this->nome possui $this->numFilhos filho(s)";
     }
 
     // Método para modificar o número de filhos do funcionário
     function modificarNumFilhos($numFilhos)
     {
-        /*
-                A variável $this->numFilhos refere-se ao atributo numFilhos do objeto atual.
-                Já $numFilhos é o parâmetro recebido pelo método, que será usado para atualizar o valor do atributo.
-            */
         $this->numFilhos = $numFilhos;
+    }
+    // Método para atribuir o cargo e salário do funcionário
+    function setCargo($telefone,$cargo, $salario)
+    {   
+        $this->telefone = $telefone;
+        $this->cargo = $cargo;
+        $this->salario = $salario;
     }
 }
 
+ //________________________________________________________________
 // Criação de uma instância da classe Funcionario
 $y = new Funcionario(); // $y é um objeto da classe Funcionario
 
 // Define o nome do funcionário $y como 'José' usando o método mágico __set
 $y->__set('nome', 'José');
-
 // Define o número de filhos do funcionário $y como 2 usando o método mágico __set
 $y->__set('numFilhos', 2);
-
+$y->setCargo('1234-5678', 'Desenvolvedor', 'R$ 1.000,00');
 // Exibe o nome e o número de filhos do funcionário $y usando o método mágico __get
-echo $y->__get('nome') . ' possui ' . $y->__get('numFilhos') . ' filho(s) '; // Exibe: "José possui 2 filho(s)"
+echo $y->__get('nome') . ' possui ' . $y->__get('numFilhos') . ' filho(s) e o telefone ' . $y->__get('telefone') . ' e o cargo ' . $y->__get('cargo') . ' e o salario ' . $y->__get('salario') . ''; // Exibe: "José possui 2 filho(s)"
 
 echo '<br />'; // Quebra de linha para melhor visualização
 
-// Criação de outra instância da classe Funcionario
-$x = new Funcionario(); // $x é outro objeto da classe Funcionario
 
-// Define o nome do funcionário $x como 'Maria' usando o método mágico __set
+$x = new Funcionario(); 
 $x->__set('nome', 'Maria');
-
-// Define o número de filhos do funcionário $x como 0 usando o método mágico __set
 $x->__set('numFilhos', 0);
-
-// Exibe o nome e o número de filhos do funcionário $x usando o método mágico __get
-echo $x->__get('nome') . ' possui ' . $x->__get('numFilhos') . ' filho(s) '; // Exibe: "Maria possui 0 filho(s)"
+$x->setCargo('6666-9999', 'Garçonet', 'R$ 1.500,00'); 
+echo $x->__get('nome') . ' possui ' . $x->__get('numFilhos') . ' filho(s)  e o telefone ' . $x->__get('telefone') . ' e o cargo ' . $x->__get('cargo') . ' e o salario ' . $x->__get('salario') . ''; // Exibe: "Maria possui 0 filho(s)"
