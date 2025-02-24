@@ -1,125 +1,182 @@
 <?php
+// Definição da classe Pai
 class Pai
 {
-    private $nome = 'Jorge'; // Atributo privado, acessível apenas dentro da classe Pai
-    protected $sobrenome = 'Silva'; // Atributo protegido, acessível na classe Pai e subclasses
-    public $humor = 'Feliz'; // Atributo público, acessível de qualquer lugar
+    //private, protected, public são operadores de visibilidade e servem para controlar o acesso aos atributos
 
-    // Métodos mágicos para acessar atributos inacessíveis ou privados/protected
-    public function __get($atr)
+    private $nome = 'Adenilson';
+    protected $sobrenome = 'Nascimento';
+    public $humor = 'Feliz';
+
+    public function getNome()
     {
-        return $this->$atr; // Retorna o valor do atributo especificado
+        return $this->nome;
     }
 
-    public function __set($atr, $value)
+    public function setNome($value)
     {
-        $this->$atr = $value; // Define o valor do atributo especificado
+        if (strlen($value) >= 3) {
+            $this->nome = $value;
+        }
     }
 
-    // Método privado, acessível apenas dentro da classe Pai
-    private function executarMania()
+    public function getSobrenome()
     {
-        echo 'Assobiar'; // Exibe uma mensagem indicando a mania
+        return $this->sobrenome;
     }
 
-    // Método protegido, acessível na classe Pai e subclasses
-    protected function responder()
+    public function setSobrenome($value)
     {
-        echo 'Oi'; // Exibe uma mensagem indicando a resposta
+        if (strlen($value) >= 3) {
+            $this->sobrenome = $value;
+        }
     }
 
-    // Método público para executar uma ação aleatória
-    public function executarAcao()
+    // Métodos mágicos que fazem o mesmo que os métodos acima
+    public function __get($atributo)
     {
-        $x = rand(1, 10); // Gera um número aleatório entre 1 e 10
-        if ($x >= 1 && $x <= 8) { // Se o número estiver entre 1 e 8
-            $this->executarMania(); // Chama o método privado executarMania()
-        } else { // Caso contrário (números 9 ou 10)
-            $this->responder(); // Chama o método protegido responder()
+        if (property_exists($this, $atributo)) {
+            return $this->$atributo;
+        }
+    }
+
+    public function __set($atributo, $value)
+    {
+        if (property_exists($this, $atributo)) {
+            $this->$atributo = $value;
+        }
+    }
+
+    // Em funções, precisamos atribuir valor das funções private e protected dentro de uma função pública para mostrá-las
+    public function executarMania()
+    {
+        echo 'Programar';
+        echo '<br/>';
+        $this->executarTristeza();
+        echo '<br/>';
+        $this->executarFeliz();
+    }
+
+    private function executarTristeza()
+    {
+        echo 'Programar em Java';
+    }
+
+    protected function executarFeliz()
+    {
+        echo 'Programar em PHP';
+    }
+
+    // Teste com função
+    public function gostarDeProgramar($programar)
+    {
+        $gosto = $programar;
+        if ($gosto == 'programar') {
+            $this->executarFeliz();
+        } else {
+            $this->executarTristeza();
         }
     }
 }
 
-// Classe Filho que herda de Pai
+//__________________________________
+
 class Filho extends Pai
+{
+    // No processo de herança, os atributos privados não são herdados, apenas os métodos protected e public são herdados
+
+    public function getAtributos($atributo)
+    {
+        return $this->$atributo;
+    }
+
+    public function setAtributos($atributo, $value)
+    {
+        $this->$atributo = $value;
+    }
+}
+
+$filho = new Filho();
+echo '<pre>';
+print_r($filho); // Mostra que o atributo "nome" pertence apenas ao objeto pai, por ser private
+echo '</pre>';
+
+echo $filho->getAtributos('humor');
+echo '<br/>';
+echo $filho->getAtributos('sobrenome');
+echo '<br/> <br/>';
+//echo $filho->getAtributos('nome'); NÃO FUNCIONA, pois o filho não recebeu do pai, por estar private
+
+echo $filho->getAtributos('humor');
+echo '<br/>';
+$filho->setAtributos('humor', 'Negro');
+echo $filho->getAtributos('humor');
+echo '<br/>';
+
+echo $filho->getAtributos('sobrenome');
+echo '<br/>';
+$filho->setAtributos('sobrenome', 'Marinos');
+echo $filho->getAtributos('sobrenome');
+echo '<br/>';
+
+//______________________________________________
+
+echo '<pre>';
+print_r($filho);
+echo '</pre>';
+
+$filho->setAtributos('nome', 'Adenilson'); // Cria um novo atributo no filho
+
+echo '<pre>';
+print_r($filho);
+echo '</pre>';
+
+echo $filho->getAtributos('nome');
+
+//______________________________________________
+
+class Neto extends Pai
 {
     public function __construct()
     {
         echo '<pre>';
-        print_r(get_class_methods($this)); // Exibe os métodos disponíveis no objeto Filho
+        print_r(get_class_methods($this));
         echo '</pre>';
     }
 
-    // Sobrescreve o método privado executarMania da classe Pai
-    private function executarMania()
+    protected function executarFeliz()
     {
-        echo 'Cantar'; // Exibe uma mensagem indicando a mania do filho
+        echo 'Programar em JavaScript';
     }
 
-    // Método público para chamar o método privado executarMania
-    public function x()
-    {
-        $this->executarMania(); // Chama o método privado executarMania() da classe Filho
-    }
-
-    // Sobrescreve o método protegido responder da classe Pai
-    protected function responder()
-    {
-        echo 'Olá'; // Exibe uma mensagem indicando a resposta do filho
-    }
-
-    /* Métodos getAtributo e setAtributo foram comentados. Eles seriam usados para acessar e modificar atributos.
-    public function getAtributo($attr) {
-        return $this->$attr;
-    }
-    public function setAtributo($attr, $value) {
-        $this->$attr = $value;
-    } */
-
-    /* Métodos mágicos __get e __set também foram comentados, pois já estão definidos na classe Pai.
-    public function __get($atr) {
-        return $this->$atr;
-    }
-    public function __set($atr, $value) {
-        $this->$atr = $value;
-    } */
+    
 }
 
-// Criação de uma instância da classe Filho
-$filho = new Filho();
+$neto = new Neto();
 
-// Exibição do objeto Filho usando print_r
 echo '<pre>';
-print_r($filho);
+print_r($neto);
 echo '</pre>';
 
-/* Chamadas aos métodos getAtributo e setAtributo foram comentadas.
-echo $filho->getAtributo('nome');
-echo '<br />';
-$filho->setAtributo('nome', 'Pereira');
-echo '<pre>';
-print_r($filho);
-echo '</pre>';
-echo '<br />';
-echo $filho->getAtributo('nome'); */
-
-// Exibição dos métodos disponíveis no objeto Filho foi comentada.
-// echo '<pre>';
-// print_r(get_class_methods($filho));
-// echo '</pre>';
-
-/* Chamadas aos métodos mágicos __get e __set foram comentadas.
-echo $filho->__get('nome');
-$filho->__set('nome', 'Jamilton');
-echo '<br />';
-echo $filho->__get('nome');
-echo '<pre>';
-print_r($filho);
-echo '</pre>'; */
-
-// Tentativa de chamar o método executarMania diretamente (erro, pois é privado)
-$fiho->executarMania();
 echo '<br/>';
 
-// Chamada ao método x(), que chama o método privado executarMania da classe Filho
-$filho->x();
+echo '<pre>';
+print_r(get_class_methods($neto));
+echo '</pre>';
+
+echo $neto->__get('nome');
+$neto->__set('nome', 'Ferreira');
+echo '<br/>';
+echo $neto->__get('nome');
+echo '<br/>';
+echo $neto->__get('sobrenome');
+$neto->__set('sobrenome', 'Marinos');
+echo '<br/>';
+echo $neto->__get('sobrenome');
+echo '<br/>';
+
+//______________________________________________
+
+$neto->executarMania();
+
+?>
