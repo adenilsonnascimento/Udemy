@@ -1,34 +1,35 @@
 <?php
-// Declaração de uma classe personalizada de exceção chamada MinhaExceptionCustomizada.
+
+// Definindo uma classe customizada de exceção que estende a classe Exception do PHP
 class MinhaExceptionCustomizada extends Exception
 {
-	private $erro = ''; // Propriedade privada para armazenar a mensagem de erro.
+	// Propriedade privada para armazenar a mensagem de erro
+	private $erro = '';
 
-	// Método construtor que recebe uma mensagem de erro como parâmetro.
+	// Construtor da classe que recebe a mensagem de erro como parâmetro
 	public function __construct($erro)
 	{
-		$this->erro = $erro; // Atribui a mensagem de erro à propriedade privada.
+		$this->erro = $erro;
 	}
 
-	// Método personalizado para exibir a mensagem de erro em um formato estilizado.
+	// Método para exibir a mensagem de erro customizada em um formato específico
 	public function exibirMensagemErroCustomizada()
 	{
 		echo '<div style="border: solid 1px #000; padding: 15px; background-color: red; color: white;">';
-		echo $this->erro; // Exibe a mensagem de erro.
+		echo $this->erro;
 		echo '</div>';
 	}
 }
 
 try {
-	// Lança uma exceção personalizada com a mensagem 'Este é um erro customizado'.
+	// Lançando uma exceção customizada com uma mensagem específica
 	throw new MinhaExceptionCustomizada('Este é um erro customizado');
 } catch (MinhaExceptionCustomizada $e) {
-	// Bloco catch para capturar exceções personalizadas.
-	$e->exibirMensagemErroCustomizada(); // Chama o método personalizado para exibir a mensagem de erro.
-
+	// Capturando a exceção customizada e exibindo a mensagem de erro customizada
+	$e->exibirMensagemErroCustomizada();
 } catch (Error $e) {
-	// Bloco catch para capturar erros do tipo Error.
+	// Capturando erros nativos do PHP e exibindo a mensagem de erro em um formato diferente
 	echo '<div style="border: solid 1px #000; padding: 15px; background-color: yellow; color: black;">';
-	echo 'Erro nativo do PHP: ' . $e->getMessage(); // Exibe a mensagem de erro nativa.
+	echo 'Erro nativo do PHP: ' . $e->getMessage();
 	echo '</div>';
 }

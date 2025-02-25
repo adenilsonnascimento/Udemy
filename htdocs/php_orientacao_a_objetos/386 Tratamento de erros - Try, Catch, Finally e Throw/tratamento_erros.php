@@ -1,38 +1,73 @@
-<?php
-// Bloco inicial do código.
+<?php 
 
 try {
-	// Início do bloco try, onde a lógica principal é executada.
-	echo '<h3> *** Try *** </h3>'; // Mensagem indicando que o bloco try está sendo executado.
+	echo '<h3>Try (Tente)</h3>';
+	echo '<p>Executado quando nenhuma exceção ocorrer</p>';
+     
 
-	// Simulação de uma lógica onde pode ocorrer um erro (exceção).
-	// Exemplo comentado de uma consulta SQL que poderia gerar um erro:
-	// $sql = 'Select * from clientes';
-	// mysql_query($sql); // Erro potencial ao tentar executar uma consulta inválida.
+	// Forçando um erro, pois não temos um banco de dados configurado
+	 $sql = 'Select * from Clientes';
+	 mysql_query($sql); //Erro
 
-	// Verifica se o arquivo 'require_arquivo_a.php' existe.
+
+	 
+} catch(Error $e) {
+
+	echo '<h3>Catch Erro</h3>';
+	echo '<p>Como teve o Erro forçado no mysql_query, passamos pelo "Catch", se não tivesse esse erro, seriamos direcionados diretamente para o "Finally" </p>';
+    
+	// mostrando o erro na tela
+	echo '<p style="color: red">' . $e . '</p>'; 
+
+}
+
+finally {
+	echo '<h3>Finalmente (Finally)</h3>';
+	echo '<p>Executado sempre, pois independente do resultado sempre vai ser executado, ele vem diretamente do try ou do catch, apesar que o finally é OPCIONAL</p>';
+}
+?>
+
+<p>_________________________________________________</p>
+<p><br</p>
+
+<?php 
+try {
+	echo '<h3>Try (Tente)</h3>';
+	echo '<p>Executado quando nenhuma exceção ocorrer</p>';
+     
+
+	// 
 	if (!file_exists('require_arquivo_a.php')) {
-		// Se o arquivo não existir, lança uma exceção personalizada.
-		throw new Exception('O arquivo em questão deveria estar disponível as ' . date('d/m/Y H:i:s') . ' mas não estava. Vamos seguir mesmo assim!');
-	}
-} catch (Error $e) {
-	// Bloco catch para capturar erros do tipo Error (erros fatais ou problemas de sintaxe).
-	echo '<h3> *** Catch Error *** </h3>'; // Mensagem indicando que um erro foi capturado.
-	echo '<p style="color: red">' . $e . '</p>'; // Exibe a mensagem de erro em vermelho.
-	// Aqui poderia haver código para armazenar o erro em um banco de dados.
-} catch (Exception $e) {
-	// Bloco catch para capturar exceções do tipo Exception (lançadas manualmente ou por problemas específicos).
-	echo '<h3> *** Catch Exception *** </h3>'; // Mensagem indicando que uma exceção foi capturada.
-	echo '<p style="color: red">' . $e->getMessage() . '</p>'; // Exibe a mensagem da exceção em vermelho.
-	// Aqui poderia haver código para armazenar a exceção em um banco de dados.
-} finally {
-	// Bloco finally, que sempre será executado, independentemente de ter ocorrido erro ou não.
-	echo '<h3> *** Finally *** </h3>'; // Mensagem indicando que o bloco finally está sendo executado.
+        throw new Exception('O arquivo em Questão deveria estar disponível as ' . date('d/m/Y H:i:s') . ' mas não estava.');
+    }
+
+
+	 
+} catch(Exception $e) {
+
+	echo '<h3>Catch Exception </h3>';
+	echo '<p>Ocorreu um erro porque o arquivo "require_arquivo_a.php" não foi encontrado. Passamos pelo "Catch" devido a essa exceção. </p>';
+    
+	// mostrando o erro na tela
+	echo '<p style="color: red">'  . $e->getMessage() .  '</p>'; 
+
 }
 
-// Continuação da lógica após o bloco try-catch-finally.
-/*
-try {
-    // Outro bloco try que pode ser usado para encapsular outra lógica onde pode ocorrer um erro.
+finally {
+	echo '<h3>Finalmente (Finally)</h3>';
+	echo '<p>Executado sempre, pois independente do resultado sempre vai ser executado, ele vem diretamente do try ou do catch, apesar que o finally é OPCIONAL</p>';
 }
-*/
+
+
+
+
+
+
+
+
+
+// try = Tente
+// catch = Capturar(Pegar)
+// finally = Finalmente (È Opcional)
+// throw = Lancar
+?>
