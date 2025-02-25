@@ -1,92 +1,78 @@
-<?php
-// Define o namespace "A".
+<?php 
+
+// Definindo o namespace A
 namespace A;
 
-// Declaração da classe Cliente no namespace "A", que implementa a interface CadastroInterface do namespace "B".
-class Cliente implements \B\CadastroInterface
-{
-	public $nome = 'Jorge'; // Propriedade pública que armazena o nome do cliente.
+// Classe Cliente que implementa a interface Cadastro do namespace B
+class Cliente implements \B\Cadastro {
+    public $nome = 'Adenilson';
 
-	// Método construtor da classe, executado automaticamente ao instanciar um objeto.
-	public function __construct()
-	{
-		echo '<pre>'; // Inicia uma tag <pre> para formatar a saída de forma legível.
-		print_r(get_class_methods($this)); // Exibe os métodos disponíveis na classe atual (incluindo os herdados e implementados).
-		echo '</pre>'; // Fecha a tag <pre>.
-	}
+    public function __construct() {
+        echo '<pre>';
+        print_r(get_class_methods($this));
+        echo '</pre>';
+    }
+    
+    public function __get($atributo) {
+        return $this->$atributo;
+    }
 
-	// Método mágico __get, usado para acessar propriedades não acessíveis ou inexistentes.
-	public function __get($attr)
-	{
-		return $this->$attr; // Retorna o valor da propriedade cujo nome foi passado como argumento.
-	}
+    public function salvar() {
+        echo 'Salvar';
+    }
 
-	// Implementação do método salvar(), definido na interface CadastroInterface do namespace "B".
-	public function salvar()
-	{
-		echo 'Salvar'; // Imprime "Salvar" quando o método é chamado.
-	}
-
-	// Implementação do método remover(), que não faz parte da interface CadastroInterface.
-	public function remover()
-	{
-		echo 'Remover'; // Imprime "Remover" quando o método é chamado.
-	}
+    public function remover() {
+        echo 'Remover';
+    }
 }
 
-// Declaração da interface CadastroInterface no namespace "A".
-interface CadastroInterface
-{
-	public function salvar(); // Define o método salvar() como obrigatório para qualquer classe que implemente esta interface.
+// Interface Cadastro que define o método salvar
+interface Cadastro {
+    public function salvar();
 }
 
-// Define o namespace "B".
+// Definindo o namespace B
 namespace B;
 
-// Declaração da classe Cliente no namespace "B", que implementa a interface CadastroInterface do namespace "A".
-class Cliente implements \A\CadastroInterface
-{
-	public $nome = 'Jamilton'; // Propriedade pública que armazena o nome do cliente.
+// Classe Cliente que implementa a interface Cadastro do namespace B
+class Cliente implements Cadastro {
+    public $nome = 'Jade Sales';
 
-	// Método construtor da classe, executado automaticamente ao instanciar um objeto.
-	public function __construct()
-	{
-		echo '<pre>'; // Inicia uma tag <pre> para formatar a saída de forma legível.
-		print_r(get_class_methods($this)); // Exibe os métodos disponíveis na classe atual (incluindo os herdados e implementados).
-		echo '</pre>'; // Fecha a tag <pre>.
-	}
+    public function __construct() {
+        echo '<pre>';
+        print_r(get_class_methods($this));
+        echo '</pre>';
+    }
 
-	// Método mágico __get, usado para acessar propriedades não acessíveis ou inexistentes.
-	public function __get($attr)
-	{
-		return $this->$attr; // Retorna o valor da propriedade cujo nome foi passado como argumento.
-	}
+    public function __get($atributo) {
+        return $this->$atributo;
+    }
 
-	// Implementação do método remover(), definido na interface CadastroInterface do namespace "A".
-	public function remover()
-	{
-		echo 'Remover'; // Imprime "Remover" quando o método é chamado.
-	}
-
-	// Implementação do método salvar(), que não faz parte da interface CadastroInterface.
-	public function salvar()
-	{
-		echo 'Salvar'; // Imprime "Salvar" quando o método é chamado.
-	}
+    public function remover() {
+        echo 'Remover';
+    }
 }
 
-// Declaração da interface CadastroInterface no namespace "B".
-interface CadastroInterface
-{
-	public function remover(); // Define o método remover() como obrigatório para qualquer classe que implemente esta interface.
+// Interface Cadastro que define o método remover
+interface Cadastro {
+    public function remover();
 }
 
-//---------------
-// Instancia um objeto da classe Cliente no namespace "B".
-$c = new \B\Cliente();
+// Especificando o namespace ao instanciar a classe Cliente do namespace B
+$cliente = new \B\Cliente();
+print_r($cliente);
+echo $cliente->__get('nome');
 
-// Exibe as informações do objeto $c, incluindo suas propriedades e valores.
-print_r($c);
+echo '<br/>';
 
-// Usa o método mágico __get para acessar a propriedade 'nome' do objeto $c e imprime seu valor.
-echo $c->__get('nome');
+// Especificando o namespace ao instanciar a classe Cliente do namespace A
+$cliente = new \A\Cliente();
+print_r($cliente);
+echo $cliente->__get('nome');
+
+?>
+
+
+<h1>Interfaces</h1>
+<p>Uma interface em PHP é uma estrutura que define métodos que devem ser implementados por qualquer classe que a implemente. Interfaces garantem que uma classe siga um contrato específico, ou seja, implemente todos os métodos definidos na interface.
+No seu código, a interface Cadastro no namespace A define o método salvar, enquanto a interface Cadastro no namespace B define o método remover.</p>

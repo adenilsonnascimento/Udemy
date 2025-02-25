@@ -1,123 +1,153 @@
 <?php
-// Definição de uma interface chamada EquipamentoEletronicoInterface, que define dois métodos obrigatórios: ligar() e desligar().
+
+// Definição de uma interface que declara métodos que devem ser implementados por qualquer classe que a implemente
 interface EquipamentoEletronicoInterface
 {
-	public function ligar(); // Método obrigatório para ligar o equipamento.
-	public function desligar(); // Método obrigatório para desligar o equipamento.
+	public function ligar();
+	public function desligar();
 }
 
-// Classe Geladeira implementa a interface EquipamentoEletronicoInterface, garantindo a implementação dos métodos ligar() e desligar().
+//-----------------------------------------
+// Classe Geladeira que implementa a interface EquipamentoEletronicoInterface
 class Geladeira implements EquipamentoEletronicoInterface
 {
 	public function abrirPorta()
-	{ // Método específico da classe Geladeira para abrir a porta.
-		echo 'Abrir a porta';
+	{
+		echo 'Abrir Porta <br/>';
 	}
 	public function ligar()
-	{ // Implementação do método ligar() definido na interface.
-		echo 'Ligar';
+	{
+		echo 'Ligar <br/>';
 	}
 	public function desligar()
-	{ // Implementação do método desligar() definido na interface.
-		echo 'Desligar';
+	{
+		echo 'Desligar <br/>';
 	}
 }
 
-// Classe TV implementa a interface EquipamentoEletronicoInterface, garantindo a implementação dos métodos ligar() e desligar().
+// Classe TV que implementa a interface EquipamentoEletronicoInterface
 class TV implements EquipamentoEletronicoInterface
 {
 	public function trocarCanal()
-	{ // Método específico da classe TV para trocar de canal.
-		echo 'Trocar canal';
+	{
+		echo 'Trocar Canal <br/>';
 	}
 	public function ligar()
-	{ // Implementação do método ligar() definido na interface.
-		echo 'Ligar';
+	{
+		echo 'Ligar <br/>';
 	}
 	public function desligar()
-	{ // Implementação do método desligar() definido na interface.
-		echo 'Desligar';
+	{
+		echo 'Desligar <br/>';
 	}
 }
 
-$x = new Geladeira(); // Instancia um objeto da classe Geladeira.
-$y = new TV(); // Instancia um objeto da classe TV.
+// Instanciando a classe Geladeira e chamando seu método abrirPorta
+$geladeira = new Geladeira();
+$geladeira->abrirPorta();
 
-//-------------------------
-// Definição de uma interface chamada MamiferoInterface, que define o método respirar().
-interface MamiferoInterface
+// Instanciando a classe TV e chamando seu método trocarCanal
+$tv = new TV();
+$tv->trocarCanal();
+
+?>
+<p>__________________________________________</p>
+<?php
+
+// Definição de interfaces para diferentes tipos de comportamento
+interface Mamifero
 {
-	public function respirar(); // Método obrigatório para que um mamífero respire.
+	public function respirar();
+}
+interface Terrestre
+{
+	public function andar();
+}
+interface Aquatico
+{
+	public function nadar();
 }
 
-// Definição de uma interface chamada TerrestreInterface, que define o método andar().
-interface TerrestreInterface
+// Classe Humano que implementa as interfaces Mamifero e Terrestre
+class Humano implements Mamifero, Terrestre
 {
-	public function andar(); // Método obrigatório para que um ser terrestre ande.
-}
-
-// Definição de uma interface chamada AquaticoInterface, que define o método nadar().
-interface AquaticoInterface
-{
-	public function nadar(); // Método obrigatório para que um ser aquático nade.
-}
-
-// Classe Humano implementa as interfaces MamiferoInterface e TerrestreInterface, garantindo a implementação dos métodos respirar() e andar().
-class Humano implements MamiferoInterface, TerrestreInterface
-{
+	public function respirar()
+	{
+		echo 'Respirar <br/>';
+	}
 	public function andar()
-	{ // Implementação do método andar() definido na interface TerrestreInterface.
-		echo 'Andar';
+	{
+		echo 'Andar <br/>';
 	}
-	public function respirar()
-	{ // Implementação do método respirar() definido na interface MamiferoInterface.
-		echo 'Respirar';
-	}
-	public function conversar()
-	{ // Método específico da classe Humano para conversar.
-		echo 'Conversar';
+	public function falar()
+	{
+		echo 'Falar <br/>';
 	}
 }
 
-// Classe Baleia implementa as interfaces MamiferoInterface e AquaticoInterface, garantindo a implementação dos métodos respirar() e nadar().
-class Baleia implements MamiferoInterface, AquaticoInterface
+// Classe Baleia que implementa as interfaces Mamifero e Aquatico
+class Baleia implements Mamifero, Aquatico
 {
 	public function respirar()
-	{ // Implementação do método respirar() definido na interface MamiferoInterface.
-		echo 'Respirar';
+	{
+		echo 'Respirar <br/>';
 	}
 	public function nadar()
-	{ // Implementação do método nadar() definido na interface AquaticoInterface.
-		echo 'Nadar';
+	{
+		echo 'Nadar <br/>';
 	}
+
 	protected function esguichar()
-	{ // Método protegido específico da classe Baleia para esguichar água.
-		echo 'Esguichar';
+	{
+		echo 'Esguichar <br/>';
 	}
 }
 
-//-----------------------------
-// Definição de uma interface chamada AnimalInterface, que define o método comer().
-interface AnimalInterface
+// Instanciando a classe Humano e chamando seus métodos
+$humano = new Humano();
+$humano->respirar();
+$humano->andar();
+$humano->falar();
+
+// Instanciando a classe Baleia e chamando seus métodos
+$baleia = new Baleia();
+$baleia->respirar();
+$baleia->nadar();
+
+?>
+
+<p>__________________________________________</p>
+
+<?php
+// Definição de uma interface Animal
+interface Animal
 {
-	public function comer(); // Método obrigatório para que um animal coma.
+	public function comer();
 }
 
-// Definição de uma interface chamada AveInterface, que estende a interface AnimalInterface, adicionando o método voar().
-interface AveInterface extends AnimalInterface
+// Definição de uma interface Ave que estende a interface Animal
+interface Ave extends Animal
 {
-	public function voar(); // Método obrigatório para que uma ave voe.
+	public function voar();
 }
 
-// Classe Papagaio implementa a interface AveInterface, garantindo a implementação dos métodos voar() e comer().
-class Papagaio implements AveInterface
+// Classe Papagaio que implementa a interface Ave
+class Papagaio implements Ave
 {
 	public function voar()
-	{ // Implementação do método voar() definido na interface AveInterface.
-		echo 'Voar';
+	{
+		echo 'Voar <br/>';
 	}
+
 	public function comer()
-	{ // Implementação do método comer() definido na interface AnimalInterface.
-		echo 'Comer';
+	{
+		echo 'Comer <br/>';
 	}
 }
+
+// Instanciando a classe Papagaio e chamando seus métodos
+$papagaio = new Papagaio();
+$papagaio->voar();
+$papagaio->comer();
+
+?>

@@ -2,7 +2,7 @@
 class Exemplo
 {
     // Atributo estático, compartilhado entre todas as instâncias da classe
-    public static $atributo1 = 'Eu sou um atributo static';
+    public static $atributo1 = 'Eu sou um atributo static (Estático) <br />';
 
     // Atributo normal, específico de cada instância da classe
     public $atributo2 = 'Eu sou atributo normal';
@@ -21,18 +21,8 @@ class Exemplo
     }
 }
 
-// $x = new Exemplo(); // Instanciação da classe (comentada)
+// Só se consegue acessa os atributos staticos e métodos estáticos sem instanciar a classe
 
-/* 
-Atributos e métodos estáticos podem ser acessados diretamente, sem precisar instanciar.
-*/
-/* 
 echo Exemplo::$atributo1; // Acessa o atributo estático diretamente
-echo '<br />';
-echo Exemplo::metodo1(); // Chama o método estático diretamente
-*/
-
-// echo Exemplo::$metodo2(); // Não funciona, pois $metodo2 não é estático
-// echo $x->atributo2; // Instâncias só acessam atributos e métodos não estáticos
 
 Exemplo::metodo1(); // Chama o método estático diretamente
