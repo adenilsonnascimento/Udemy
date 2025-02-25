@@ -1,30 +1,39 @@
 <?php
-// Importa o arquivo "lib1.php" localizado no diretório "./bibliotecas/lib1/".
-require "./bibliotecas/lib1/lib1.php";
 
-// Importa o arquivo "lib2.php" localizado no diretório "./bibliotecas/lib2/".
-require "./bibliotecas/lib2/lib2.php";
+// Inclusão de arquivos externos usando require
 
-// Define um alias para a classe Cliente do namespace A, chamando-a de C1.
-use A\Cliente as C1;
+// require é uma palavra reservada que inclui e avalia o arquivo especificado
 
-// Define um alias para a classe Cliente do namespace B, chamando-a de C2.
-use B\Cliente as C2;
+// Se o arquivo não for encontrado, um erro fatal é gerado e a execução do script é interrompida
 
-// Instancia um objeto da classe Cliente do namespace A (usando o alias C1).
-$c = new C1();
+require  "../bibliotecas/lib1/lib1.php";
+require "../bibliotecas/lib2/lib2.php";
 
-// Exibe as informações do objeto $c, incluindo suas propriedades e valores.
-print_r($c);
+// Usando a palavra-chave use para importar classes de namespaces específicos
 
-// Usa o método mágico __get para acessar a propriedade 'nome' do objeto $c e imprime seu valor.
-echo $c->__get('nome');
+// As classes são renomeadas (alias) para evitar conflitos de nomes
 
-// Instancia um objeto da classe Cliente do namespace B (usando o alias C2).
-$c = new C2();
+use B\Cliente as ClienteB;
+use A\Cliente as ClienteA;
 
-// Exibe as informações do objeto $c, incluindo suas propriedades e valores.
-print_r($c);
+// Instanciando a classe Cliente do namespace B
 
-// Usa o método mágico __get para acessar a propriedade 'nome' do objeto $c e imprime seu valor.
-echo $c->__get('nome');
+$clienteB = new ClienteB();
+print_r($clienteB); // Exibe a estrutura do objeto $clienteB
+echo $clienteB->__get('nome'); // Exibe o valor do atributo 'nome' do objeto $clienteB
+
+echo '<br/>';
+
+// Instanciando a classe Cliente do namespace A
+
+$clienteA = new ClienteA();
+print_r($clienteA); // Exibe a estrutura do objeto $clienteA
+echo $clienteA->__get('nome'); // Exibe o valor do atributo 'nome' do objeto $clienteA
+
+// https://packagist.org/ biblioteca de pacotes PHP
+?>
+
+<p>https://packagist.org/ biblioteca de pacotes PHP</p>
+
+
+
