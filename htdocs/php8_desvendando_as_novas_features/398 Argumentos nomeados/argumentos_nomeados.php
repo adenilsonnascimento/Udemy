@@ -1,12 +1,29 @@
 <?php
-// Função para calcular a área de um retângulo
-function calcularAreaRetangulo(float $largura, float $altura): float {
-    return $largura * $altura;
+
+// Função para enviar e-mail
+function sendEmail($destinatario = "", $cc = "", $assunto = "", $mensagem = "") {
+    echo "Destinatario: $destinatario <br>";
+    echo "CC: $cc <br>";
+    echo "Assunto: $assunto <br>";
+    echo "Mensagem: $mensagem <br>";
 }
 
-// Chamando a função usando argumentos nomeados
-$area = calcularAreaRetangulo(largura: 5.0, altura: 10.0);
+// Chamando a função com argumentos posicionais
+sendEmail(
+    "liinkifood5@gmail.com",
+    "liinkifood6@gmail.com",    
+    "Argumentos nomeados",
+    "Dominando a fectura de argumentos nomeados em PHP 8"
+);
 
-// Exibindo o resultado
-echo "A área do retângulo é: " . $area . " metros quadrados.";
+echo "<br>";
+echo "<hr>";
+
+// Chamando a função com argumentos nomeados
+sendEmail(
+    destinatario: "liinkifood5@gmail.com", 
+    assunto: "Argumentos nomeados",
+    mensagem: "Dominando a fectura de argumentos nomeados em PHP 8"
+);
+
 ?>
