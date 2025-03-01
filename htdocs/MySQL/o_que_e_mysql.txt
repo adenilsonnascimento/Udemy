@@ -1,0 +1,47 @@
+============================= 
+O que é o MySQL?
+============================= 
+
+O MySQL é um sistema de gerenciamento de banco de dados relacional (SGBD) de código aberto. Ele é usado para armazenar, organizar e gerenciar grandes volumes de informações de forma estruturada.
+
+============================= 
+Como funciona?
+============================= 
+
+O MySQL usa tabelas para armazenar os dados, permitindo que os usuários acessem, modifiquem e consultem informações rapidamente por meio da linguagem SQL (Structured Query Language).
+
+============================= 
+Principais Características:
+
+============================= 
+✅ Gratuito e de código aberto – Qualquer pessoa pode usá-lo sem pagar.
+✅ Rápido e eficiente – É um dos bancos de dados mais usados no mundo.
+✅ Seguro – Protege os dados contra acessos não autorizados.
+✅ Escalável – Suporta desde pequenos sites até grandes sistemas corporativos.
+
+============================= 
+Onde é utilizado?
+============================= 
+
+📌 Sites e aplicativos – O MySQL é muito usado para armazenar dados de sites dinâmicos, como blogs, lojas online e redes sociais.
+📌 Empresas – Organiza informações de clientes, vendas e produtos.
+📌 Jogos online – Mantém perfis de jogadores, pontuações e rankings.
+
+============================= 
+Exemplo básico de uso:
+============================= 
+
+Criando um banco de dados e uma tabela no MySQL:
+
+CREATE DATABASE minha_loja;
+USE minha_loja;
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL
+);
+
+Esse código cria um banco de dados chamado "minha_loja" e uma tabela "produtos", onde os itens vendidos podem ser armazenados.
+
+O MySQL é uma ferramenta essencial para quem deseja trabalhar com banco de dados, desenvolvimento web e aplicativos!

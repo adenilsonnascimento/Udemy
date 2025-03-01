@@ -1,0 +1,107 @@
+============================= 
+Tipos de Comandos SQL: DDL, DML, DCL, DTL e DQL
+=============================
+
+O SQL (Structured Query Language) é a linguagem usada para gerenciar bancos de dados relacionais. Os comandos SQL são classificados em cinco grupos principais, de acordo com suas funções:
+
+
+============================= 
+📌 1. DDL (Data Definition Language) – Linguagem de Definição de Dados
+============================= 
+
+
+Os comandos DDL são usados para criar e modificar a estrutura do banco de dados, como tabelas, índices e restrições.
+
+Principais comandos DDL:
+CREATE → Cria um banco de dados, tabelas, índices e outros objetos.
+ALTER → Modifica a estrutura de uma tabela, como adicionar ou remover colunas.
+DROP → Exclui bancos de dados ou tabelas permanentemente.
+TRUNCATE → Remove todos os registros de uma tabela, mas mantém sua estrutura.
+📌 Exemplo: Criando uma tabela chamada "clientes":
+
+sql
+Copiar
+Editar
+CREATE TABLE clientes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);
+
+
+============================= 
+📌 2. DML (Data Manipulation Language) – Linguagem de Manipulação de Dados
+============================= 
+
+
+Os comandos DML servem para inserir, atualizar, excluir e manipular os dados armazenados nas tabelas.
+
+Principais comandos DML:
+INSERT → Insere novos registros em uma tabela.
+UPDATE → Atualiza dados existentes.
+DELETE → Remove registros específicos.
+📌 Exemplo: Inserindo um cliente na tabela "clientes":
+
+
+INSERT INTO clientes (nome, email) VALUES ('João Silva', 'joao@email.com');
+
+
+============================= 
+📌 3. DQL (Data Query Language) – Linguagem de Consulta de Dados
+============================= 
+
+
+Os comandos DQL são usados para consultar e recuperar informações do banco de dados.
+
+Principal comando DQL:
+SELECT → Seleciona registros de uma ou mais tabelas.
+📌 Exemplo: Buscando todos os clientes cadastrados:
+
+SELECT * FROM clientes;
+
+
+============================= 
+📌 4. DCL (Data Control Language) – Linguagem de Controle de Dados
+============================= 
+
+
+Os comandos DCL servem para gerenciar permissões e controle de acesso ao banco de dados.
+
+Principais comandos DCL:
+GRANT → Concede permissões a um usuário.
+REVOKE → Remove permissões de um usuário.
+📌 Exemplo: Concedendo permissão de leitura para um usuário:
+
+GRANT SELECT ON clientes TO 'usuario'@'localhost';
+
+
+============================= 
+📌 5. DTL (Data Transaction Language) – Linguagem de Controle de Transações
+============================= 
+
+
+Os comandos DTL são usados para gerenciar transações no banco de dados, garantindo a integridade dos dados.
+
+Principais comandos DTL:
+COMMIT → Confirma todas as mudanças feitas na transação.
+ROLLBACK → Desfaz as mudanças, retornando ao estado anterior.
+SAVEPOINT → Cria um ponto de salvamento dentro da transação.
+📌 Exemplo: Usando transações para garantir segurança:
+
+START TRANSACTION;
+UPDATE clientes SET nome = 'Carlos Silva' WHERE id = 1;
+ROLLBACK; -- Volta ao nome anterior
+
+
+============================= 
+Resumo rápido:
+============================= 
+
+
+✅ DDL → Define a estrutura do banco de dados (CREATE, ALTER, DROP).
+✅ DML → Manipula os dados (INSERT, UPDATE, DELETE).
+✅ DQL → Consulta os dados (SELECT).
+✅ DCL → Gerencia permissões (GRANT, REVOKE).
+✅ DTL → Controla transações (COMMIT, ROLLBACK, SAVEPOINT).
+
+Esses comandos são essenciais para trabalhar com bancos de dados no MySQL e em outros sistemas relacionais. 🚀

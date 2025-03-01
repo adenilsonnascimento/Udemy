@@ -1,0 +1,49 @@
+=============================  
+📌 LISTA DE TIPOS DE DADOS NO MYSQL  
+=============================  
+
+🔹 1️⃣ TIPOS NUMÉRICOS  
+----------------------------------  
+TINYINT    → Inteiro pequeno (-128 a 127 ou 0 a 255 se UNSIGNED). Pode ser usado como BOOLEAN.  
+SMALLINT   → Inteiro pequeno (-32.768 a 32.767 ou 0 a 65.535 se UNSIGNED).  
+MEDIUMINT  → Inteiro médio (-8.388.608 a 8.388.607 ou 0 a 16.777.215 se UNSIGNED).  
+INT        → Inteiro padrão (-2.147.483.648 a 2.147.483.647 ou 0 a 4.294.967.295 se UNSIGNED).  
+BIGINT     → Inteiro grande (-9 quintilhões a 9 quintilhões ou 0 a 18 quintilhões se UNSIGNED).  
+DECIMAL(p,d) → Número decimal com precisão fixa (Ex: DECIMAL(10,2)).  
+FLOAT(m,d) → Número de ponto flutuante de precisão simples.  
+DOUBLE(m,d) → Número de ponto flutuante de precisão dupla.  
+BIT(n)     → Armazena valores binários (até 64 bits).  
+
+🔹 2️⃣ TIPOS DE TEXTO (STRINGS)  
+----------------------------------  
+CHAR(n)    → String de tamanho fixo (0 a 255 caracteres).  
+VARCHAR(n) → String de tamanho variável (0 a 65.535 caracteres).  
+TEXT       → Texto longo (até 64 KB).  
+TINYTEXT   → Texto pequeno (até 255 caracteres).  
+MEDIUMTEXT → Texto médio (até 16 MB).  
+LONGTEXT   → Texto muito longo (até 4 GB).  
+ENUM('A', 'B', 'C') → Lista fixa de valores (um por campo).  
+SET('X', 'Y', 'Z')  → Lista fixa de valores (vários por campo).  
+
+🔹 3️⃣ TIPOS DE DADOS MULTIMÍDIA (IMAGENS, MÚSICAS, VÍDEOS, ARQUIVOS)  
+----------------------------------  
+BLOB       → Dados binários gerais (imagens, áudios, vídeos, PDFs, etc.).  
+TINYBLOB   → Pequeno BLOB (até 255 bytes).  
+MEDIUMBLOB → Médio BLOB (até 16 MB).  
+LONGBLOB   → Grande BLOB (até 4 GB).  
+
+💡 **Observação:**  
+- O MySQL **não armazena arquivos diretamente** como um sistema de arquivos.  
+- O recomendado é **armazenar o caminho (URL) do arquivo no banco** e manter o arquivo no servidor.  
+
+🔹 4️⃣ TIPOS DE DATA E HORA  
+----------------------------------  
+DATE       → Data (YYYY-MM-DD).  
+DATETIME   → Data e hora (YYYY-MM-DD HH:MI:SS).  
+TIMESTAMP  → Data e hora como UNIX Timestamp (atualiza automaticamente se DEFAULT CURRENT_TIMESTAMP).  
+TIME       → Hora (HH:MI:SS).  
+YEAR       → Ano (YYYY) (de 1901 a 2155).  
+
+=============================  
+📌 FIM DA LISTA  
+=============================

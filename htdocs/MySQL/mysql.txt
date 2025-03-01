@@ -1,0 +1,136 @@
+=============================  
+📌 CURSO MYSQL Jorge Sant Ana
+============================= 
+
+
+http://localhost/phpmyadmin/
+
+
+=============================  
+----------------------- Banco de Dados ----------------------- 
+=============================  
+
+
+CREATE DATABASE db_curso_web; -- Cria um banco de dados
+DROP DATABASE db_curso_web; -- Remove um banco de dados
+USE db_curso_web; -- Seleciona um banco de dados para uso
+SHOW DATABASES; -- Lista todos os bancos de dados disponíveis
+SHOW TABLES; -- Lista todas as tabelas do banco de dados selecionado
+SHOW COLUMNS FROM tb_cursos; -- Mostra as colunas de uma tabela específica
+DESCRIBE tb_cursos; -- Exibe detalhes da estrutura da tabela
+
+
+=============================  
+----------------------- Tabelas ----------------------- 
+=============================  
+
+
+____ Abaixo um Exemplo___
+CREATE TABLE tb_cursos (
+    id_curso INT NOT NULL,
+    imagem_curso VARCHAR(100) NOT NULL,
+    nome_curso CHAR(50) NOT NULL,
+    resumo TEXT NULL,
+    data_cadastro DATETIME NOT NULL,
+    ativo BOOLEAN DEFAULT TRUE,
+    investimento FLOAT(8,2) DEFAULT 0
+); ___ Fim do Exemplo___
+
+DROP TABLE tb_cursos;
+
+ALTER TABLE tb_cursos ADD COLUMN carga_horaria INT NOT NULL DEFAULT 0; -- Adiciona uma nova coluna
+ALTER TABLE tb_cursos DROP COLUMN carga_horaria; -- Remove uma coluna existente
+ALTER TABLE tb_cursos MODIFY COLUMN nome_curso VARCHAR(100); -- Modifica o tipo de uma coluna
+ALTER TABLE tb_cursos RENAME TO cursos_online; -- Renomeia uma tabela
+
+
+=============================  
+----------------------- Manipulação de Dados ----------------------- 
+=============================  
+
+
+INSERT INTO usuarios (nome, email, senha) VALUES ('João Silva', 'joao@email.com', '123456'); -- Insere um novo registro
+
+SELECT * FROM usuarios; -- Seleciona todos os registros da tabela
+SELECT nome, email FROM usuarios WHERE id = 1; -- Filtra registros
+
+UPDATE usuarios SET senha = 'novaSenha123' WHERE id = 1; -- Atualiza um registro
+DELETE FROM usuarios WHERE id = 1; -- Deleta um registro específico
+TRUNCATE TABLE usuarios; -- Remove todos os registros da tabela, mas mantém sua estrutura
+
+INSERT INTO tb_cursos (id_curso, imagem_curso, nome_curso, resumo, data_cadastro, ativo, investimento) 
+VALUES (1, 'curso1.jpg', 'Curso de MySQL', 'Aprenda MySQL do zero', NOW(), true, 49.90); -- Insere um registro completo
+
+UPDATE tb_cursos SET investimento = 59.90 WHERE id_curso = 1; -- Atualiza um campo específico
+DELETE FROM tb_cursos WHERE id_curso = 1; -- Remove um curso específico
+TRUNCATE TABLE tb_cursos; -- Remove todos os registros da tabela, mantendo a estrutura
+
+
+=============================  
+----------------------- Consultas Avançadas --------------------
+=============================  
+
+
+SELECT * FROM usuarios ORDER BY nome ASC; -- Ordena os resultados em ordem crescente
+SELECT * FROM usuarios WHERE nome LIKE 'J%'; -- Filtra registros com nomes que começam com "J"
+SELECT COUNT(*) FROM usuarios; -- Conta o número de registros na tabela
+SELECT AVG(idade) FROM usuarios; -- Calcula a média de uma coluna numérica
+SELECT MIN(idade), MAX(idade) FROM usuarios; -- Obtém o menor e maior valor da coluna idade
+SELECT DISTINCT nome FROM usuarios; -- Seleciona valores distintos
+SELECT nome, LENGTH(nome) AS tamanho FROM usuarios; -- Retorna o tamanho do nome
+SELECT UPPER(nome) FROM usuarios; -- Converte o nome para maiúsculas
+SELECT LOWER(nome) FROM usuarios; -- Converte o nome para minúsculas
+SELECT CONCAT(nome, ' - ', email) AS dados FROM usuarios; -- Concatena colunas
+
+
+=============================
+-- -------------------- Chaves e Índices --------------------
+=============================
+
+
+ALTER TABLE usuarios ADD CONSTRAINT unique_email UNIQUE (email); -- Adiciona uma restrição única
+CREATE INDEX idx_nome ON usuarios (nome); -- Cria um índice para melhorar buscas
+DROP INDEX idx_nome ON usuarios; -- Remove um índice
+ALTER TABLE tb_cursos ADD PRIMARY KEY (id_curso); -- Adiciona chave primária
+ALTER TABLE tb_cursos ADD FOREIGN KEY (id_curso) REFERENCES pedidos(id); -- Adiciona chave estrangeira
+
+
+=============================
+----------------------- Relacionamentos entre Tabelas --------------------
+=============================
+
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    total DECIMAL(10,2),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+); 
+
+SELECT usuarios.nome, pedidos.total 
+FROM usuarios 
+JOIN pedidos ON usuarios.id = pedidos.usuario_id; -- INNER JOIN entre duas tabelas
+
+SELECT u.nome, p.total 
+FROM usuarios u 
+LEFT JOIN pedidos p ON u.id = p.usuario_id; -- LEFT JOIN, retorna todos os usuários, mesmo sem pedidos
+
+SELECT u.nome, COUNT(p.id) AS total_pedidos
+FROM usuarios u
+LEFT JOIN pedidos p ON u.id = p.usuario_id
+GROUP BY u.nome; -- Conta quantos pedidos cada usuário fez
+
+
+=============================
+----------------------- Controle de Transações --------------------
+=============================
+
+
+START TRANSACTION; -- Inicia uma transação
+UPDATE usuarios SET nome = 'Carlos Silva' WHERE id = 1;
+ROLLBACK; -- Desfaz as alterações
+COMMIT; -- Confirma as alterações
+
+SAVEPOINT ponto1; -- Cria um ponto de salvamento na transação
+UPDATE usuarios SET senha = 'senha123' WHERE id = 2;
+ROLLBACK TO ponto1; -- Volta ao ponto salvo, sem desfazer tudo
