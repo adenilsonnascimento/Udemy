@@ -1,0 +1,95 @@
+=============================  
+Filtros no MySQL
+=============================  
+
+
+Filtros são usados em consultas SQL para restringir os resultados retornados com base em condições específicas. A cláusula WHERE é a mais comum para aplicar filtros.
+
+
+=============================  
+1. Cláusula WHERE
+=============================  
+
+
+A cláusula WHERE é usada para filtrar registros que atendem a uma condição específica. Por exemplo:
+
+SELECT * FROM tb_compradores WHERE idade > 18;
+Isso retorna todos os registros da tabela tb_compradores onde a idade é maior que 18.
+
+
+=============================  
+2. Operadores de Comparação
+=============================  
+
+
+Você pode usar operadores de comparação para criar condições na cláusula WHERE:
+
+=: Igual a
+<> ou !=: Diferente de
+>: Maior que
+<: Menor que
+>=: Maior ou igual a
+<=: Menor ou igual a
+Exemplo:
+
+SELECT * FROM tb_compradores WHERE investimento >= 500;
+
+
+=============================  
+3. Operadores Lógicos
+=============================  
+
+
+Os operadores lógicos permitem combinar várias condições:
+
+AND: Todas as condições devem ser verdadeiras
+OR: Pelo menos uma condição deve ser verdadeira
+NOT: Inverte a condição
+Exemplo:
+
+SELECT * FROM tb_compradores WHERE idade < 25 AND interesse = 'tecnologia';
+
+
+=============================  
+4. Operador LIKE
+=============================  
+
+
+O operador LIKE é usado para buscar um padrão em uma coluna de texto. Você pode usar os caracteres curinga % (qualquer sequência de caracteres) e _ (um único caractere).
+
+Exemplo:
+
+SELECT * FROM tb_compradores WHERE nome_comprador LIKE 'Jo%';
+Isso retorna todos os compradores cujo nome começa com "Jo".
+
+
+=============================  
+5. Operador IN
+=============================  
+
+
+O operador IN permite especificar múltiplos valores em uma condição WHERE.
+
+Exemplo:
+
+SELECT * FROM tb_compradores WHERE cidade IN ('São Paulo', 'Rio de Janeiro');
+6. Operador BETWEEN
+O operador BETWEEN é usado para selecionar valores dentro de um intervalo.
+
+Exemplo:
+
+SELECT * FROM tb_compradores WHERE data_cadastro BETWEEN '2025-01-01' AND '2025-12-31';
+Aplicando Filtros no phpMyAdmin
+No phpMyAdmin, você pode usar a interface gráfica para aplicar filtros facilmente:
+
+Selecionar Tabela: Escolha a tabela que deseja filtrar.
+Pesquisar: Vá para a aba "Pesquisar" e insira as condições de filtro nos campos apropriados.
+Executar: Clique em "Executar" para ver os resultados filtrados.
+
+
+=============================  
+Conclusão
+=============================  
+
+
+Filtros são uma ferramenta poderosa para manipular e analisar dados em MySQL. Com a prática, você se tornará mais eficiente em criar consultas complexas e extrair informações valiosas de seus bancos de dados.
